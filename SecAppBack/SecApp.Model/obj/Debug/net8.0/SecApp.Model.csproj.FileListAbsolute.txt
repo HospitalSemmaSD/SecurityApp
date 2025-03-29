@@ -1,0 +1,11 @@
+C:\Users\wmartinez\Documents\HDSSDdevelopment\SecApp\SecApp.Model\bin\Debug\net8.0\SecApp.Model.deps.json
+C:\Users\wmartinez\Documents\HDSSDdevelopment\SecApp\SecApp.Model\bin\Debug\net8.0\SecApp.Model.dll
+C:\Users\wmartinez\Documents\HDSSDdevelopment\SecApp\SecApp.Model\bin\Debug\net8.0\SecApp.Model.pdb
+C:\Users\wmartinez\Documents\HDSSDdevelopment\SecApp\SecApp.Model\obj\Debug\net8.0\SecApp.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\wmartinez\Documents\HDSSDdevelopment\SecApp\SecApp.Model\obj\Debug\net8.0\SecApp.Model.AssemblyInfoInputs.cache
+C:\Users\wmartinez\Documents\HDSSDdevelopment\SecApp\SecApp.Model\obj\Debug\net8.0\SecApp.Model.AssemblyInfo.cs
+C:\Users\wmartinez\Documents\HDSSDdevelopment\SecApp\SecApp.Model\obj\Debug\net8.0\SecApp.Model.csproj.CoreCompileInputs.cache
+C:\Users\wmartinez\Documents\HDSSDdevelopment\SecApp\SecApp.Model\obj\Debug\net8.0\SecApp.Model.dll
+C:\Users\wmartinez\Documents\HDSSDdevelopment\SecApp\SecApp.Model\obj\Debug\net8.0\refint\SecApp.Model.dll
+C:\Users\wmartinez\Documents\HDSSDdevelopment\SecApp\SecApp.Model\obj\Debug\net8.0\SecApp.Model.pdb
+C:\Users\wmartinez\Documents\HDSSDdevelopment\SecApp\SecApp.Model\obj\Debug\net8.0\ref\SecApp.Model.dll

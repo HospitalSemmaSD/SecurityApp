@@ -1,0 +1,42 @@
+<h2>Listado Agentes</h2>
+
+@if (agents.length === 0) {
+<div style="align-items: center">
+  <img src="pendulum.gif" alt="" />
+</div>
+
+}@else{ @for (item of agents; track $index) {
+<div class="contenedorAgente">
+  <div class="row" style="display: inline-flex; flex-direction: row; gap: 10px">
+    <div>
+      @if (!item.photo) {
+      <img
+        src="defaultUserPhoto.jpg"
+        alt="Imagen de {{ item.name }}"
+        priority="$index === 0"
+        width="210"
+        height="250"
+      />
+      } @else{
+      <img
+        [src]="item.foto"
+        alt="Imagen de {{ item.name }}"
+        priority="$index === 0"
+        width="210"
+        height="250"
+      />
+
+      }
+    </div>
+
+    <div class="card-body">
+      <div>
+        <p>{{ item.lastName | uppercase }}</p>
+        <p>{{ item.name | uppercase }}</p>
+        <p>Contacto: {{ item.phone }}</p>
+        <button mat-flat-button>Ver Info</button>
+      </div>
+    </div>
+  </div>
+</div>
+} }
