@@ -1,4 +1,5 @@
-﻿using Dapper;
+﻿using System.Configuration;
+using Dapper;
 using MySql.Data.MySqlClient;
 using SecApp.Data.Interfaces;
 using SecApp.Model;
@@ -13,7 +14,7 @@ namespace SecApp.Data.Repositories
         {
             this.connection = connection;
         }
-        protected MySqlConnection dbConnection() 
+        protected MySqlConnection dbConnection()
         {
             return new MySqlConnection(connection.ConnectionString);
         }
@@ -21,10 +22,9 @@ namespace SecApp.Data.Repositories
         public Task<IEnumerable<Agent>> GetAgents()
         {
             var db = dbConnection();
-            var sql = @"SELECT * FROM AGENTS";
+            var sql = @"SELECT * FROM agents";
             return db.QueryAsync<Agent>(sql, new { });
         }
-
         public async Task<Agent> GetDetails(int id)
         {
             var db = dbConnection();
@@ -32,13 +32,14 @@ namespace SecApp.Data.Repositories
             return await db.QueryFirstOrDefaultAsync<Agent>(sql, new { id = id });
         }
 
+
         public async Task<bool> InsertAgent(Agent agent)
         {
             var db = dbConnection();
             var sql = @"INSERT INTO agents(name, lastname, phone, identification, birthday, status, rangeid)
                         VALUES(@name, @lastname, @phone, @identification, @birthday, @status, @rangeid)";
-            var result = await db.ExecuteAsync(sql, new { agent.Name, agent.LastName, agent.Phone, agent.Identification, agent.BirthDay, agent.Status, agent.RangeId});
-            return result > 0; 
+            var result = await db.ExecuteAsync(sql, new { agent.Name, agent.LastName, agent.Phone, agent.Identification, agent.BirthDay, agent.Status, agent.RangeId });
+            return result > 0;
         }
 
         public async Task<bool> UpdateAgent(Agent agent)
@@ -71,7 +72,7 @@ namespace SecApp.Data.Repositories
 
             var db = dbConnection();
             var sql = @"DELETE FROM Agents WHERE agentId = @Id";
-            var result = await db.ExecuteAsync(sql, new {Id = agent.AgentId });
+            var result = await db.ExecuteAsync(sql, new { Id = agent.AgentId });
             return result > 0;
         }
     }

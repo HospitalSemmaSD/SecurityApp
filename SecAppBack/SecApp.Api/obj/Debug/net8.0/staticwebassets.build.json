@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "0PtIQ9aaB/789GqZ2exZaBKbZjyUypYi95IVGTjjZPs=",
-  "Source": "SecApp",
-  "BasePath": "_content/SecApp",
+  "Hash": "bfz2QuyLr08M6SnfCgAxeHKiKm3BQLrSaZmCGPF0CmE=",
+  "Source": "SecApp.Api",
+  "BasePath": "_content/SecApp.Api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

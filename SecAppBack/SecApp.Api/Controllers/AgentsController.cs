@@ -18,25 +18,23 @@ namespace SecApp.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            
             return Ok(await agentsRepository.GetAgents());
         }
-
         [HttpGet("{id}")]
-        public async Task<IActionResult> Get([FromRoute]int id)
+        public async Task<IActionResult> Get([FromRoute] int id)
         {
             return Ok(await agentsRepository.GetDetails(id));
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateAgent([FromBody]Agent agent) 
-        { 
+        public async Task<IActionResult> CreateAgent([FromBody] Agent agent)
+        {
             if (agent == null)
             {
                 return BadRequest();
 
             }
-            if (!ModelState.IsValid) 
+            if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
@@ -63,7 +61,7 @@ namespace SecApp.Controllers
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {
-            await agentsRepository.DeleteAgent(new Agent { AgentId = id});
+            await agentsRepository.DeleteAgent(new Agent { AgentId = id });
             return NoContent();
         }
     }

@@ -9,28 +9,18 @@
 <div class="contenedorAgente">
   <div class="row" style="display: inline-flex; flex-direction: row; gap: 10px">
     <div>
-      @if (!item.photo) {
       <img
-        src="defaultUserPhoto.jpg"
+        [src]="item.photo"
         alt="Imagen de {{ item.name }}"
         priority="$index === 0"
         width="210"
         height="250"
       />
-      } @else{
-      <img
-        [src]="item.foto"
-        alt="Imagen de {{ item.name }}"
-        priority="$index === 0"
-        width="210"
-        height="250"
-      />
-
-      }
     </div>
 
     <div class="card-body">
       <div>
+        <p style="font-weight: bold">{{ item.rangeId }}</p>
         <p>{{ item.lastName | uppercase }}</p>
         <p>{{ item.name | uppercase }}</p>
         <p>Contacto: {{ item.phone }}</p>

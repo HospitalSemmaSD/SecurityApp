@@ -5,25 +5,29 @@ import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-listado-agentes',
-  imports: [UpperCasePipe,MatButtonModule],
+  imports: [UpperCasePipe, MatButtonModule],
   templateUrl: './listado-agentes.component.html',
-  styleUrl: './listado-agentes.component.css'
+  styleUrl: './listado-agentes.component.css',
 })
-export class ListadoAgentesComponent implements OnInit  {
+export class ListadoAgentesComponent implements OnInit {
   agents: any[] = [];
 
-constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService) {}
   ngOnInit(): void {
-    setTimeout(() => {      
+    setTimeout(() => {
       this.getAgents();
     }, 3000);
   }
 
   getAgents() {
-    this.apiService.getSecurity().subscribe((data: any)=>{
+    this.apiService.getSecurity().subscribe((data: any) => {
+      console.log(data);
+      for (let i = 0; i < data.length; i++) {
+        if (data[i].photo.length === 0) {
+          data[i].photo = 'DefaultAgent.jpg';
+        }
+      }
       this.agents = data;
-      console.log(this.agents);
     });
   }
-
 }
