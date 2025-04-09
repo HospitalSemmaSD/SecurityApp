@@ -1,33 +1,40 @@
 {
   "format": 1,
   "restore": {
-    "/Users/mrmartinez/Documents/Development/SecurityApp/SecAppBack/SecApp.Api/SecApp.Api.csproj": {}
+    "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\SecApp.Api.csproj": {}
   },
   "projects": {
-    "/Users/mrmartinez/Documents/Development/SecurityApp/SecAppBack/SecApp.Api/SecApp.Api.csproj": {
+    "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\SecApp.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mrmartinez/Documents/Development/SecurityApp/SecAppBack/SecApp.Api/SecApp.Api.csproj",
+        "projectUniqueName": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\SecApp.Api.csproj",
         "projectName": "SecApp.Api",
-        "projectPath": "/Users/mrmartinez/Documents/Development/SecurityApp/SecAppBack/SecApp.Api/SecApp.Api.csproj",
-        "packagesPath": "/Users/mrmartinez/.nuget/packages/",
-        "outputPath": "/Users/mrmartinez/Documents/Development/SecurityApp/SecAppBack/SecApp.Api/obj/",
+        "projectPath": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\SecApp.Api.csproj",
+        "packagesPath": "C:\\Users\\wmartinez\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/mrmartinez/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\wmartinez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/mrmartinez/Documents/Development/SecurityApp/SecAppBack/SecApp.Data/SecApp.Data.csproj": {
-                "projectPath": "/Users/mrmartinez/Documents/Development/SecurityApp/SecAppBack/SecApp.Data/SecApp.Data.csproj"
+              "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Data\\SecApp.Data.csproj": {
+                "projectPath": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Data\\SecApp.Data.csproj"
               }
             }
           }
@@ -82,6 +89,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.14, 8.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[8.0.14, 8.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.14, 8.0.14]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.14, 8.0.14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -90,34 +115,41 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/mrmartinez/Documents/Development/SecurityApp/SecAppBack/SecApp.Data/SecApp.Data.csproj": {
+    "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Data\\SecApp.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mrmartinez/Documents/Development/SecurityApp/SecAppBack/SecApp.Data/SecApp.Data.csproj",
+        "projectUniqueName": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Data\\SecApp.Data.csproj",
         "projectName": "SecApp.Data",
-        "projectPath": "/Users/mrmartinez/Documents/Development/SecurityApp/SecAppBack/SecApp.Data/SecApp.Data.csproj",
-        "packagesPath": "/Users/mrmartinez/.nuget/packages/",
-        "outputPath": "/Users/mrmartinez/Documents/Development/SecurityApp/SecAppBack/SecApp.Data/obj/",
+        "projectPath": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Data\\SecApp.Data.csproj",
+        "packagesPath": "C:\\Users\\wmartinez\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Data\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/mrmartinez/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\wmartinez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/mrmartinez/Documents/Development/SecurityApp/SecAppBack/SecApp.Model/SecApp.Model.csproj": {
-                "projectPath": "/Users/mrmartinez/Documents/Development/SecurityApp/SecAppBack/SecApp.Model/SecApp.Model.csproj"
+              "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Model\\SecApp.Model.csproj": {
+                "projectPath": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Model\\SecApp.Model.csproj"
               }
             }
           }
@@ -158,31 +190,52 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.14, 8.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.14, 8.0.14]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.14, 8.0.14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/mrmartinez/Documents/Development/SecurityApp/SecAppBack/SecApp.Model/SecApp.Model.csproj": {
+    "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Model\\SecApp.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mrmartinez/Documents/Development/SecurityApp/SecAppBack/SecApp.Model/SecApp.Model.csproj",
+        "projectUniqueName": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Model\\SecApp.Model.csproj",
         "projectName": "SecApp.Model",
-        "projectPath": "/Users/mrmartinez/Documents/Development/SecurityApp/SecAppBack/SecApp.Model/SecApp.Model.csproj",
-        "packagesPath": "/Users/mrmartinez/.nuget/packages/",
-        "outputPath": "/Users/mrmartinez/Documents/Development/SecurityApp/SecAppBack/SecApp.Model/obj/",
+        "projectPath": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Model\\SecApp.Model.csproj",
+        "packagesPath": "C:\\Users\\wmartinez\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Model\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/mrmartinez/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\wmartinez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -217,12 +270,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.14, 8.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.14, 8.0.14]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.14, 8.0.14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

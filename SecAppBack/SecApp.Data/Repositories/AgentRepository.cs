@@ -24,7 +24,8 @@ namespace SecApp.Data.Repositories
             var db = dbConnection();
             var sql = @"SELECT * FROM agents";
             return db.QueryAsync<Agent>(sql, new { });
-        }
+        }       
+
         public async Task<Agent> GetDetails(int id)
         {
             var db = dbConnection();

@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "XqIekc1hEAY=",
+  "dgSpecHash": "rUYC20tvIPI=",
   "success": true,
-  "projectFilePath": "/Users/mrmartinez/Documents/Development/SecurityApp/SecAppBack/SecApp.Model/SecApp.Model.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Model\\SecApp.Model.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\wmartinez\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.14\\microsoft.netcore.app.ref.8.0.14.nupkg.sha512",
+    "C:\\Users\\wmartinez\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.14\\microsoft.windowsdesktop.app.ref.8.0.14.nupkg.sha512",
+    "C:\\Users\\wmartinez\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.14\\microsoft.aspnetcore.app.ref.8.0.14.nupkg.sha512"
+  ],
   "logs": []
 }

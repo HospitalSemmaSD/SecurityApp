@@ -1,6 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Configuration;
+using MySql.Data.MySqlClient;
+using Dapper;
 using SecApp.Data.Interfaces;
 using SecApp.Model;
+using SecApp.Data;
 
 namespace SecApp.Controllers
 {
@@ -9,10 +13,17 @@ namespace SecApp.Controllers
     public class AgentsController : ControllerBase
     {
         private readonly ICRUDtRepository<Agent> agentsRepository;
+         private readonly MySQLConfiguration connection;
 
-        public AgentsController(ICRUDtRepository<Agent> agentsRepository)
+        public AgentsController(MySQLConfiguration connection, ICRUDtRepository<Agent> agentsRepository)
         {
+            this.connection = connection;
             this.agentsRepository = agentsRepository;
+        }
+    
+         protected MySqlConnection dbConnection()
+        {
+            return new MySqlConnection(connection.ConnectionString);
         }
 
         [HttpGet]
@@ -20,10 +31,35 @@ namespace SecApp.Controllers
         {
             return Ok(await agentsRepository.GetAgents());
         }
+
         [HttpGet("{id}")]
         public async Task<IActionResult> Get([FromRoute] int id)
         {
             return Ok(await agentsRepository.GetDetails(id));
+        }
+
+        [HttpGet("GetAgentsRanges")]   
+        public async Task<IActionResult> GetAgentsRanges()
+        {
+            List<AgentVM> agents = new List<AgentVM>();
+            var db = dbConnection();
+            var sql = @"SELECT a.name as Name, a.lastname as LastName, a.phone as Phone, a.photo as Photo, r.name as RangeName 
+                        FROM agents a 
+                        join ranges r
+                        on a.rangeId = r.rangeId";
+            var result = await db.QueryAsync<AgentVM>(sql, new { });
+            foreach (var item in result)
+            {
+                agents.Add(new AgentVM
+                {
+                    Name = item.Name,
+                    LastName = item.LastName,
+                    Phone = item.Phone,
+                    RangeName = item.RangeName,                    
+                    Photo = item.Photo
+                });
+            }
+            return Ok(agents);
         }
 
         [HttpPost]
