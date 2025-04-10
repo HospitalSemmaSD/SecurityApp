@@ -12,6 +12,6 @@ export class CreateAGentComponent {
   //private router = inject(Router);
 
   saveChange(agent: AgentCreateDto) {
-    console.log('from create agent' + agent);
+    console.log(agent);
   }
 }

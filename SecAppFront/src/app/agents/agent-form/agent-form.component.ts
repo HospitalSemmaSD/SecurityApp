@@ -1,10 +1,17 @@
-import { Component, EventEmitter, inject, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  inject,
+  Input,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { RouterLink } from '@angular/router';
-import { AgentCreateDto } from '../../models/agent';
+import { AgentCreateDto, AgentDto } from '../../models/agent';
 
 @Component({
   selector: 'app-agent-form',
@@ -18,7 +25,27 @@ import { AgentCreateDto } from '../../models/agent';
   templateUrl: './agent-form.component.html',
   styleUrl: './agent-form.component.css',
 })
-export class AgentFormComponent {
+export class AgentFormComponent implements OnInit {
+  ngOnInit(): void {
+    if (this.model !== undefined) {
+      this.form.patchValue({
+        name: this.model.name,
+        lastName: this.model.lastName,
+        phone: this.model.phone,
+        identification: this.model.identification,
+        email: this.model.email,
+        birthday: this.model.birthday,
+        status: this.model.status,
+        photo: this.model.photo,
+        rangeId: this.model.rangeId,
+        agentId: this.model.agentId,
+      });
+    }
+  }
+
+  @Input()
+  model?: AgentDto;
+
   @Output()
   formPost = new EventEmitter<AgentCreateDto>();
 
@@ -47,12 +74,10 @@ export class AgentFormComponent {
   });
 
   saveChange() {
-    console.log(this.form.value);
     if (!this.form.valid) {
       return;
     }
     const agent = this.form.value as AgentCreateDto;
-
     this.formPost.emit(agent);
   }
 
