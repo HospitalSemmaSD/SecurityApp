@@ -22,15 +22,14 @@
       <mat-label> Cedula </mat-label>
       <input matInput [formControl]="form.controls.identification" />
     </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label> Email</mat-label>
+      <input matInput [formControl]="form.controls.email" />
+    </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label> Fecha Nacimiento </mat-label>
-      <input
-        matInput
-        type="date"
-        [formControl]="form.controls.birthday"
-        type="date"
-      />
+      <input matInput type="date" [formControl]="form.controls.birthday" />
     </mat-form-field>
 
     <mat-form-field appearance="outline">

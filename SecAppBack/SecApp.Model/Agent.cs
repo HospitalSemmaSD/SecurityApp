@@ -8,7 +8,7 @@ namespace SecApp.Model
         public string LastName { get; set; } = string.Empty;
         public string Phone { get; set; } = string.Empty;
         public string Identification { get; set; } = string.Empty;
-        public string email { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
         public DateTime BirthDay { get; set; }
         public bool Status { get; set; }
         public string Photo { get; set; } = string.Empty;

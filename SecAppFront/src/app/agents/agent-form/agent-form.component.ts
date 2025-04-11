@@ -6,7 +6,12 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -66,11 +71,17 @@ export class AgentFormComponent implements OnInit {
     ],
     identification: ['', { validators: [Validators.required] }],
     email: ['', { validators: [Validators.email] }],
-    birthday: [''],
-    status: [''],
-    photo: [''],
-    rangeId: [''],
-    agentId: [],
+    birthday: new FormControl<Date | null>(null, {
+      validators: [Validators.required],
+    }),
+    status: new FormControl<boolean>(false, {
+      validators: [Validators.required],
+    }),
+    photo: new FormControl<string | null>(null),
+    rangeId: new FormControl<number | null>(null, {
+      validators: [Validators.required],
+    }),
+    agentId: new FormControl<number | null>(null),
   });
 
   saveChange() {

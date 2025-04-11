@@ -1,4 +1,5 @@
 export interface AgentCreateDto {
+  agentId?: number;
   name: string;
   lastName: string;
   phone: string;
@@ -6,7 +7,7 @@ export interface AgentCreateDto {
   email: string;
   birthday?: Date;
   status?: boolean;
-  photo: string;
+  photo?: string;
   rangeId?: number;
 }
 
@@ -19,6 +20,6 @@ export interface AgentDto {
   email?: string;
   birthday?: Date;
   status?: boolean;
-  photo: string;
+  photo?: string;
   rangeId?: number;
 }

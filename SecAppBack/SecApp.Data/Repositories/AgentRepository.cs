@@ -37,9 +37,10 @@ namespace SecApp.Data.Repositories
         public async Task<bool> InsertAgent(Agent agent)
         {
             var db = dbConnection();
-            var sql = @"INSERT INTO agents(name, lastname, phone, identification, birthday, status, rangeid)
-                        VALUES(@name, @lastname, @phone, @identification, @birthday, @status, @rangeid)";
-            var result = await db.ExecuteAsync(sql, new { agent.Name, agent.LastName, agent.Phone, agent.Identification, agent.BirthDay, agent.Status, agent.RangeId });
+            var sql = @"INSERT INTO agents(name, lastname, phone, identification, birthday, email, status, photo, rangeid)
+                        VALUES(@name, @lastname, @phone, @identification, @birthday, @email, @status, @photo, @rangeid)";
+            var result = await db.ExecuteAsync(sql, new { agent.Name, agent.LastName, agent.Phone, agent.Identification,
+                                                         agent.BirthDay, agent.Email, agent.Status, agent.Photo, agent.RangeId });
             return result > 0;
         }
 
