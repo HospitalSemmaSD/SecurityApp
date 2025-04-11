@@ -27,4 +27,16 @@ export class AgentServiceService {
       })
     );
   }
+  public updateAgent(agent: AgentCreateDto): Observable<AgentCreateDto> {
+    agent.agentId = 0; // Set agentId to 0 for new agents
+    if (!agent.photo) {
+      agent.photo = ''; // Set rangeId to 0 if not provided
+    }
+    return this.http.patch<AgentCreateDto>(this.URLbase, agent).pipe(
+      catchError((error) => {
+        console.error('ERROR CREANTO EL AGENTE:', error);
+        throw error; // Rethrow the error to propagate it to the caller
+      })
+    );
+  }
 }
