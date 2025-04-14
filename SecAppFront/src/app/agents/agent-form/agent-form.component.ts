@@ -52,7 +52,7 @@ export class AgentFormComponent implements OnInit {
   model?: AgentDto;
 
   @Output()
-  formPost = new EventEmitter<AgentCreateDto>();
+  formPost = new EventEmitter<AgentDto>();
 
   private readonly formBuilder = inject(FormBuilder);
 
@@ -88,7 +88,7 @@ export class AgentFormComponent implements OnInit {
     if (!this.form.valid) {
       return;
     }
-    const agent = this.form.value as AgentCreateDto;
+    const agent = this.form.value as AgentDto;
     this.formPost.emit(agent);
   }
 

@@ -1,7 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { AgentFormComponent } from '../agent-form/agent-form.component';
-import { AgentCreateDto } from '../../models/agent';
+import { AgentCreateDto, AgentDto } from '../../models/agent';
 import { AgentServiceService } from '../../services/agents/agent-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-gent',
@@ -10,13 +11,12 @@ import { AgentServiceService } from '../../services/agents/agent-service.service
   styleUrl: './create-agent.component.css',
 })
 export class CreateAGentComponent {
-  //private router = inject(Router);
+  private router = inject(Router);
   constructor(private agentService: AgentServiceService) {}
-  saveChange(agent: AgentCreateDto) {
+  saveChange(agent: AgentDto) {
     this.agentService.createAgent(agent).subscribe((data) => {
-      console.log('Agent created successfully:', data);
       // Optionally, navigate to another page or show a success message
-      // this.router.navigate(['/agents']);
+      this.router.navigate(['/agents']);
     });
   }
 }

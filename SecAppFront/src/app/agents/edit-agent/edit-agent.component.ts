@@ -8,10 +8,6 @@ import { AgentDto } from '../../models/agent';
   templateUrl: './edit-agent.component.html',
   styleUrl: './edit-agent.component.css',
 })
-
-@Input({transform: Date}
-  birthday: Date;
-)
 export class EditAgentComponent {
   saveChange(agent: AgentDto) {
     console.log(agent);
