@@ -1,0 +1,82 @@
+  .landing-container {
+      display: flex;
+      flex-direction: column;
+      
+      width: 80%;
+      margin: 1rem;
+      background-color: #1a237e;
+      margin-left: 20%   ;
+    }
+    
+    .header {
+      padding: 0 16px;
+      box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+    }
+    
+    .logo-toolbar {
+      height: 40px;
+    }
+    
+    .spacer {
+      flex: 1 1 auto;
+    }
+    
+    .hero {
+      background: linear-gradient(135deg, #3f51b5 0%, #1a237e 100%);
+      color: white;
+      padding: 20px 20px;
+      text-align: center;
+      flex: 1;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+    
+    .subtitle {
+      font-size: 1.2rem;
+      margin-bottom: 32px;
+      opacity: 0.9;
+    }
+    
+    .features {
+      display: flex;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      padding: 60px 20px;
+      max-width: 1200px;
+  
+      margin: 0 auto;
+    }
+    
+    .feature-card {
+      transition: transform 0.3s ease;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .feature-icon {
+      background-color: #3f51b5;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+    }
+    
+    .feature-icon mat-icon {
+      font-size: 24px;
+    }
+    
+   
