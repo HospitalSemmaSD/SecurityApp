@@ -9,9 +9,12 @@ import { EditRangeComponent } from './ranges/edit-range/edit-range.component';
 import { InstitutionsListComponent } from './institutions/institutions-list/institutions-list.component';
 import { CreateInstitutionComponent } from './institutions/create-institution/create-institution.component';
 import { EditInstitutionComponent } from './institutions/edit-institution/edit-institution.component';
+import { LoginComponent } from './login/login.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+
   { path: 'agents', component: AgentsListComponent },
   { path: 'create-agent', component: CreateAGentComponent },
   { path: 'edit-agent', component: EditAgentComponent },

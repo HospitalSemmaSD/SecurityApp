@@ -16,7 +16,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { RouterLink } from '@angular/router';
-import { AgentCreateDto, AgentDto } from '../../models/agent';
+import { AgentDto } from '../../models/agent';
 
 @Component({
   selector: 'app-agent-form',

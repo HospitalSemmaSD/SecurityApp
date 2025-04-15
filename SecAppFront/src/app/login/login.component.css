@@ -1,0 +1,121 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #589fe6;
+    padding: 16px;
+  }
+  
+  .login-card {
+    width: 100%;
+    max-width: 420px;
+    padding: 32px 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: inline;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    color: #f44336;
+  }
+  
+  .card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 24px;
+  }
+  
+  .logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 16px;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #3f51b5;
+    margin: 8px 0;
+    text-align: center;
+  }
+  
+  .card-subtitle {
+    color: #666;
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  .card-content {
+    width: 100%;
+    padding: 0 8px;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .form-label {
+    color: #555;
+    font-weight: 500;
+  }
+  
+  .form-input {
+    font-size: 1rem;
+    padding: 12px 0;
+  }
+  
+  .form-icon {
+    color: #666;
+  }
+  
+  .form-error {
+    font-size: 0.8rem;
+    color: #f44336;
+  }
+  
+  .login-button {
+    width: 100%;
+    height: 48px;
+    margin-top: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+  
+  .card-actions {
+    width: 100%;
+    margin-top: 16px;
+    padding: 0;
+  }
+  
+  .action-button {
+    font-weight: 500;
+  }
+  
+  .spacer {
+    flex: 1;
+  }
+  
+  /* Mejoras específicas para el outline de los campos */
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: rgba(0, 0, 0, 0.12);
+  }
+  
+  .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: #3f51b5;
+  }
+  
+  .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 0.7em 0 0.7em 0;
+  }
