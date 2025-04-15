@@ -3,17 +3,11 @@ import { Component, inject, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../services/auth-service.service';
 import { MatButtonModule } from '@angular/material/button';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
-import { MatIcon, MatIconModule } from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-login',
@@ -24,7 +18,6 @@ import { MatIcon, MatIconModule } from '@angular/material/icon';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatCardModule,
-    RouterLink,
   ],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
@@ -45,7 +38,7 @@ export class LoginComponent implements OnInit {
   private readonly formBuilder = inject(FormBuilder);
 
   form = this.formBuilder.group({
-    username: ['', { validators: [Validators.required] }],
+    codigo: ['', { validators: [Validators.required] }],
     password: ['', { validators: [Validators.required] }],
   });
   onSubmit() {
@@ -67,10 +60,18 @@ export class LoginComponent implements OnInit {
     // });
   }
 
-  errorName() {
-    return 'El campo nombre es requerido ';
+  errorCodigo() {
+    let codigo = this.form.controls.codigo;
+    if (codigo.errors?.['required'] && codigo.touched) {
+      return 'Codigo necesario ';
+    }
+    return '';
   }
-  errorLastName() {
-    return 'El campo apellido es requerido ';
+  errorPassword() {
+    let pass = this.form.controls.password;
+    if (pass.errors?.['required'] && pass.touched) {
+      return 'Necesitas una contraseña';
+    }
+    return '';
   }
 }
