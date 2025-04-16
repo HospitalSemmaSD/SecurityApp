@@ -103,6 +103,7 @@ export class AgentFormComponent implements OnInit {
       return;
     }
     const agent = this.form.value as AgentDto;
+    console.log(agent);
     this.formPost.emit(agent);
   }
 
