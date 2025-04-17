@@ -1,6 +1,7 @@
 
 .user-list {
-    display: inline-grid;
+    display: inline-flex;
+    justify-content: center;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1.5rem;
     padding: 1rem;

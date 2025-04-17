@@ -1,8 +1,4 @@
 <h2>Listado Agentes</h2>
-<button mat-flat-button routerLink="/create-agent">
-  <mat-icon>person_add</mat-icon> Crear Agente
-</button>
-<br /><br />
 
 <section>
   @if (agents.length === 0) {
@@ -10,7 +6,12 @@
     <img src="pendulum.gif" alt="" />
   </div>
 
-  }@else{ @for (agent of agents; track $index) {
+  }@else{
+  <button mat-flat-button routerLink="/create-agent">
+    <mat-icon>person_add</mat-icon> Crear Agente
+  </button>
+  <br /><br />
+  @for (agent of agents; track $index) {
   <div class="user-list">
     <mat-card class="user-card">
       <div class="user-header">
@@ -43,86 +44,5 @@
     </mat-card>
   </div>
 
-  <!-- <div class="user-list">
-    <mat-card class="user-card">
-      <div class="user-info">
-        <img
-          mat-card-avatar
-          [src]="agent.photo"
-          alt="Foto de {{ agent.name }}"
-          width="210"
-          height="250"
-        />
-        <div class="user-details">
-          <h3>{{ agent.name | uppercase }}</h3>
-          <p class="contact">Contacto: {{ agent.phone }}</p>
-          <p class="email">Email: {{ agent.email }}</p>
-          <p class="role">Rango: {{ agent.rangeName }}</p>
-        </div>
-      </div>
-      <mat-divider></mat-divider>
-      <div class="user-actions">
-        <button mat-flat-button>Ver Info</button>
-      </div>
-    </mat-card>
-  </div> -->
-
-  <!-- <div class="contenedorAgente">
-        <div
-          class="row"
-          style="display: inline-flex; flex-direction: row; gap: 10px"
-        >
-          <div>
-            <img
-              [src]="item.photo"
-              alt="Imagen de {{ item.name }}"
-              priority="$index === 0"
-              width="210"
-              height="250"
-            />
-          </div>
-    
-          <div class="card-body">
-            <div>
-              <p style="font-weight: bold">{{ item.rangeName }}</p>
-              <p>{{ item.lastName | uppercase }}</p>
-              <p>{{ item.name | uppercase }}</p>
-              <p>Contacto: {{ item.phone }}</p>
-              <button mat-flat-button>Ver Info</button>
-            </div>
-          </div>
-        </div>
-      </div> -->
-  }
-
-  <!-- @for (item of agents; track $index) {
-  <div class="contenedorAgente">
-    <div
-      class="row"
-      style="display: inline-flex; flex-direction: row; gap: 10px"
-    >
-      <div>
-        <img
-          [src]="item.photo"
-          alt="Imagen de {{ item.name }}"
-          priority="$index === 0"
-          width="210"
-          height="250"
-        />
-      </div>
-
-      <div class="card-body">
-        <div>
-          <p style="font-weight: bold">{{ item.rangeName }}</p>
-          <p>{{ item.lastName | uppercase }}</p>
-          <p>{{ item.name | uppercase }}</p>
-          <p>Contacto: {{ item.phone }}</p>
-          <button mat-flat-button>Ver Info</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  }  -->
-
-  }
+  } }
 </section>
