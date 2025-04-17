@@ -31,10 +31,9 @@ export class AgentsListComponent implements OnInit {
 
   constructor(private agentService: AgentServiceService) {}
   ngOnInit(): void {
-    this.getAgents();
-    // setTimeout(() => {
-    //   this.getAgents();
-    // }, 3000);
+    setTimeout(() => {
+      this.getAgents();
+    }, 3000);
   }
 
   getAgents() {
