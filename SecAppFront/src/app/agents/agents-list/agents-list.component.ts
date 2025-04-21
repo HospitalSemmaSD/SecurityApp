@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../services/api.service';
 import { DatePipe, NgClass, UpperCasePipe } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -43,8 +42,8 @@ export class AgentsListComponent implements OnInit {
           data[i].photo = 'DefaultAgent.jpg';
         }
       }
-      this.agents = data;
-      console.log(this.agents);
+      //console.log(data);
+      //this.agents = data;
     });
   }
 }

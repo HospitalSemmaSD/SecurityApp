@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { catchError, Observable } from 'rxjs';
-import { AgentCreateDto } from '../../models/agent';
+import { AgentDto } from '../../models/agent';
 import { environment } from '../../../environments/environment'; // Adjust the import path as needed
 
 @Injectable({
@@ -16,24 +16,25 @@ export class AgentServiceService {
     return this.http.get<any>(this.URLbase);
   }
 
-  public createAgent(agent: AgentCreateDto): Observable<AgentCreateDto> {
-    //agent.agentId = 0; // Set agentId to 0 for new agents
+  public createAgent(agent: AgentDto): Observable<AgentDto> {
+    agent.agentId = 0; // Set agentId to 0 for new agents
     if (!agent.photo) {
       agent.photo = ''; // Set rangeId to 0 if not provided
     }
-    return this.http.post<AgentCreateDto>(this.URLbase, agent).pipe(
+
+    return this.http.post<AgentDto>(this.URLbase, agent).pipe(
       catchError((error) => {
         console.error('ERROR CREANTO EL AGENTE:', error);
         throw error; // Rethrow the error to propagate it to the caller
       })
     );
   }
-  public updateAgent(agent: AgentCreateDto): Observable<AgentCreateDto> {
+  public updateAgent(agent: AgentDto): Observable<AgentDto> {
     //  agent.agentId = 0; // Set agentId to 0 for new agents
     if (!agent.photo) {
       agent.photo = ''; // Set rangeId to 0 if not provided
     }
-    return this.http.patch<AgentCreateDto>(this.URLbase, agent).pipe(
+    return this.http.patch<AgentDto>(this.URLbase, agent).pipe(
       catchError((error) => {
         console.error('ERROR CREANTO EL AGENTE:', error);
         throw error; // Rethrow the error to propagate it to the caller

@@ -13,15 +13,15 @@ namespace SecApp.Controllers
     public class AgentsController : ControllerBase
     {
         private readonly ICRUDtRepository<Agent> agentsRepository;
-         private readonly MySQLConfiguration connection;
+        private readonly MySQLConfiguration connection;
 
         public AgentsController(MySQLConfiguration connection, ICRUDtRepository<Agent> agentsRepository)
         {
             this.connection = connection;
             this.agentsRepository = agentsRepository;
         }
-    
-         protected MySqlConnection dbConnection()
+
+        protected MySqlConnection dbConnection()
         {
             return new MySqlConnection(connection.ConnectionString);
         }
@@ -38,7 +38,7 @@ namespace SecApp.Controllers
             return Ok(await agentsRepository.GetDetails(id));
         }
 
-        [HttpGet("GetAgentsRanges")]   
+        [HttpGet("GetAgentsRanges")]
         public async Task<IActionResult> GetAgentsRanges()
         {
             List<AgentVM> agents = new List<AgentVM>();
@@ -55,7 +55,7 @@ namespace SecApp.Controllers
                     Name = item.Name,
                     LastName = item.LastName,
                     Phone = item.Phone,
-                    RangeName = item.RangeName,                    
+                    RangeName = item.RangeName,
                     Photo = item.Photo
                 });
             }
@@ -100,5 +100,31 @@ namespace SecApp.Controllers
             await agentsRepository.DeleteAgent(new Agent { AgentId = id });
             return NoContent();
         }
+
+        [HttpPost("upload-photo")]
+        public async Task<IActionResult> UploadPhoto(IFormFile file)
+        {
+            if (file == null || file.Length == 0)
+                return BadRequest("No valid file");
+
+            var folderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads/agents");
+
+            if (!Directory.Exists(folderPath))
+                Directory.CreateDirectory(folderPath);
+
+            var fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
+            var filePath = Path.Combine(folderPath, fileName);
+
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await file.CopyToAsync(stream);
+            }
+
+            var urlPath = $"/uploads/agents/{fileName}";
+            return Ok(new { filePath = urlPath });
+        }
+
     }
+
+
 }

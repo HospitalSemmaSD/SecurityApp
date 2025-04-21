@@ -1,12 +1,228 @@
 {
   "Version": 1,
-  "Hash": "bfz2QuyLr08M6SnfCgAxeHKiKm3BQLrSaZmCGPF0CmE=",
+  "Hash": "8rBKw8T+1y+qdiGaW3JY9yoGpr4zNKfuRWDyHx7Ddy0=",
   "Source": "SecApp.Api",
   "BasePath": "_content/SecApp.Api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "SecApp.Api/wwwroot",
+      "Source": "SecApp.Api",
+      "ContentRoot": "/Users/mrmartinez/Documents/Development/SecurityApp/SecAppBack/SecApp.Api/wwwroot/",
+      "BasePath": "_content/SecApp.Api",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/Users/mrmartinez/Documents/Development/SecurityApp/SecAppBack/SecApp.Api/wwwroot/uploads/agents/9edfd4b5-b0ec-4a36-96a9-802636ecf8c2.PNG",
+      "SourceId": "SecApp.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/mrmartinez/Documents/Development/SecurityApp/SecAppBack/SecApp.Api/wwwroot/",
+      "BasePath": "_content/SecApp.Api",
+      "RelativePath": "uploads/agents/9edfd4b5-b0ec-4a36-96a9-802636ecf8c2#[.{fingerprint}]?.PNG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "l82fbb26z2",
+      "Integrity": "66+XD/OvVOrtwu13jxk/5c2qn4QhOd9eYjNdDw7dLEY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/agents/9edfd4b5-b0ec-4a36-96a9-802636ecf8c2.PNG"
+    },
+    {
+      "Identity": "/Users/mrmartinez/Documents/Development/SecurityApp/SecAppBack/SecApp.Api/wwwroot/uploads/agents/d8858230-d6ca-4ce4-9448-3257489efb08.PNG",
+      "SourceId": "SecApp.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/mrmartinez/Documents/Development/SecurityApp/SecAppBack/SecApp.Api/wwwroot/",
+      "BasePath": "_content/SecApp.Api",
+      "RelativePath": "uploads/agents/d8858230-d6ca-4ce4-9448-3257489efb08#[.{fingerprint}]?.PNG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "l82fbb26z2",
+      "Integrity": "66+XD/OvVOrtwu13jxk/5c2qn4QhOd9eYjNdDw7dLEY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/agents/d8858230-d6ca-4ce4-9448-3257489efb08.PNG"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "uploads/agents/9edfd4b5-b0ec-4a36-96a9-802636ecf8c2.l82fbb26z2.PNG",
+      "AssetFile": "/Users/mrmartinez/Documents/Development/SecurityApp/SecAppBack/SecApp.Api/wwwroot/uploads/agents/9edfd4b5-b0ec-4a36-96a9-802636ecf8c2.PNG",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3429962"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"66+XD/OvVOrtwu13jxk/5c2qn4QhOd9eYjNdDw7dLEY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 18 Apr 2025 15:36:35 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "l82fbb26z2"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/agents/9edfd4b5-b0ec-4a36-96a9-802636ecf8c2.PNG"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-66+XD/OvVOrtwu13jxk/5c2qn4QhOd9eYjNdDw7dLEY="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/agents/9edfd4b5-b0ec-4a36-96a9-802636ecf8c2.PNG",
+      "AssetFile": "/Users/mrmartinez/Documents/Development/SecurityApp/SecAppBack/SecApp.Api/wwwroot/uploads/agents/9edfd4b5-b0ec-4a36-96a9-802636ecf8c2.PNG",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3429962"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"66+XD/OvVOrtwu13jxk/5c2qn4QhOd9eYjNdDw7dLEY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 18 Apr 2025 15:36:35 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-66+XD/OvVOrtwu13jxk/5c2qn4QhOd9eYjNdDw7dLEY="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/agents/d8858230-d6ca-4ce4-9448-3257489efb08.l82fbb26z2.PNG",
+      "AssetFile": "/Users/mrmartinez/Documents/Development/SecurityApp/SecAppBack/SecApp.Api/wwwroot/uploads/agents/d8858230-d6ca-4ce4-9448-3257489efb08.PNG",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3429962"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"66+XD/OvVOrtwu13jxk/5c2qn4QhOd9eYjNdDw7dLEY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 18 Apr 2025 15:37:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "l82fbb26z2"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/agents/d8858230-d6ca-4ce4-9448-3257489efb08.PNG"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-66+XD/OvVOrtwu13jxk/5c2qn4QhOd9eYjNdDw7dLEY="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/agents/d8858230-d6ca-4ce4-9448-3257489efb08.PNG",
+      "AssetFile": "/Users/mrmartinez/Documents/Development/SecurityApp/SecAppBack/SecApp.Api/wwwroot/uploads/agents/d8858230-d6ca-4ce4-9448-3257489efb08.PNG",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3429962"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"66+XD/OvVOrtwu13jxk/5c2qn4QhOd9eYjNdDw7dLEY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 18 Apr 2025 15:37:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-66+XD/OvVOrtwu13jxk/5c2qn4QhOd9eYjNdDw7dLEY="
+        }
+      ]
+    }
+  ]
 }

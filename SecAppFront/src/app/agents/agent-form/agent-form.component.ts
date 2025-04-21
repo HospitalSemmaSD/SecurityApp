@@ -22,12 +22,16 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { NgxMaskDirective } from 'ngx-mask';
 
 import { RouterLink } from '@angular/router';
 import { AgentDto } from '../../models/agent';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-agent-form',
+  standalone: true,
   imports: [
     MatInputModule,
     MatButtonModule,
@@ -39,6 +43,7 @@ import { AgentDto } from '../../models/agent';
     MatIconModule,
     MatCheckboxModule,
     ReactiveFormsModule,
+    NgxMaskDirective,
     RouterLink,
   ],
   templateUrl: './agent-form.component.html',
@@ -69,6 +74,8 @@ export class AgentFormComponent implements OnInit {
   formPost = new EventEmitter<AgentDto>();
 
   private readonly formBuilder = inject(FormBuilder);
+  private readonly http = inject(HttpClient);
+  private URLbase = environment.API_URL + 'agents';
 
   form = this.formBuilder.group({
     name: ['', { validators: [Validators.required] }],
@@ -88,7 +95,7 @@ export class AgentFormComponent implements OnInit {
     birthday: new FormControl<Date | null>(null, {
       validators: [Validators.required],
     }),
-    status: new FormControl<boolean>(false, {
+    status: new FormControl<boolean>(true, {
       validators: [Validators.required],
     }),
     photo: new FormControl<string | null>(null),
@@ -103,8 +110,39 @@ export class AgentFormComponent implements OnInit {
       return;
     }
     const agent = this.form.value as AgentDto;
-    console.log(agent);
+
     this.formPost.emit(agent);
+  }
+
+  selectedFile: File | null = null;
+
+  onFileSelected(event: Event) {
+    const fileInput = event.target as HTMLInputElement;
+    if (fileInput.files && fileInput.files.length > 0) {
+      this.selectedFile = fileInput.files[0];
+    }
+  }
+
+  onSubmit() {
+    if (this.selectedFile) {
+      const formData = new FormData();
+      formData.append('file', this.selectedFile);
+
+      console.log('Subiendo imagen:', this.selectedFile);
+      console.log(formData);
+
+      this.http.post(this.URLbase + '/upload-photo', formData).subscribe({
+        next: (res: any) => {
+          console.log('Imagen subida:', res.filePath);
+          // Aquí puedes guardar la ruta de la imagen en el agente
+          this.form.patchValue({ photo: res.filePath });
+          this.saveChange(); // envía el formulario completo
+        },
+        error: (err) => console.error('Error al subir imagen:', err),
+      });
+    } else {
+      this.saveChange();
+    }
   }
 
   errorName() {

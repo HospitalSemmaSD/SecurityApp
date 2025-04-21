@@ -1,0 +1,40 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\agents\9edfd4b5-b0ec-4a36-96a9-802636ecf8c2.PNG'))">
+      <SourceType>Package</SourceType>
+      <SourceId>SecApp.Api</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/SecApp.Api</BasePath>
+      <RelativePath>uploads/agents/9edfd4b5-b0ec-4a36-96a9-802636ecf8c2.PNG</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>l82fbb26z2</Fingerprint>
+      <Integrity>66+XD/OvVOrtwu13jxk/5c2qn4QhOd9eYjNdDw7dLEY=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\agents\9edfd4b5-b0ec-4a36-96a9-802636ecf8c2.PNG'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\agents\d8858230-d6ca-4ce4-9448-3257489efb08.PNG'))">
+      <SourceType>Package</SourceType>
+      <SourceId>SecApp.Api</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/SecApp.Api</BasePath>
+      <RelativePath>uploads/agents/d8858230-d6ca-4ce4-9448-3257489efb08.PNG</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>l82fbb26z2</Fingerprint>
+      <Integrity>66+XD/OvVOrtwu13jxk/5c2qn4QhOd9eYjNdDw7dLEY=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\agents\d8858230-d6ca-4ce4-9448-3257489efb08.PNG'))</OriginalItemSpec>
+    </StaticWebAsset>
+  </ItemGroup>
+</Project>

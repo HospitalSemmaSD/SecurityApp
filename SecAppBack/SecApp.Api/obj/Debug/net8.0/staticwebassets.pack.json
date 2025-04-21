@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/mrmartinez/Documents/Development/SecurityApp/SecAppBack/SecApp.Api/wwwroot/uploads/agents/9edfd4b5-b0ec-4a36-96a9-802636ecf8c2.PNG",
+      "PackagePath": "staticwebassets/uploads/agents/9edfd4b5-b0ec-4a36-96a9-802636ecf8c2.PNG"
+    },
+    {
+      "Id": "/Users/mrmartinez/Documents/Development/SecurityApp/SecAppBack/SecApp.Api/wwwroot/uploads/agents/d8858230-d6ca-4ce4-9448-3257489efb08.PNG",
+      "PackagePath": "staticwebassets/uploads/agents/d8858230-d6ca-4ce4-9448-3257489efb08.PNG"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.SecApp.Api.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.SecApp.Api.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.SecApp.Api.props",
+      "PackagePath": "build\\SecApp.Api.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.SecApp.Api.props",
+      "PackagePath": "buildMultiTargeting\\SecApp.Api.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.SecApp.Api.props",
+      "PackagePath": "buildTransitive\\SecApp.Api.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

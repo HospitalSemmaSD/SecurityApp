@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SecApp.Model")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+72968515de3c2835d5e3cfb8a8d1312474aad541")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+59730d198fa43aefe38ba7245e10f49a97d4703e")]
 [assembly: System.Reflection.AssemblyProductAttribute("SecApp.Model")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SecApp.Model")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
