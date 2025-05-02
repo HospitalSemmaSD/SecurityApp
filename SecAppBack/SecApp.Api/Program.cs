@@ -3,6 +3,7 @@ using SecApp.Data;
 using SecApp.Data.Interfaces;
 using SecApp.Data.Repositories;
 using SecApp.Model;
+using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,6 +29,15 @@ builder.Services.AddScoped<ICRUDtRepository<Agent>, AgentRepository>();
 
 
 var app = builder.Build();
+
+app.UseStaticFiles();
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(
+        Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Uploads")),
+    RequestPath = "/images"
+});
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

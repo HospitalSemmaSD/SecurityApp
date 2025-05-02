@@ -16,14 +16,16 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
 
   { path: 'agents', component: AgentsListComponent },
-  { path: 'create-agent', component: CreateAGentComponent },
-  { path: 'edit-agent', component: EditAgentComponent },
+  { path: 'agents/create', component: CreateAGentComponent },
+  { path: 'agents/edit/:id', component: EditAgentComponent },
 
   { path: 'ranges', component: RangesListComponent },
-  { path: 'create-range', component: CreateRangeComponent },
-  { path: 'edit-range', component: EditRangeComponent },
+  { path: 'ranges/create', component: CreateRangeComponent },
+  { path: 'ranges/edit/:id', component: EditRangeComponent },
 
   { path: 'institutions', component: InstitutionsListComponent },
-  { path: 'create-institution', component: CreateInstitutionComponent },
-  { path: 'edit-institution', component: EditInstitutionComponent },
+  { path: 'institutions/create', component: CreateInstitutionComponent },
+  { path: 'institutions/edit/:id', component: EditInstitutionComponent },
+
+  { path: '**', redirectTo: '' }, // Redirect to home for any unknown routes,
 ];

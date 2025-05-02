@@ -12,6 +12,8 @@ namespace SecApp.Model
         public DateTime BirthDay { get; set; }
         public bool Status { get; set; }
         public string Photo { get; set; } = string.Empty;
+        public int AgentCode { get; set; }
         public int RangeId { get; set; }
+
     }
 }

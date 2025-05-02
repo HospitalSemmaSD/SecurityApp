@@ -1,31 +1,59 @@
 {
   "Files": [
     {
-      "Id": "/Users/mrmartinez/Documents/Development/SecurityApp/SecAppBack/SecApp.Api/wwwroot/uploads/agents/9edfd4b5-b0ec-4a36-96a9-802636ecf8c2.PNG",
-      "PackagePath": "staticwebassets/uploads/agents/9edfd4b5-b0ec-4a36-96a9-802636ecf8c2.PNG"
+      "Id": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\012f907f-b035-40e7-a9ae-81a67bdc975e.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\012f907f-b035-40e7-a9ae-81a67bdc975e.jpeg"
     },
     {
-      "Id": "/Users/mrmartinez/Documents/Development/SecurityApp/SecAppBack/SecApp.Api/wwwroot/uploads/agents/d8858230-d6ca-4ce4-9448-3257489efb08.PNG",
-      "PackagePath": "staticwebassets/uploads/agents/d8858230-d6ca-4ce4-9448-3257489efb08.PNG"
+      "Id": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\282aa472-dfdd-4564-ab90-ada6935d048d.jpg",
+      "PackagePath": "staticwebassets\\uploads\\282aa472-dfdd-4564-ab90-ada6935d048d.jpg"
     },
     {
-      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.SecApp.Api.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "Id": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\37e43806-9674-4b10-a033-2401b2e39ad7.jpg",
+      "PackagePath": "staticwebassets\\uploads\\37e43806-9674-4b10-a033-2401b2e39ad7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\6b1be527-f067-4f5a-a1c4-d2045435306a.jpg",
+      "PackagePath": "staticwebassets\\uploads\\6b1be527-f067-4f5a-a1c4-d2045435306a.jpg"
+    },
+    {
+      "Id": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\8aae5246-a439-4541-9807-02c3a7416cac.jpg",
+      "PackagePath": "staticwebassets\\uploads\\8aae5246-a439-4541-9807-02c3a7416cac.jpg"
+    },
+    {
+      "Id": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\a5da43c3-896f-4822-9265-32f86aafca88.jpg",
+      "PackagePath": "staticwebassets\\uploads\\a5da43c3-896f-4822-9265-32f86aafca88.jpg"
+    },
+    {
+      "Id": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\d6b40ab2-f74c-4d7c-8c8d-1f388dcb2a62.png",
+      "PackagePath": "staticwebassets\\uploads\\d6b40ab2-f74c-4d7c-8c8d-1f388dcb2a62.png"
+    },
+    {
+      "Id": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\e6509c46-ac36-4bfb-8c97-619290260313.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\e6509c46-ac36-4bfb-8c97-619290260313.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\f64eabaf-b704-4ae4-9b4d-3dfacd854f06.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\f64eabaf-b704-4ae4-9b4d-3dfacd854f06.jpeg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.SecApp.Api.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
-      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.SecApp.Api.Microsoft.AspNetCore.StaticWebAssets.props",
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.SecApp.Api.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
     {
-      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.SecApp.Api.props",
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.SecApp.Api.props",
       "PackagePath": "build\\SecApp.Api.props"
     },
     {
-      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.SecApp.Api.props",
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.SecApp.Api.props",
       "PackagePath": "buildMultiTargeting\\SecApp.Api.props"
     },
     {
-      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.SecApp.Api.props",
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.SecApp.Api.props",
       "PackagePath": "buildTransitive\\SecApp.Api.props"
     }
   ],

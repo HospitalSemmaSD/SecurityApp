@@ -43,7 +43,8 @@ namespace SecApp.Controllers
         {
             List<AgentVM> agents = new List<AgentVM>();
             var db = dbConnection();
-            var sql = @"SELECT a.name as Name, a.lastname as LastName, a.phone as Phone, a.photo as Photo, r.name as RangeName 
+            var sql = @"SELECT a.name as Name, a.lastname as LastName, a.phone as Phone, a.photo as Photo,
+                        a.AgentCode, a.Identification, r.name as RangeName 
                         FROM agents a 
                         join ranges r
                         on a.rangeId = r.rangeId";
@@ -56,7 +57,9 @@ namespace SecApp.Controllers
                     LastName = item.LastName,
                     Phone = item.Phone,
                     RangeName = item.RangeName,
-                    Photo = item.Photo
+                    Photo = item.Photo,
+                    Identification = item.Identification,
+                    AgentCode = item.AgentCode
                 });
             }
             return Ok(agents);
@@ -73,7 +76,7 @@ namespace SecApp.Controllers
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
-            }
+            }            
             var created = await agentsRepository.InsertAgent(agent);
             return Created("Created", created);
         }
@@ -107,11 +110,12 @@ namespace SecApp.Controllers
             if (file == null || file.Length == 0)
                 return BadRequest("No valid file");
 
-            var folderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads/agents");
+            var folderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads");
 
             if (!Directory.Exists(folderPath))
                 Directory.CreateDirectory(folderPath);
 
+            // fileName most be the agent code
             var fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
             var filePath = Path.Combine(folderPath, fileName);
 
@@ -120,8 +124,12 @@ namespace SecApp.Controllers
                 await file.CopyToAsync(stream);
             }
 
-            var urlPath = $"/uploads/agents/{fileName}";
-            return Ok(new { filePath = urlPath });
+            var imageUrl = $"{Request.Scheme}://{Request.Host}/uploads/{fileName}";
+            return Ok(new { imageUrl});
+
+            // var urlPath = $"/uploads/agents/{fileName}";
+            // //return Ok(new { filePath = urlPath });
+            // return Ok(new { fileName, urlPath });
         }
 
     }

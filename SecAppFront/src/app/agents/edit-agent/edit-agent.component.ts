@@ -1,6 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, numberAttribute } from '@angular/core';
 import { AgentFormComponent } from '../agent-form/agent-form.component';
-import { AgentDto } from '../../models/agent';
+import { AgentCreateDto, AgentDto } from '../../models/agent';
 
 @Component({
   selector: 'app-edit-agent',
@@ -9,7 +9,26 @@ import { AgentDto } from '../../models/agent';
   styleUrl: './edit-agent.component.css',
 })
 export class EditAgentComponent {
-  saveChange(agent: AgentDto) {
-    console.log(agent);
+  @Input({ transform: numberAttribute })
+  agentId!: number;
+
+  //agent to be edited example
+  agent: AgentDto = {
+    agentId: 5,
+    name: 'Agent Name',
+    lastName: 'Agent Last Name',
+    phone: '8497825245',
+    identification: '00100055896',
+    email: 'agent@email.com',
+    birthday: new Date(),
+    status: true,
+    photo: ' Agent Photo',
+    agentCode: 12345,
+    rangeId: 1,
+    rangeName: 'Agent Range',
+  };
+
+  saveChange(agent: AgentCreateDto) {
+    console.log('Editing agent', agent);
   }
 }

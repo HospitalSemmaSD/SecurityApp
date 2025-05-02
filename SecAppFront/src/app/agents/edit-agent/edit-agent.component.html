@@ -1,2 +1,5 @@
 <h2>Editando Agente</h2>
-<app-agent-form (formPost)="saveChange($event)"></app-agent-form>
+<app-agent-form
+  [model]="agent"
+  (formPost)="saveChange($event)"
+></app-agent-form>

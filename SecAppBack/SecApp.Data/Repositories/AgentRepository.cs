@@ -38,9 +38,9 @@ namespace SecApp.Data.Repositories
         {
             var db = dbConnection();
             var sql = @"INSERT INTO agents(name, lastname, phone, identification, birthday, email, status, photo, rangeid)
-                        VALUES(@name, @lastname, @phone, @identification, @birthday, @email, @status, @photo, @rangeid)";
+                        VALUES(@name, @lastname, @phone, @identification, @birthday, @email, @status, @photo, @rangeid, @agentcode)";
             var result = await db.ExecuteAsync(sql, new { agent.Name, agent.LastName, agent.Phone, agent.Identification,
-                                                         agent.BirthDay, agent.Email, agent.Status, agent.Photo, agent.RangeId });
+                                                         agent.BirthDay, agent.Email, agent.Status, agent.Photo, agent.RangeId, agent.AgentCode });
             return result > 0;
         }
 

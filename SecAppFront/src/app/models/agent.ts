@@ -1,12 +1,27 @@
 export interface AgentDto {
-  agentId: number;
-  name: string;
-  lastName: string;
-  phone: string;
-  identification: string;
-  email?: string;
-  birthday?: Date;
-  status?: boolean;
-  photo?: string;
-  rangeId?: number;
+  agentId: number | null;
+  name: string | null;
+  lastName: string | null;
+  phone: string | null;
+  identification: string | null;
+  email: string | null;
+  birthday: Date | null;
+  status: boolean | null;
+  photo: string | null;
+  agentCode: number | null;
+  rangeId: number | null;
+  rangeName: string | null;
+}
+
+export interface AgentCreateDto {
+  name: string | null;
+  lastName: string | null;
+  phone: string | null;
+  identification: string | null;
+  email: string | null;
+  birthday: Date | null;
+  status: boolean | null;
+  photo: string | null;
+  rangeId: number | null;
+  agentCode: number | null;
 }

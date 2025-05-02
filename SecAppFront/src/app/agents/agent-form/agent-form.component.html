@@ -59,13 +59,21 @@
       <mat-label>Fecha de nacimiento</mat-label>
       <input
         matInput
-        [formControl]="form.controls.birthday"
         [matDatepicker]="picker"
-        placeholder="Seleccione una fecha"
+        [formControl]="form.controls.birthday"
         required
       />
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="m-width">
+      <mat-label>Codigo</mat-label>
+      <input
+        matInput
+        [formControl]="form.controls.agentCode"
+        type="number"
+        placeholder="Codigo"
+      />
     </mat-form-field>
 
     <mat-form-field appearance="outline" class="m-width">
@@ -79,7 +87,8 @@
         <mat-option value="6">Mayor</mat-option>
       </mat-select>
     </mat-form-field>
-    <div class="m-width">
+    <app-input-img title="Foto del Agente"></app-input-img>
+    <!-- <div class="m-width">
       <label for="foto">Foto</label><br />
       <input
         type="file"
@@ -88,14 +97,15 @@
         name="foto"
         accept="image/*"
         [formControl]="form.controls.photo"
+        #fileInput
       />
-    </div>
+    </div> -->
 
     <mat-slide-toggle color="primary" [formControl]="form.controls.status"
       >Activo</mat-slide-toggle
     >
 
-    <input [formControl]="form.controls.agentId" hidden />
+    <!-- <input type="number" [formControl]="form.controls.agentId" hidden /> -->
 
     <div class="bottomContainer">
       <button type="submit" mat-raised-button [disabled]="form.invalid">

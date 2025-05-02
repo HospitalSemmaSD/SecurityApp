@@ -8,6 +8,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 
 import { AgentServiceService } from '../../services/agents/agent-service.service';
+import { AgentDto } from '../../models/agent';
 
 @Component({
   selector: 'app-listado-agentes',
@@ -26,7 +27,7 @@ import { AgentServiceService } from '../../services/agents/agent-service.service
   styleUrl: './agents-list.component.css',
 })
 export class AgentsListComponent implements OnInit {
-  agents: any[] = [];
+  agents: AgentDto[] = [];
 
   constructor(private agentService: AgentServiceService) {}
   ngOnInit(): void {
@@ -42,8 +43,7 @@ export class AgentsListComponent implements OnInit {
           data[i].photo = 'DefaultAgent.jpg';
         }
       }
-      //console.log(data);
-      //this.agents = data;
+      this.agents = data;
     });
   }
 }
