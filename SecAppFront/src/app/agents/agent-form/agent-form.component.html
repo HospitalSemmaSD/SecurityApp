@@ -1,111 +1,208 @@
-<div class="agentes-form-container">
+<form class="agente-form" (submit)="onSubmit()" [formGroup]="form">
+  <div class="form-content">
+    <div class="left-column">
+      <app-input-img title="Foto del Agente"></app-input-img>
+    </div>
+
+    <div class="right-column">
+      <mat-form-field appearance="outline" class="m-width">
+        <mat-label>Nombres</mat-label>
+        <input
+          matInput
+          [formControl]="form.controls.name"
+          placeholder="Nombres"
+          required
+        />
+        <mat-error>{{ errorName() }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="m-width">
+        <mat-label>Apellidos</mat-label>
+        <input
+          matInput
+          [formControl]="form.controls.lastName"
+          placeholder="Apellidos"
+          required
+        />
+        <mat-error>{{ errorLastName() }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="m-width">
+        <mat-label>Teléfono</mat-label>
+        <input
+          matInput
+          mask="(000)000-0000"
+          placeholder="(000)000-0000"
+          [formControl]="form.controls.phone"
+          type="tel"
+          required
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="m-width">
+        <mat-label>Cédula</mat-label>
+        <input
+          matInput
+          mask="000-0000000-0"
+          [formControl]="form.controls.identification"
+          placeholder="000-0000000-0"
+          required
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="m-width">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          [formControl]="form.controls.email"
+          type="email"
+          placeholder="Opcional"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="m-width">
+        <mat-label>Fecha de nacimiento</mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          [formControl]="form.controls.birthday"
+          required
+        />
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="m-width">
+        <mat-label>Codigo</mat-label>
+        <input
+          matInput
+          [formControl]="form.controls.agentCode"
+          type="number"
+          placeholder="Codigo"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="m-width">
+        <mat-label>Rango</mat-label>
+        <mat-select [formControl]="form.controls.rangeId" required>
+          <mat-option value="1">Raso</mat-option>
+          <mat-option value="2">Cabo</mat-option>
+          <mat-option value="3">Sargento</mat-option>
+          <mat-option value="4">Teniente</mat-option>
+          <mat-option value="5">Capitán</mat-option>
+          <mat-option value="6">Mayor</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-slide-toggle color="primary" [formControl]="form.controls.status">
+        Activo
+      </mat-slide-toggle>
+    </div>
+  </div>
+
+  <div class="bottomContainer">
+    <a mat-stroked-button routerLink="/agents">Cancelar</a>
+    <button type="submit" mat-raised-button [disabled]="form.invalid">
+      Guardar Cambios
+    </button>
+  </div>
+</form>
+
+<!-- <div class="agentes-form-container">
   <form (submit)="onSubmit()" [formGroup]="form">
-    <mat-form-field appearance="outline" class="m-width">
-      <mat-label>Nombres</mat-label>
-      <input
-        matInput
-        [formControl]="form.controls.name"
-        placeholder="Nombres"
-        required
-      />
-      <mat-error>{{ errorName() }}</mat-error>
-    </mat-form-field>
+    <div>
+      <app-input-img title="Foto del Agente"></app-input-img>
+      <mat-slide-toggle color="primary" [formControl]="form.controls.status"
+        >Activo</mat-slide-toggle
+      >
+    </div>
+    <div>
+      <mat-form-field appearance="outline" class="m-width">
+        <mat-label>Nombres</mat-label>
+        <input
+          matInput
+          [formControl]="form.controls.name"
+          placeholder="Nombres"
+          required
+        />
+        <mat-error>{{ errorName() }}</mat-error>
+      </mat-form-field>
 
-    <mat-form-field appearance="outline" class="m-width">
-      <mat-label>Apellidos</mat-label>
-      <input
-        matInput
-        [formControl]="form.controls.lastName"
-        placeholder="Apellidos"
-        required
-      />
-      <mat-error>{{ errorLastName() }}</mat-error>
-    </mat-form-field>
+      <mat-form-field appearance="outline" class="m-width">
+        <mat-label>Apellidos</mat-label>
+        <input
+          matInput
+          [formControl]="form.controls.lastName"
+          placeholder="Apellidos"
+          required
+        />
+        <mat-error>{{ errorLastName() }}</mat-error>
+      </mat-form-field>
 
-    <mat-form-field appearance="outline" class="m-width">
-      <mat-label>Teléfono</mat-label>
-      <input
-        matInput
-        mask="(000)000-0000"
-        placeholder="(000)000-0000"
-        [formControl]="form.controls.phone"
-        type="tel"
-        required
-      />
-    </mat-form-field>
+      <mat-form-field appearance="outline" class="m-width">
+        <mat-label>Teléfono</mat-label>
+        <input
+          matInput
+          mask="(000)000-0000"
+          placeholder="(000)000-0000"
+          [formControl]="form.controls.phone"
+          type="tel"
+          required
+        />
+      </mat-form-field>
 
-    <mat-form-field appearance="outline" class="m-width">
-      <mat-label>Cédula</mat-label>
-      <input
-        matInput
-        mask="000-0000000-0"
-        [formControl]="form.controls.identification"
-        placeholder="000-0000000-0"
-        required
-      />
-    </mat-form-field>
+      <mat-form-field appearance="outline" class="m-width">
+        <mat-label>Cédula</mat-label>
+        <input
+          matInput
+          mask="000-0000000-0"
+          [formControl]="form.controls.identification"
+          placeholder="000-0000000-0"
+          required
+        />
+      </mat-form-field>
 
-    <mat-form-field appearance="outline" class="m-width">
-      <mat-label>Email</mat-label>
-      <input
-        matInput
-        [formControl]="form.controls.email"
-        type="email"
-        placeholder="Opcional"
-      />
-    </mat-form-field>
+      <mat-form-field appearance="outline" class="m-width">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          [formControl]="form.controls.email"
+          type="email"
+          placeholder="Opcional"
+        />
+      </mat-form-field>
 
-    <mat-form-field appearance="outline" class="m-width">
-      <mat-label>Fecha de nacimiento</mat-label>
-      <input
-        matInput
-        [matDatepicker]="picker"
-        [formControl]="form.controls.birthday"
-        required
-      />
-      <mat-datepicker #picker></mat-datepicker>
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    </mat-form-field>
-    <mat-form-field appearance="outline" class="m-width">
-      <mat-label>Codigo</mat-label>
-      <input
-        matInput
-        [formControl]="form.controls.agentCode"
-        type="number"
-        placeholder="Codigo"
-      />
-    </mat-form-field>
+      <mat-form-field appearance="outline" class="m-width">
+        <mat-label>Fecha de nacimiento</mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          [formControl]="form.controls.birthday"
+          required
+        />
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="m-width">
+        <mat-label>Codigo</mat-label>
+        <input
+          matInput
+          [formControl]="form.controls.agentCode"
+          type="number"
+          placeholder="Codigo"
+        />
+      </mat-form-field>
 
-    <mat-form-field appearance="outline" class="m-width">
-      <mat-label>Rango</mat-label>
-      <mat-select [formControl]="form.controls.rangeId" required>
-        <mat-option value="1">Raso</mat-option>
-        <mat-option value="2">Cabo</mat-option>
-        <mat-option value="3">Sargento</mat-option>
-        <mat-option value="4">Teniente</mat-option>
-        <mat-option value="5">Capitán</mat-option>
-        <mat-option value="6">Mayor</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <app-input-img title="Foto del Agente"></app-input-img>
-    <!-- <div class="m-width">
-      <label for="foto">Foto</label><br />
-      <input
-        type="file"
-        (change)="onFileSelected($event)"
-        id="foto"
-        name="foto"
-        accept="image/*"
-        [formControl]="form.controls.photo"
-        #fileInput
-      />
-    </div> -->
-
-    <mat-slide-toggle color="primary" [formControl]="form.controls.status"
-      >Activo</mat-slide-toggle
-    >
-
-    <!-- <input type="number" [formControl]="form.controls.agentId" hidden /> -->
+      <mat-form-field appearance="outline" class="m-width">
+        <mat-label>Rango</mat-label>
+        <mat-select [formControl]="form.controls.rangeId" required>
+          <mat-option value="1">Raso</mat-option>
+          <mat-option value="2">Cabo</mat-option>
+          <mat-option value="3">Sargento</mat-option>
+          <mat-option value="4">Teniente</mat-option>
+          <mat-option value="5">Capitán</mat-option>
+          <mat-option value="6">Mayor</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
 
     <div class="bottomContainer">
       <button type="submit" mat-raised-button [disabled]="form.invalid">
@@ -114,4 +211,4 @@
       <a mat-stroked-button routerLink="/agents">Cancelar</a>
     </div>
   </form>
-</div>
+</div> -->
