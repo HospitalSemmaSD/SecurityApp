@@ -10,6 +10,7 @@ import { InstitutionsListComponent } from './institutions/institutions-list/inst
 import { CreateInstitutionComponent } from './institutions/create-institution/create-institution.component';
 import { EditInstitutionComponent } from './institutions/edit-institution/edit-institution.component';
 import { LoginComponent } from './login/login.component';
+import { AgentFilterComponent } from './agents/agent-filter/agent-filter.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,6 +19,7 @@ export const routes: Routes = [
   { path: 'agents', component: AgentsListComponent },
   { path: 'agents/create', component: CreateAGentComponent },
   { path: 'agents/edit/:id', component: EditAgentComponent },
+  { path: 'agents/filter', component: AgentFilterComponent },
 
   { path: 'ranges', component: RangesListComponent },
   { path: 'ranges/create', component: CreateRangeComponent },

@@ -1,4 +1,4 @@
-import { Component, Input, input } from '@angular/core';
+import { Component, Input, input, Output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { toBase64 } from '../../funtions/toBase64';
 

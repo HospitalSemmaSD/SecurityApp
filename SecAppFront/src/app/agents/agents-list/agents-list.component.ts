@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, Input, OnInit } from '@angular/core';
 import { DatePipe, NgClass, UpperCasePipe } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -9,6 +9,8 @@ import { MatDividerModule } from '@angular/material/divider';
 
 import { AgentServiceService } from '../../services/agents/agent-service.service';
 import { AgentDto } from '../../models/agent';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-listado-agentes',
@@ -22,11 +24,14 @@ import { AgentDto } from '../../models/agent';
     MatIcon,
     MatCardModule,
     MatDividerModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   templateUrl: './agents-list.component.html',
   styleUrl: './agents-list.component.css',
 })
 export class AgentsListComponent implements OnInit {
+  @Input({ required: true })
   agents: AgentDto[] = [];
 
   constructor(private agentService: AgentServiceService) {}

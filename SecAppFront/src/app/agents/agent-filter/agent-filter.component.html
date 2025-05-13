@@ -1,0 +1,15 @@
+<form [formGroup]="form">
+  <mat-form-field appearance="outline" class="m-width">
+    <mat-label>Buscar</mat-label>
+    <input
+      matInput
+      [formControl]="form.controls.name"
+      placeholder="Buscar Agente"
+    />
+    <button matSuffix mat-icon-button aria-label="Buscar">
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-form-field>
+  <button mat-flat-button (click)="clearFilter()">Limpiar Filtros</button>
+</form>
+<app-listado-agentes [agents]="agentsFiltered"></app-listado-agentes>

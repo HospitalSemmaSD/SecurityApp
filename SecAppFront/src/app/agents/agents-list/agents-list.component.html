@@ -1,7 +1,6 @@
 <h2>Listado Agentes</h2>
-
-<section>
-  @if (agents.length === 0) {
+<div class="agent-list-header">
+  @if (!agents) {
   <div style="align-items: center">
     <img src="pendulum.gif" alt="" />
   </div>
@@ -10,7 +9,10 @@
   <button mat-flat-button routerLink="/agents/create">
     <mat-icon>person_add</mat-icon> Crear Agente
   </button>
-  <br /><br />
+
+  <mat-divider></mat-divider>}
+</div>
+<section>
   @for (agent of agents; track $index) {
   <div class="user-list">
     <mat-card class="user-card">
@@ -44,5 +46,5 @@
     </mat-card>
   </div>
 
-  } }
+  }
 </section>

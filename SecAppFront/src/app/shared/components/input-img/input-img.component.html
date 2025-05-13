@@ -1,6 +1,11 @@
 <h4>{{ title }}</h4>
 
 <div>
+  @if (image) {
+  <img [src]="image" width="169" height="250" />
+  }
+</div>
+<div>
   <button type="button" mat-raised-button (click)="loadFile.click()">
     Buscar Imagen
   </button>
@@ -11,10 +16,4 @@
     accept="image/*"
     (change)="inputChange($event)"
   />
-</div>
-
-<div>
-  @if (image) {
-  <img [src]="image" width="169" height="250" />
-  }
 </div>

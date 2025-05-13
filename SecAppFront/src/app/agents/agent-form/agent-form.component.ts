@@ -53,21 +53,7 @@ import { InputImgComponent } from '../../shared/components/input-img/input-img.c
 export class AgentFormComponent implements OnInit {
   ngOnInit(): void {
     if (this.model !== undefined) {
-      this.form.patchValue(
-        this.model
-        //{
-        //   name: this.model.name,
-        //   lastName: this.model.lastName,
-        //   phone: this.model.phone,
-        //   identification: this.model.identification,
-        //   email: this.model.email,
-        //   birthday: this.model.birthday,
-        //   status: this.model.status,
-        //   photo: this.model.photo,
-        //   rangeId: this.model.rangeId,
-        //   agentId: this.model.agentId,
-        // }
-      );
+      this.form.patchValue(this.model);
     }
   }
   constructor(private agentService: AgentServiceService) {}
@@ -80,10 +66,22 @@ export class AgentFormComponent implements OnInit {
 
   private readonly router = inject(Router);
   private readonly formBuilder = inject(FormBuilder);
-  //private readonly http = inject(HttpClient);
-  //private URLbase = environment.API_URL + 'agents'; i'm using the service
   selectedFile: File | null = null;
-
+  ranges: any[] = [
+    { id: 1, name: 'Raso' },
+    { id: 2, name: 'Cabo' },
+    { id: 3, name: 'Sargento' },
+    { id: 4, name: 'Sargento Mayor' },
+    { id: 5, name: 'Segundo Teniente' },
+    { id: 6, name: 'Primer Teniente' },
+    { id: 7, name: 'Capitán' },
+    { id: 8, name: 'Mayor' },
+    { id: 9, name: 'Teniente Coronel' },
+    { id: 10, name: 'Coronel' },
+    { id: 11, name: 'General de Brigada' },
+    { id: 12, name: 'Mayor General' },
+    { id: 13, name: 'Teniente General' },
+  ];
   form = this.formBuilder.group({
     name: ['', { validators: [Validators.required] }],
     lastName: ['', { validators: [Validators.required] }],
@@ -99,9 +97,12 @@ export class AgentFormComponent implements OnInit {
     ],
     identification: ['', { validators: [Validators.required] }],
     email: ['', { validators: [Validators.email] }],
-    birthday: new FormControl<Date | null>(null, {
-      validators: [Validators.required],
-    }),
+    birthday: [
+      '',
+      {
+        validators: [Validators.required],
+      },
+    ],
     status: new FormControl<boolean>(true, {
       validators: [Validators.required],
     }),
@@ -115,6 +116,7 @@ export class AgentFormComponent implements OnInit {
 
   saveChange() {
     if (!this.form.valid) {
+      console.log('formulario no valido ', this.form.value);
       return;
     }
     const agent = this.form.value as AgentCreateDto;
@@ -130,39 +132,21 @@ export class AgentFormComponent implements OnInit {
   }
 
   onSubmit() {
-    if (!this.selectedFile) return;
+    console.log(this.selectedFile);
 
-    // if (this.selectedFile) {
-    //   const formData = new FormData();
-    //   formData.append('file', this.selectedFile);
-
-    //   this.http.post(this.URLbase + '/upload-photo', formData).subscribe({
-    //     next: (res: any) => {
-    //       console.log('Imagen subida:', res.urlPath);
-    //       // Aquí puedes guardar la ruta de la imagen en el agente
-    //       this.form.patchValue({ photo: res.urlPath });
-    //       //  this.saveChange(); // envía el formulario completo
-    //     },
-    //     error: (err) => console.error('Error al subir imagen:', err),
-    //   });
-    // }
-    this.agentService.uploadImage(this.selectedFile).subscribe((resp) => {
-      const imageUrl = resp.imageUrl;
-      this.form.patchValue({ photo: imageUrl });
-      console.log('Imagen subida:', imageUrl);
-    });
+    if (this.selectedFile) {
+      this.agentService.uploadImage(this.selectedFile).subscribe((resp) => {
+        console.log(resp);
+        const imageUrl = resp.imageUrl;
+        this.form.patchValue({ photo: imageUrl });
+        console.log('Imagen subida:', imageUrl);
+      });
+    }
     const formValue: AgentCreateDto = this.form.getRawValue();
     const agent: AgentCreateDto = {
       ...formValue,
-      //agentId: null, // Set agentId to null for new agents
-      // rangeId: formValue.rangeId || null, // Set rangeId to null if not provided
     };
 
-    // this.agentService.createAgent(agent).subscribe((data) => {
-    //   console.log('Agente creado:', data);
-    //   this.form.reset(); // Reset the form after successful submission
-    //   this.selectedFile = null; // Reset the selected file
-    // });
     this.saveChange();
   }
 

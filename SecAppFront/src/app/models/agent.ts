@@ -5,7 +5,7 @@ export interface AgentDto {
   phone: string | null;
   identification: string | null;
   email: string | null;
-  birthday: Date | null;
+  birthday: string | null;
   status: boolean | null;
   photo: string | null;
   agentCode: number | null;
@@ -14,12 +14,13 @@ export interface AgentDto {
 }
 
 export interface AgentCreateDto {
+  agentId: number | null;
   name: string | null;
   lastName: string | null;
   phone: string | null;
   identification: string | null;
   email: string | null;
-  birthday: Date | null;
+  birthday: string | null;
   status: boolean | null;
   photo: string | null;
   rangeId: number | null;

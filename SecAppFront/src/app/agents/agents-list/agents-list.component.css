@@ -86,5 +86,18 @@
     .avatar {
       border-color: #555;
     }
+
+
+  }
+  .agent-list-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    
+    
+    
+    color: #eee;
+ 
   }
  

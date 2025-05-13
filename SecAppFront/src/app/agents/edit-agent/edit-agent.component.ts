@@ -20,7 +20,7 @@ export class EditAgentComponent {
     phone: '8497825245',
     identification: '00100055896',
     email: 'agent@email.com',
-    birthday: new Date(),
+    birthday: '2000-10-22', //ew Date(),
     status: true,
     photo: ' Agent Photo',
     agentCode: 12345,
