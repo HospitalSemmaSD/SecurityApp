@@ -3,6 +3,8 @@
 <div>
   @if (image) {
   <img [src]="image" width="169" height="250" />
+  }@else if (actualPhoto) {
+  <img [src]="actualPhoto" width="169" height="250" />
   }
 </div>
 <div>

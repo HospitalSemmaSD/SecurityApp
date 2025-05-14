@@ -20,9 +20,10 @@ export class EditAgentComponent {
     phone: '8497825245',
     identification: '00100055896',
     email: 'agent@email.com',
-    birthday: '2000-10-22', //ew Date(),
+    birthday: new Date(),
     status: true,
-    photo: ' Agent Photo',
+    photo:
+      'https://img.freepik.com/foto-gratis/atractivo-policia-masculino-municiones-sosteniendo-pistola-ambas-manos-vista-frontal-hombre-barbudo-vestido-negro_7502-10633.jpg?ga=GA1.1.689866545.1743427208&semt=ais_hybrid',
     agentCode: 12345,
     rangeId: 1,
     rangeName: 'Agent Range',

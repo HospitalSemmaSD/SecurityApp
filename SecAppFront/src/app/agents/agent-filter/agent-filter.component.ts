@@ -90,7 +90,7 @@ export class AgentFilterComponent implements OnInit {
       queryStrings.push(`name=${encodeURIComponent(value.name)}`);
     }
     //when i referesh the page, the filter is not applied
-    this.location.replaceState('/agents/filter', queryStrings.join('&'));
+    this.location.replaceState('agents/filter', queryStrings.join('&'));
   }
 
   readURLValues() {

@@ -17,15 +17,15 @@ export class AgentServiceService {
   }
 
   public createAgent(agent: AgentCreateDto): Observable<AgentCreateDto> {
-    agent.agentId = 0; // Set agentId to 0 for new agents
-    const datePipe = new DatePipe('en-US');
+    //agent.agentId = 0; // Set agentId to 0 for new agents
+    //const datePipe = new DatePipe('en-US');
 
     //console.log('fecha sin transformar: ', agent.birthday);
 
-    agent.birthday = datePipe.transform(agent.birthday, 'yyyy-MM-dd');
+    //agent.birthday = datePipe.transform(agent.birthday, 'yyyy-MM-dd');
 
     if (!agent.photo) {
-      agent.photo = ''; // Set rangeId to 0 if not provided
+      //agent.photo = '';
     }
 
     return this.http.post<AgentCreateDto>(this.URLbase, agent).pipe(

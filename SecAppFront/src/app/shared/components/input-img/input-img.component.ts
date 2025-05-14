@@ -1,4 +1,4 @@
-import { Component, Input, input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, input, Output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { toBase64 } from '../../funtions/toBase64';
 
@@ -12,6 +12,11 @@ export class InputImgComponent {
   @Input({ required: true })
   title: string = 'Input Image Component';
 
+  @Input()
+  actualPhoto?: string;
+
+  @Output()
+  fileSelected = new EventEmitter<File>();
   image?: string;
 
   inputChange(event: Event) {
@@ -26,6 +31,8 @@ export class InputImgComponent {
         .catch((error) => {
           console.error('Error converting file to base64:', error);
         });
+      this.fileSelected.emit(file);
+      this.actualPhoto = undefined;
     }
   }
 }

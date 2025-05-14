@@ -1,9 +1,10 @@
-<form class="agente-form" (submit)="onSubmit()" [formGroup]="form">
+<form class="agente-form" (submit)="saveChange()" [formGroup]="form">
   <div class="form-content">
     <div class="left-column">
       <app-input-img
+        [actualPhoto]="model?.photo"
         title="Foto del Agente"
-        (change)="onFileSelected($event)"
+        (fileSelected)="onFileSelected($event)"
       ></app-input-img>
     </div>
 
