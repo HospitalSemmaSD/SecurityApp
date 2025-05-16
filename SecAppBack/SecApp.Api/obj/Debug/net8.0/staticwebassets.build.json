@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7H1U/igWnFnAbkfZkL6mh2+x1SeiQCkoLkhCN9fMehk=",
+  "Hash": "jDu8qm040C49V9lQtptuRFfN0qRDq+ImZZwNP/ORg+I=",
   "Source": "SecApp.Api",
   "BasePath": "_content/SecApp.Api",
   "Mode": "Default",
@@ -143,6 +143,27 @@
       "OriginalItemSpec": "wwwroot\\uploads\\6b1be527-f067-4f5a-a1c4-d2045435306a.jpg"
     },
     {
+      "Identity": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\6be43eb8-7135-485e-aab0-54e3c0dfc0a6.jpg",
+      "SourceId": "SecApp.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\",
+      "BasePath": "_content/SecApp.Api",
+      "RelativePath": "uploads/6be43eb8-7135-485e-aab0-54e3c0dfc0a6#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "jkwrpq4d80",
+      "Integrity": "o74mQCAJPJsEfJ/We+1Jsb0Ks3/DDbNAq/T9NV967yM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\6be43eb8-7135-485e-aab0-54e3c0dfc0a6.jpg"
+    },
+    {
       "Identity": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\8aae5246-a439-4541-9807-02c3a7416cac.jpg",
       "SourceId": "SecApp.Api",
       "SourceType": "Discovered",
@@ -204,6 +225,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\ab2e2861-36aa-49a7-abd1-d47073b192af.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\cf79f4e2-be0c-478e-bad3-51de2639c9da.jpg",
+      "SourceId": "SecApp.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\",
+      "BasePath": "_content/SecApp.Api",
+      "RelativePath": "uploads/cf79f4e2-be0c-478e-bad3-51de2639c9da#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "d3oop2x6wz",
+      "Integrity": "+SAK1LlYM/5a/Qjr9W93tMZvklRL7sqRHjhgOc0ZKQs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\cf79f4e2-be0c-478e-bad3-51de2639c9da.jpg"
     },
     {
       "Identity": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\d6b40ab2-f74c-4d7c-8c8d-1f388dcb2a62.png",
@@ -293,7 +335,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 30 Apr 2025 18:52:32 GMT"
+          "Value": "Fri, 16 May 2025 15:11:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -330,7 +372,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 30 Apr 2025 18:52:32 GMT"
+          "Value": "Fri, 16 May 2025 15:11:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -375,7 +417,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 01 May 2025 18:19:01 GMT"
+          "Value": "Fri, 16 May 2025 15:11:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -420,7 +462,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 01 May 2025 18:19:01 GMT"
+          "Value": "Fri, 16 May 2025 15:11:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -457,7 +499,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 30 Apr 2025 18:40:15 GMT"
+          "Value": "Fri, 16 May 2025 15:11:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -502,7 +544,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 30 Apr 2025 18:40:15 GMT"
+          "Value": "Fri, 16 May 2025 15:11:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -539,7 +581,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 09 May 2025 19:26:11 GMT"
+          "Value": "Fri, 16 May 2025 15:11:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -576,7 +618,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 09 May 2025 19:26:11 GMT"
+          "Value": "Fri, 16 May 2025 15:11:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -621,7 +663,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 30 Apr 2025 19:32:02 GMT"
+          "Value": "Fri, 16 May 2025 15:11:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -666,7 +708,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 30 Apr 2025 19:32:02 GMT"
+          "Value": "Fri, 16 May 2025 15:11:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -703,7 +745,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 30 Apr 2025 18:54:56 GMT"
+          "Value": "Fri, 16 May 2025 15:11:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -748,7 +790,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 30 Apr 2025 18:54:56 GMT"
+          "Value": "Fri, 16 May 2025 15:11:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -759,6 +801,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-+SAK1LlYM/5a/Qjr9W93tMZvklRL7sqRHjhgOc0ZKQs="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/6be43eb8-7135-485e-aab0-54e3c0dfc0a6.jkwrpq4d80.jpg",
+      "AssetFile": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\6be43eb8-7135-485e-aab0-54e3c0dfc0a6.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16164795"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"o74mQCAJPJsEfJ/We+1Jsb0Ks3/DDbNAq/T9NV967yM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 May 2025 15:11:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jkwrpq4d80"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/6be43eb8-7135-485e-aab0-54e3c0dfc0a6.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-o74mQCAJPJsEfJ/We+1Jsb0Ks3/DDbNAq/T9NV967yM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/6be43eb8-7135-485e-aab0-54e3c0dfc0a6.jpg",
+      "AssetFile": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\6be43eb8-7135-485e-aab0-54e3c0dfc0a6.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16164795"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"o74mQCAJPJsEfJ/We+1Jsb0Ks3/DDbNAq/T9NV967yM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 May 2025 15:11:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-o74mQCAJPJsEfJ/We+1Jsb0Ks3/DDbNAq/T9NV967yM="
         }
       ]
     },
@@ -785,7 +909,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 30 Apr 2025 19:26:09 GMT"
+          "Value": "Fri, 16 May 2025 15:11:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -822,7 +946,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 30 Apr 2025 19:26:09 GMT"
+          "Value": "Fri, 16 May 2025 15:11:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -867,7 +991,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 30 Apr 2025 19:42:58 GMT"
+          "Value": "Fri, 16 May 2025 15:11:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -912,7 +1036,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 30 Apr 2025 19:42:58 GMT"
+          "Value": "Fri, 16 May 2025 15:11:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -949,7 +1073,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 13 May 2025 12:43:45 GMT"
+          "Value": "Fri, 16 May 2025 15:11:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -986,7 +1110,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 13 May 2025 12:43:45 GMT"
+          "Value": "Fri, 16 May 2025 15:11:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1005,6 +1129,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-pw+HPAfPU020p51Ldk9E6MJMR2ODIIvUPYoS7l6Uzvo="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/cf79f4e2-be0c-478e-bad3-51de2639c9da.d3oop2x6wz.jpg",
+      "AssetFile": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\cf79f4e2-be0c-478e-bad3-51de2639c9da.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6940754"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+SAK1LlYM/5a/Qjr9W93tMZvklRL7sqRHjhgOc0ZKQs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 May 2025 15:11:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "d3oop2x6wz"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/cf79f4e2-be0c-478e-bad3-51de2639c9da.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+SAK1LlYM/5a/Qjr9W93tMZvklRL7sqRHjhgOc0ZKQs="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/cf79f4e2-be0c-478e-bad3-51de2639c9da.jpg",
+      "AssetFile": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\cf79f4e2-be0c-478e-bad3-51de2639c9da.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6940754"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+SAK1LlYM/5a/Qjr9W93tMZvklRL7sqRHjhgOc0ZKQs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 May 2025 15:11:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-+SAK1LlYM/5a/Qjr9W93tMZvklRL7sqRHjhgOc0ZKQs="
         }
       ]
     },
@@ -1031,7 +1237,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 30 Apr 2025 18:47:37 GMT"
+          "Value": "Fri, 16 May 2025 15:11:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1068,7 +1274,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 30 Apr 2025 18:47:37 GMT"
+          "Value": "Fri, 16 May 2025 15:11:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1113,7 +1319,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 30 Apr 2025 15:50:25 GMT"
+          "Value": "Fri, 16 May 2025 15:11:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1150,7 +1356,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 30 Apr 2025 15:50:25 GMT"
+          "Value": "Fri, 16 May 2025 15:11:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1195,7 +1401,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 30 Apr 2025 19:14:03 GMT"
+          "Value": "Fri, 16 May 2025 15:11:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1240,7 +1446,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 30 Apr 2025 19:14:03 GMT"
+          "Value": "Fri, 16 May 2025 15:11:39 GMT"
         },
         {
           "Name": "Cache-Control",

@@ -5,6 +5,7 @@ using Dapper;
 using SecApp.Data.Interfaces;
 using SecApp.Model;
 using SecApp.Data;
+using Microsoft.AspNetCore.OutputCaching;
 
 namespace SecApp.Controllers
 {
@@ -33,6 +34,7 @@ namespace SecApp.Controllers
         }
 
         [HttpGet("{id}")]
+        [OutputCache]
         public async Task<IActionResult> Get([FromRoute] int id)
         {
             return Ok(await agentsRepository.GetDetails(id));
@@ -76,7 +78,7 @@ namespace SecApp.Controllers
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
-            }            
+            }
             var created = await agentsRepository.InsertAgent(agent);
             return Created("Created", created);
         }
@@ -125,7 +127,7 @@ namespace SecApp.Controllers
             }
 
             var imageUrl = $"{Request.Scheme}://{Request.Host}/uploads/{fileName}";
-            return Ok(new { imageUrl});
+            return Ok(new { imageUrl });
 
             // var urlPath = $"/uploads/agents/{fileName}";
             // //return Ok(new { filePath = urlPath });

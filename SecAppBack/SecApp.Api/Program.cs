@@ -27,6 +27,10 @@ builder.Services.AddSingleton(mySqlConnection);
 
 builder.Services.AddScoped<ICRUDtRepository<Agent>, AgentRepository>();
 
+builder.Services.AddOutputCache(options => 
+{ 
+    options.DefaultExpirationTimeSpan = TimeSpan.FromMinutes(1);
+});
 
 var app = builder.Build();
 
@@ -47,7 +51,7 @@ if (app.Environment.IsDevelopment())
 }
 app.UseCors("AllowAllOrigins");
 app.UseHttpsRedirection();
-
+app.UseOutputCache();
 app.UseAuthorization();
 
 app.MapControllers();
