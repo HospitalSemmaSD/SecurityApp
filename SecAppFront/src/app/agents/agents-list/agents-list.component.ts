@@ -9,8 +9,8 @@ import { MatDividerModule } from '@angular/material/divider';
 
 import { AgentServiceService } from '../agent-service.service';
 import { AgentDto } from '../../models/agent';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
+//import { MatFormFieldModule } from '@angular/material/form-field';
+//import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-listado-agentes',
@@ -24,23 +24,28 @@ import { MatInputModule } from '@angular/material/input';
     MatIcon,
     MatCardModule,
     MatDividerModule,
-    MatFormFieldModule,
-    MatInputModule,
+    //MatFormFieldModule,
+    // MatInputModule,
   ],
   templateUrl: './agents-list.component.html',
   styleUrl: './agents-list.component.css',
 })
 export class AgentsListComponent implements OnInit {
-  @Input({ required: true })
-  agents: AgentDto[] = [];
-
-  constructor(private agentService: AgentServiceService) {}
+  //constructor(private agentService: AgentServiceService) {} change to inject
   ngOnInit(): void {
     setTimeout(() => {
       this.getAgents();
     }, 3000);
   }
 
+  @Input({ required: true })
+  agents: AgentDto[] = [];
+
+  private agentService = inject(AgentServiceService);
+
+  constructor() {
+    this.agentService.getAgents().subscribe((agents) => {});
+  }
   getAgents() {
     this.agentService.getAgents().subscribe((data: any) => {
       for (let i = 0; i < data.length; i++) {

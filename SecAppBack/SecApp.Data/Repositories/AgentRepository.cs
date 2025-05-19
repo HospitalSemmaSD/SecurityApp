@@ -23,20 +23,31 @@ namespace SecApp.Data.Repositories
             var db = dbConnection();
             var sql = @"SELECT * FROM agents";
             return db.QueryAsync<Agent>(sql, new { });
-        }       
+        }
         public async Task<Agent> GetDetails(int id)
         {
             var db = dbConnection();
             var sql = @"SELECT * FROM agents WHERE agentId =@id";
-            return await db.QueryFirstOrDefaultAsync<Agent>(sql, new { id = id });
+            return await db.QueryFirstOrDefaultAsync<Agent>(sql, new { id = id })!;
         }
         public async Task<bool> InsertAgent(Agent agent)
         {
             var db = dbConnection();
             var sql = @"INSERT INTO agents(name, lastname, phone, identification, birthday, email, status, photo, rangeid, agentcode)
                         VALUES(@name, @lastname, @phone, @identification, @birthday, @email, @status, @photo, @rangeid, @agentcode)";
-            var result = await db.ExecuteAsync(sql, new { agent.Name, agent.LastName, agent.Phone, agent.Identification,
-                                                         agent.BirthDay, agent.Email, agent.Status, agent.Photo, agent.RangeId, agent.AgentCode });
+            var result = await db.ExecuteAsync(sql, new
+            {
+                agent.Name,
+                agent.LastName,
+                agent.Phone,
+                agent.Identification,
+                agent.BirthDay,
+                agent.Email,
+                agent.Status,
+                agent.Photo,
+                agent.RangeId,
+                agent.AgentCode
+            });
             return result > 0;
         }
         public async Task<bool> UpdateAgent(Agent agent)

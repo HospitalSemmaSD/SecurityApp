@@ -8,18 +8,26 @@ using Microsoft.Extensions.FileProviders;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddCors(options => {
+builder.Services.AddCors(options =>
+{
     options.AddPolicy("AllowAllOrigins",
         builder => builder.AllowAnyOrigin()
                           .AllowAnyMethod()
                           .AllowAnyHeader());
+    //options.AddDefaultPolicy(corsOptions =>
+    //{
+    //    corsOptions.WithOrigins(allowedHosts)
+    //        .AllowAnyMethod()
+    //        .AllowAnyHeader();
+    //});
 });
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var mySqlConnection = new MySQLConfiguration(builder.Configuration.GetConnectionString("SecAppconnection"));
+var mySqlConnection = new MySQLConfiguration(builder.Configuration.GetConnectionString("SecAppconnection")!);
 builder.Services.AddSingleton(mySqlConnection);
 
 //DEBERIA DE SER DE ESTA FORMA... QUE CREE UNA CONNECION POR CADA SOLICITUD
@@ -27,10 +35,12 @@ builder.Services.AddSingleton(mySqlConnection);
 
 builder.Services.AddScoped<ICRUDtRepository<Agent>, AgentRepository>();
 
-builder.Services.AddOutputCache(options => 
-{ 
-    options.DefaultExpirationTimeSpan = TimeSpan.FromMinutes(1);
+builder.Services.AddOutputCache(options =>
+{
+    options.DefaultExpirationTimeSpan = TimeSpan.FromMinutes(3);
 });
+
+//var allowedHosts = builder.Configuration.GetValue<string>("AllowedHosts")!.Split(",");
 
 var app = builder.Build();
 
@@ -53,7 +63,6 @@ app.UseCors("AllowAllOrigins");
 app.UseHttpsRedirection();
 app.UseOutputCache();
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();

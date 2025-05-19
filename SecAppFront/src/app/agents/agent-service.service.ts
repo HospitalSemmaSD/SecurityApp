@@ -11,9 +11,10 @@ import { DatePipe } from '@angular/common';
 export class AgentServiceService {
   constructor() {}
   private http = inject(HttpClient);
-  private URLbase = environment.API_URL + 'agents'; // Adjust the URL as needed
-  public getAgents(): Observable<any> {
-    return this.http.get<any>(this.URLbase + '/GetAgentsRanges');
+  private baseURL = environment.API_URL + 'agents'; // Adjust the URL as needed
+
+  public getAgents(): Observable<AgentDto[]> {
+    return this.http.get<AgentDto[]>(this.baseURL + '/GetAgentsRanges');
   }
 
   public createAgent(agent: AgentCreateDto): Observable<AgentCreateDto> {
@@ -28,7 +29,7 @@ export class AgentServiceService {
       //agent.photo = '';
     }
 
-    return this.http.post<AgentCreateDto>(this.URLbase, agent).pipe(
+    return this.http.post<AgentCreateDto>(this.baseURL, agent).pipe(
       catchError((error) => {
         // console.log('fecha transformada: ', agent.birthday);
         console.error('ERROR CREANTO EL AGENTE:', error);
@@ -41,7 +42,7 @@ export class AgentServiceService {
     if (!agent.photo) {
       agent.photo = ''; // Set rangeId to 0 if not provided
     }
-    return this.http.patch<AgentDto>(this.URLbase, agent).pipe(
+    return this.http.patch<AgentDto>(this.baseURL, agent).pipe(
       catchError((error) => {
         console.error('ERROR CREANTO EL AGENTE:', error);
         throw error; // Rethrow the error to propagate it to the caller
@@ -54,7 +55,7 @@ export class AgentServiceService {
     formData.append('file', file);
 
     return this.http.post<{ imageUrl: string }>(
-      `${this.URLbase}/upload-photo`,
+      `${this.baseURL}/upload-photo`,
       formData
     );
   }

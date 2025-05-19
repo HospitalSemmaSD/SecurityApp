@@ -17,7 +17,7 @@ namespace SecApp.Controllers
         private readonly IOutputCacheStore outputCache;
         private readonly MySQLConfiguration connection;
 
-        public AgentsController(MySQLConfiguration connection, 
+        public AgentsController(MySQLConfiguration connection,
                                 ICRUDtRepository<Agent> agentsRepository,
                                 IOutputCacheStore outputCache)
         {
@@ -38,14 +38,14 @@ namespace SecApp.Controllers
         }
 
         [HttpGet("{id}")]
-        [OutputCache(Tags =["agents"])]
+        [OutputCache(Tags = ["agents"])]
         public async Task<IActionResult> Get([FromRoute] int id)
         {
             return Ok(await agentsRepository.GetDetails(id));
         }
 
         [HttpGet("GetAgentsRanges")]
-        [OutputCache(Tags = ["agents"])]
+        [OutputCache(Tags = ["agents"])] //how to know that this item is in the cache?
         public async Task<IActionResult> GetAgentsRanges()
         {
             List<AgentVM> agents = new List<AgentVM>();
