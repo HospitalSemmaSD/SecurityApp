@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { AgentFormComponent } from '../agent-form/agent-form.component';
 import { AgentCreateDto, AgentDto } from '../../models/agent';
-import { AgentServiceService } from '../../services/agents/agent-service.service';
+import { AgentServiceService } from '../agent-service.service';
 import { Router } from '@angular/router';
 
 @Component({

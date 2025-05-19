@@ -8,7 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { AgentFilter } from '../../models/agentFilter';
 import { AgentsListComponent } from '../agents-list/agents-list.component';
-import { AgentServiceService } from '../../services/agents/agent-service.service';
+import { AgentServiceService } from '../agent-service.service';
 import { AgentDto } from '../../models/agent';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';

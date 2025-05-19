@@ -311,14 +311,10 @@ C:/Users/wmartinez/Documents/HDSSDdevelopment/SecurityApp/SecAppBack/SecApp.Api/
 C:/Users/wmartinez/Documents/HDSSDdevelopment/SecurityApp/SecAppBack/SecApp.Api/obj/Debug/net8.0/SecApp.Api.pdb
 C:/Users/wmartinez/Documents/HDSSDdevelopment/SecurityApp/SecAppBack/SecApp.Api/obj/Debug/net8.0/SecApp.Api.genruntimeconfig.cache
 C:/Users/wmartinez/Documents/HDSSDdevelopment/SecurityApp/SecAppBack/SecApp.Api/obj/Debug/net8.0/ref/SecApp.Api.dll
-C:/Users/wmartinez/Documents/HDSSDdevelopment/SecurityApp/SecAppBack/SecApp.Api/bin/Debug/net8.0/SecApp.Api.staticwebassets.endpoints.json
-C:/Users/wmartinez/Documents/HDSSDdevelopment/SecurityApp/SecAppBack/SecApp.Api/obj/Debug/net8.0/staticwebassets.build.endpoints.json
-C:/Users/wmartinez/Documents/HDSSDdevelopment/SecurityApp/SecAppBack/SecApp.Api/obj/Debug/net8.0/staticwebassets/msbuild.SecApp.Api.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
 /Users/mrmartinez/Documents/Development/SecurityApp/SecAppBack/SecApp.Api/bin/Debug/net8.0/SecApp.Api.staticwebassets.runtime.json
 C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\bin\Debug\net8.0\appsettings.json
 C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\bin\Debug\net8.0\SecApp.Api.staticwebassets.runtime.json
-C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\bin\Debug\net8.0\SecApp.Api.staticwebassets.endpoints.json
 C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\bin\Debug\net8.0\SecApp.Api.exe
 C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\bin\Debug\net8.0\SecApp.Api.deps.json
 C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\bin\Debug\net8.0\SecApp.Api.runtimeconfig.json
@@ -461,9 +457,7 @@ C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\
 C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\obj\Debug\net8.0\scopedcss\bundle\SecApp.Api.styles.css
 C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\obj\Debug\net8.0\staticwebassets.development.json
-C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\obj\Debug\net8.0\staticwebassets\msbuild.SecApp.Api.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\obj\Debug\net8.0\staticwebassets\msbuild.SecApp.Api.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
 C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\obj\Debug\net8.0\staticwebassets\msbuild.build.SecApp.Api.props
 C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.SecApp.Api.props
 C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.SecApp.Api.props
@@ -474,3 +468,6 @@ C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\
 C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\obj\Debug\net8.0\SecApp.Api.pdb
 C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\obj\Debug\net8.0\SecApp.Api.genruntimeconfig.cache
 C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\obj\Debug\net8.0\ref\SecApp.Api.dll
+C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\bin\Debug\net8.0\SecApp.Api.staticwebassets.endpoints.json
+C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\obj\Debug\net8.0\staticwebassets\msbuild.SecApp.Api.Microsoft.AspNetCore.StaticWebAssetEndpoints.props

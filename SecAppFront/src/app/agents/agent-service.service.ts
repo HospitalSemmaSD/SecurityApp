@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { catchError, Observable } from 'rxjs';
-import { AgentCreateDto, AgentDto } from '../../models/agent';
-import { environment } from '../../../environments/environment'; // Adjust the import path as needed
+import { AgentCreateDto, AgentDto } from '../models/agent';
+import { environment } from '../../environments/environment'; // Adjust the import path as needed
 import { DatePipe } from '@angular/common';
 
 @Injectable({

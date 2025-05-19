@@ -7,7 +7,7 @@ import { MatIcon } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 
-import { AgentServiceService } from '../../services/agents/agent-service.service';
+import { AgentServiceService } from '../agent-service.service';
 import { AgentDto } from '../../models/agent';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';

@@ -14,12 +14,16 @@ namespace SecApp.Controllers
     public class AgentsController : ControllerBase
     {
         private readonly ICRUDtRepository<Agent> agentsRepository;
+        private readonly IOutputCacheStore outputCache;
         private readonly MySQLConfiguration connection;
 
-        public AgentsController(MySQLConfiguration connection, ICRUDtRepository<Agent> agentsRepository)
+        public AgentsController(MySQLConfiguration connection, 
+                                ICRUDtRepository<Agent> agentsRepository,
+                                IOutputCacheStore outputCache)
         {
             this.connection = connection;
             this.agentsRepository = agentsRepository;
+            this.outputCache = outputCache;
         }
 
         protected MySqlConnection dbConnection()
@@ -34,13 +38,14 @@ namespace SecApp.Controllers
         }
 
         [HttpGet("{id}")]
-        [OutputCache]
+        [OutputCache(Tags =["agents"])]
         public async Task<IActionResult> Get([FromRoute] int id)
         {
             return Ok(await agentsRepository.GetDetails(id));
         }
 
         [HttpGet("GetAgentsRanges")]
+        [OutputCache(Tags = ["agents"])]
         public async Task<IActionResult> GetAgentsRanges()
         {
             List<AgentVM> agents = new List<AgentVM>();
@@ -80,6 +85,7 @@ namespace SecApp.Controllers
                 return BadRequest(ModelState);
             }
             var created = await agentsRepository.InsertAgent(agent);
+            await outputCache.EvictByTagAsync("agents", default);
             return Created("Created", created);
         }
 

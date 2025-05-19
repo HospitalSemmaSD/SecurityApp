@@ -26,7 +26,7 @@ import { NgxMaskDirective } from 'ngx-mask';
 
 import { Router, RouterLink } from '@angular/router';
 import { AgentCreateDto, AgentDto } from '../../models/agent';
-import { AgentServiceService } from '../../services/agents/agent-service.service';
+import { AgentServiceService } from '../agent-service.service';
 import { InputImgComponent } from '../../shared/components/input-img/input-img.component';
 import moment from 'moment';
 
