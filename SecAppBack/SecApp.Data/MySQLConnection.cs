@@ -2,11 +2,11 @@
 {
     public class MySQLConfiguration
     {
-        public MySQLConfiguration(string connectionString) 
-        {
-            ConnectionString = connectionString;
-        }
+        //public MySQLConfiguration(string connectionString) 
+        //{
+        //    ConnectionString = connectionString;
+        //}
 
-        public string ConnectionString { get; set; }
+        //public string ConnectionString { get; set; }
     }
 }

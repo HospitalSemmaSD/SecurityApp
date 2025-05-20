@@ -45,3 +45,5 @@ C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Data
 C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Data\obj\Debug\net8.0\refint\SecApp.Data.dll
 C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Data\obj\Debug\net8.0\SecApp.Data.pdb
 C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Data\obj\Debug\net8.0\ref\SecApp.Data.dll
+C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Data\bin\Debug\net8.0\SecApp.Data.runtimeconfig.json
+C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Data\obj\Debug\net8.0\SecApp.Data.genruntimeconfig.cache

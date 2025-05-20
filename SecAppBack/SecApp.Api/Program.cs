@@ -1,9 +1,10 @@
-using MySql.Data.MySqlClient;
-using SecApp.Data;
-using SecApp.Data.Interfaces;
-using SecApp.Data.Repositories;
-using SecApp.Model;
+
 using Microsoft.Extensions.FileProviders;
+using Microsoft.EntityFrameworkCore;
+using SecApp.Api;
+using SecApp.Api.Interfaces;
+using SecApp.Api.Models;
+using SecApp.Api.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,8 +28,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var mySqlConnection = new MySQLConfiguration(builder.Configuration.GetConnectionString("SecAppconnection")!);
-builder.Services.AddSingleton(mySqlConnection);
+builder.Services.AddDbContext<SecurityDBContext>(options => options.UseSqlServer("name=DefaultConnection"));
+//var mySqlConnection = new MySQLConfiguration(builder.Configuration.GetConnectionString("SecAppconnection")!);
+//builder.Services.AddSingleton(mySqlConnection);
 
 //DEBERIA DE SER DE ESTA FORMA... QUE CREE UNA CONNECION POR CADA SOLICITUD
 //builder.Services.AddSingleton(new MySqlConnection(builder.Configuration.GetConnectionString("SecAppconnection")));

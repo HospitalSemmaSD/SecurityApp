@@ -7,14 +7,18 @@ namespace SecApp.Model
     {
         public int AgentId { get; set; }
         [Required(ErrorMessage ="Field {0} is required")]
-        public string Name { get; set; } = string.Empty;
+        [StringLength(50, ErrorMessage ="The field {0} must have {1} character or less")]
+        public required string Name { get; set; } = string.Empty;
         [Required]
+        [StringLength(50, ErrorMessage = "The field {0} must have {1} character or less")]
         public string LastName { get; set; } = string.Empty;
         [Required]
         [StringLength(10, ErrorMessage ="Invalid {0}: must have {1} digits")]
         public string Phone { get; set; } = string.Empty;
         [Required]
         [Range(18,65)]
+        [StringLength(11, ErrorMessage = "The field {0} must have {1} character or less")]
+
         public string Identification { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
         [Required]

@@ -8,6 +8,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecApp.Model", "SecApp.Model\SecApp.Model.csproj", "{EBBE9091-3E50-4680-818B-11146329C537}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecApp.Api", "SecApp.Api\SecApp.Api.csproj", "{BEFC4157-5B98-42E6-8F99-45D0D82A1392}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EBBE9091-3E50-4680-818B-11146329C537} = {EBBE9091-3E50-4680-818B-11146329C537}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

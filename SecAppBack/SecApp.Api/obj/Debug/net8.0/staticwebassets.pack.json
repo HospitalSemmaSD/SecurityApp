@@ -57,10 +57,6 @@
       "PackagePath": "staticwebassets\\uploads\\f64eabaf-b704-4ae4-9b4d-3dfacd854f06.jpeg"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.SecApp.Api.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
-      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
-    },
-    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.SecApp.Api.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jDu8qm040C49V9lQtptuRFfN0qRDq+ImZZwNP/ORg+I=",
+  "Hash": "o8M4XigyjCAWHxCZgnHIDaib6WzgPZ8KeJu7WniMMOQ=",
   "Source": "SecApp.Api",
   "BasePath": "_content/SecApp.Api",
   "Mode": "Default",
@@ -22,17 +22,15 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\",
       "BasePath": "_content/SecApp.Api",
-      "RelativePath": "uploads/012f907f-b035-40e7-a9ae-81a67bdc975e#[.{fingerprint}]?.jpeg",
+      "RelativePath": "uploads/012f907f-b035-40e7-a9ae-81a67bdc975e.jpeg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "t8uc1v7f6t",
-      "Integrity": "4y4qyfLExS/6Ci6x1WVL6iOQ2yJ37sWCZQofGsUR7II=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\012f907f-b035-40e7-a9ae-81a67bdc975e.jpeg"
@@ -43,17 +41,15 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\",
       "BasePath": "_content/SecApp.Api",
-      "RelativePath": "uploads/24480d84-27ec-403f-9f0c-810e6156b5f0#[.{fingerprint}]?.jpeg",
+      "RelativePath": "uploads/24480d84-27ec-403f-9f0c-810e6156b5f0.jpeg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "jg5kh2et85",
-      "Integrity": "o3HDLNAYQyBqpDdm7azc4g7MVPSvhMTHOCtyjzocEUM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\24480d84-27ec-403f-9f0c-810e6156b5f0.jpeg"
@@ -64,17 +60,15 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\",
       "BasePath": "_content/SecApp.Api",
-      "RelativePath": "uploads/282aa472-dfdd-4564-ab90-ada6935d048d#[.{fingerprint}]?.jpg",
+      "RelativePath": "uploads/282aa472-dfdd-4564-ab90-ada6935d048d.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "jkwrpq4d80",
-      "Integrity": "o74mQCAJPJsEfJ/We+1Jsb0Ks3/DDbNAq/T9NV967yM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\282aa472-dfdd-4564-ab90-ada6935d048d.jpg"
@@ -85,17 +79,15 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\",
       "BasePath": "_content/SecApp.Api",
-      "RelativePath": "uploads/2900a6a0-e967-461f-bcde-f38cfc0b3beb#[.{fingerprint}]?.jpg",
+      "RelativePath": "uploads/2900a6a0-e967-461f-bcde-f38cfc0b3beb.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "vfb838inbk",
-      "Integrity": "686Jw06gYvZHv8ZJ8tQmfiC4Rph98vVEVL7qeSagwgE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\2900a6a0-e967-461f-bcde-f38cfc0b3beb.jpg"
@@ -106,17 +98,15 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\",
       "BasePath": "_content/SecApp.Api",
-      "RelativePath": "uploads/37e43806-9674-4b10-a033-2401b2e39ad7#[.{fingerprint}]?.jpg",
+      "RelativePath": "uploads/37e43806-9674-4b10-a033-2401b2e39ad7.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "jkwrpq4d80",
-      "Integrity": "o74mQCAJPJsEfJ/We+1Jsb0Ks3/DDbNAq/T9NV967yM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\37e43806-9674-4b10-a033-2401b2e39ad7.jpg"
@@ -127,17 +117,15 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\",
       "BasePath": "_content/SecApp.Api",
-      "RelativePath": "uploads/6b1be527-f067-4f5a-a1c4-d2045435306a#[.{fingerprint}]?.jpg",
+      "RelativePath": "uploads/6b1be527-f067-4f5a-a1c4-d2045435306a.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "d3oop2x6wz",
-      "Integrity": "+SAK1LlYM/5a/Qjr9W93tMZvklRL7sqRHjhgOc0ZKQs=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\6b1be527-f067-4f5a-a1c4-d2045435306a.jpg"
@@ -148,17 +136,15 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\",
       "BasePath": "_content/SecApp.Api",
-      "RelativePath": "uploads/6be43eb8-7135-485e-aab0-54e3c0dfc0a6#[.{fingerprint}]?.jpg",
+      "RelativePath": "uploads/6be43eb8-7135-485e-aab0-54e3c0dfc0a6.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "jkwrpq4d80",
-      "Integrity": "o74mQCAJPJsEfJ/We+1Jsb0Ks3/DDbNAq/T9NV967yM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\6be43eb8-7135-485e-aab0-54e3c0dfc0a6.jpg"
@@ -169,17 +155,15 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\",
       "BasePath": "_content/SecApp.Api",
-      "RelativePath": "uploads/8aae5246-a439-4541-9807-02c3a7416cac#[.{fingerprint}]?.jpg",
+      "RelativePath": "uploads/8aae5246-a439-4541-9807-02c3a7416cac.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "vfb838inbk",
-      "Integrity": "686Jw06gYvZHv8ZJ8tQmfiC4Rph98vVEVL7qeSagwgE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\8aae5246-a439-4541-9807-02c3a7416cac.jpg"
@@ -190,17 +174,15 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\",
       "BasePath": "_content/SecApp.Api",
-      "RelativePath": "uploads/a5da43c3-896f-4822-9265-32f86aafca88#[.{fingerprint}]?.jpg",
+      "RelativePath": "uploads/a5da43c3-896f-4822-9265-32f86aafca88.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "854ut6nump",
-      "Integrity": "fHX8fXN4NtZFfao21tBYH5Zvmcio+oqtmbqdiT6oVpI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\a5da43c3-896f-4822-9265-32f86aafca88.jpg"
@@ -211,17 +193,15 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\",
       "BasePath": "_content/SecApp.Api",
-      "RelativePath": "uploads/ab2e2861-36aa-49a7-abd1-d47073b192af#[.{fingerprint}]?.jpeg",
+      "RelativePath": "uploads/ab2e2861-36aa-49a7-abd1-d47073b192af.jpeg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "xatg0eoasl",
-      "Integrity": "pw+HPAfPU020p51Ldk9E6MJMR2ODIIvUPYoS7l6Uzvo=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\ab2e2861-36aa-49a7-abd1-d47073b192af.jpeg"
@@ -232,17 +212,15 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\",
       "BasePath": "_content/SecApp.Api",
-      "RelativePath": "uploads/cf79f4e2-be0c-478e-bad3-51de2639c9da#[.{fingerprint}]?.jpg",
+      "RelativePath": "uploads/cf79f4e2-be0c-478e-bad3-51de2639c9da.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "d3oop2x6wz",
-      "Integrity": "+SAK1LlYM/5a/Qjr9W93tMZvklRL7sqRHjhgOc0ZKQs=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\cf79f4e2-be0c-478e-bad3-51de2639c9da.jpg"
@@ -253,17 +231,15 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\",
       "BasePath": "_content/SecApp.Api",
-      "RelativePath": "uploads/d6b40ab2-f74c-4d7c-8c8d-1f388dcb2a62#[.{fingerprint}]?.png",
+      "RelativePath": "uploads/d6b40ab2-f74c-4d7c-8c8d-1f388dcb2a62.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "pulg9voq9x",
-      "Integrity": "oVdlWyeArcQelGryGZoKTsSW72Bp4UIEp/TfALarvz8=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\d6b40ab2-f74c-4d7c-8c8d-1f388dcb2a62.png"
@@ -274,17 +250,15 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\",
       "BasePath": "_content/SecApp.Api",
-      "RelativePath": "uploads/e6509c46-ac36-4bfb-8c97-619290260313#[.{fingerprint}]?.jpeg",
+      "RelativePath": "uploads/e6509c46-ac36-4bfb-8c97-619290260313.jpeg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "xatg0eoasl",
-      "Integrity": "pw+HPAfPU020p51Ldk9E6MJMR2ODIIvUPYoS7l6Uzvo=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\e6509c46-ac36-4bfb-8c97-619290260313.jpeg"
@@ -295,1170 +269,18 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\",
       "BasePath": "_content/SecApp.Api",
-      "RelativePath": "uploads/f64eabaf-b704-4ae4-9b4d-3dfacd854f06#[.{fingerprint}]?.jpeg",
+      "RelativePath": "uploads/f64eabaf-b704-4ae4-9b4d-3dfacd854f06.jpeg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "jg5kh2et85",
-      "Integrity": "o3HDLNAYQyBqpDdm7azc4g7MVPSvhMTHOCtyjzocEUM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\f64eabaf-b704-4ae4-9b4d-3dfacd854f06.jpeg"
-    }
-  ],
-  "Endpoints": [
-    {
-      "Route": "uploads/012f907f-b035-40e7-a9ae-81a67bdc975e.jpeg",
-      "AssetFile": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\012f907f-b035-40e7-a9ae-81a67bdc975e.jpeg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "16899"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"4y4qyfLExS/6Ci6x1WVL6iOQ2yJ37sWCZQofGsUR7II=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 16 May 2025 15:11:39 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-4y4qyfLExS/6Ci6x1WVL6iOQ2yJ37sWCZQofGsUR7II="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/012f907f-b035-40e7-a9ae-81a67bdc975e.t8uc1v7f6t.jpeg",
-      "AssetFile": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\012f907f-b035-40e7-a9ae-81a67bdc975e.jpeg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "16899"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"4y4qyfLExS/6Ci6x1WVL6iOQ2yJ37sWCZQofGsUR7II=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 16 May 2025 15:11:39 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "t8uc1v7f6t"
-        },
-        {
-          "Name": "label",
-          "Value": "uploads/012f907f-b035-40e7-a9ae-81a67bdc975e.jpeg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-4y4qyfLExS/6Ci6x1WVL6iOQ2yJ37sWCZQofGsUR7II="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/24480d84-27ec-403f-9f0c-810e6156b5f0.jg5kh2et85.jpeg",
-      "AssetFile": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\24480d84-27ec-403f-9f0c-810e6156b5f0.jpeg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "54157"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"o3HDLNAYQyBqpDdm7azc4g7MVPSvhMTHOCtyjzocEUM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 16 May 2025 15:11:39 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "jg5kh2et85"
-        },
-        {
-          "Name": "label",
-          "Value": "uploads/24480d84-27ec-403f-9f0c-810e6156b5f0.jpeg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-o3HDLNAYQyBqpDdm7azc4g7MVPSvhMTHOCtyjzocEUM="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/24480d84-27ec-403f-9f0c-810e6156b5f0.jpeg",
-      "AssetFile": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\24480d84-27ec-403f-9f0c-810e6156b5f0.jpeg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "54157"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"o3HDLNAYQyBqpDdm7azc4g7MVPSvhMTHOCtyjzocEUM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 16 May 2025 15:11:39 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-o3HDLNAYQyBqpDdm7azc4g7MVPSvhMTHOCtyjzocEUM="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/282aa472-dfdd-4564-ab90-ada6935d048d.jkwrpq4d80.jpg",
-      "AssetFile": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\282aa472-dfdd-4564-ab90-ada6935d048d.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "16164795"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"o74mQCAJPJsEfJ/We+1Jsb0Ks3/DDbNAq/T9NV967yM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 16 May 2025 15:11:39 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "jkwrpq4d80"
-        },
-        {
-          "Name": "label",
-          "Value": "uploads/282aa472-dfdd-4564-ab90-ada6935d048d.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-o74mQCAJPJsEfJ/We+1Jsb0Ks3/DDbNAq/T9NV967yM="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/282aa472-dfdd-4564-ab90-ada6935d048d.jpg",
-      "AssetFile": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\282aa472-dfdd-4564-ab90-ada6935d048d.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "16164795"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"o74mQCAJPJsEfJ/We+1Jsb0Ks3/DDbNAq/T9NV967yM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 16 May 2025 15:11:39 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-o74mQCAJPJsEfJ/We+1Jsb0Ks3/DDbNAq/T9NV967yM="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/2900a6a0-e967-461f-bcde-f38cfc0b3beb.jpg",
-      "AssetFile": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\2900a6a0-e967-461f-bcde-f38cfc0b3beb.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "18458982"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"686Jw06gYvZHv8ZJ8tQmfiC4Rph98vVEVL7qeSagwgE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 16 May 2025 15:11:39 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-686Jw06gYvZHv8ZJ8tQmfiC4Rph98vVEVL7qeSagwgE="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/2900a6a0-e967-461f-bcde-f38cfc0b3beb.vfb838inbk.jpg",
-      "AssetFile": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\2900a6a0-e967-461f-bcde-f38cfc0b3beb.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "18458982"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"686Jw06gYvZHv8ZJ8tQmfiC4Rph98vVEVL7qeSagwgE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 16 May 2025 15:11:39 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "vfb838inbk"
-        },
-        {
-          "Name": "label",
-          "Value": "uploads/2900a6a0-e967-461f-bcde-f38cfc0b3beb.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-686Jw06gYvZHv8ZJ8tQmfiC4Rph98vVEVL7qeSagwgE="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/37e43806-9674-4b10-a033-2401b2e39ad7.jkwrpq4d80.jpg",
-      "AssetFile": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\37e43806-9674-4b10-a033-2401b2e39ad7.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "16164795"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"o74mQCAJPJsEfJ/We+1Jsb0Ks3/DDbNAq/T9NV967yM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 16 May 2025 15:11:39 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "jkwrpq4d80"
-        },
-        {
-          "Name": "label",
-          "Value": "uploads/37e43806-9674-4b10-a033-2401b2e39ad7.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-o74mQCAJPJsEfJ/We+1Jsb0Ks3/DDbNAq/T9NV967yM="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/37e43806-9674-4b10-a033-2401b2e39ad7.jpg",
-      "AssetFile": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\37e43806-9674-4b10-a033-2401b2e39ad7.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "16164795"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"o74mQCAJPJsEfJ/We+1Jsb0Ks3/DDbNAq/T9NV967yM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 16 May 2025 15:11:39 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-o74mQCAJPJsEfJ/We+1Jsb0Ks3/DDbNAq/T9NV967yM="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/6b1be527-f067-4f5a-a1c4-d2045435306a.d3oop2x6wz.jpg",
-      "AssetFile": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\6b1be527-f067-4f5a-a1c4-d2045435306a.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6940754"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"+SAK1LlYM/5a/Qjr9W93tMZvklRL7sqRHjhgOc0ZKQs=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 16 May 2025 15:11:39 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "d3oop2x6wz"
-        },
-        {
-          "Name": "label",
-          "Value": "uploads/6b1be527-f067-4f5a-a1c4-d2045435306a.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-+SAK1LlYM/5a/Qjr9W93tMZvklRL7sqRHjhgOc0ZKQs="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/6b1be527-f067-4f5a-a1c4-d2045435306a.jpg",
-      "AssetFile": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\6b1be527-f067-4f5a-a1c4-d2045435306a.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6940754"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"+SAK1LlYM/5a/Qjr9W93tMZvklRL7sqRHjhgOc0ZKQs=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 16 May 2025 15:11:39 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-+SAK1LlYM/5a/Qjr9W93tMZvklRL7sqRHjhgOc0ZKQs="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/6be43eb8-7135-485e-aab0-54e3c0dfc0a6.jkwrpq4d80.jpg",
-      "AssetFile": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\6be43eb8-7135-485e-aab0-54e3c0dfc0a6.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "16164795"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"o74mQCAJPJsEfJ/We+1Jsb0Ks3/DDbNAq/T9NV967yM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 16 May 2025 15:11:39 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "jkwrpq4d80"
-        },
-        {
-          "Name": "label",
-          "Value": "uploads/6be43eb8-7135-485e-aab0-54e3c0dfc0a6.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-o74mQCAJPJsEfJ/We+1Jsb0Ks3/DDbNAq/T9NV967yM="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/6be43eb8-7135-485e-aab0-54e3c0dfc0a6.jpg",
-      "AssetFile": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\6be43eb8-7135-485e-aab0-54e3c0dfc0a6.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "16164795"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"o74mQCAJPJsEfJ/We+1Jsb0Ks3/DDbNAq/T9NV967yM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 16 May 2025 15:11:39 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-o74mQCAJPJsEfJ/We+1Jsb0Ks3/DDbNAq/T9NV967yM="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/8aae5246-a439-4541-9807-02c3a7416cac.jpg",
-      "AssetFile": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\8aae5246-a439-4541-9807-02c3a7416cac.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "18458982"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"686Jw06gYvZHv8ZJ8tQmfiC4Rph98vVEVL7qeSagwgE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 16 May 2025 15:11:39 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-686Jw06gYvZHv8ZJ8tQmfiC4Rph98vVEVL7qeSagwgE="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/8aae5246-a439-4541-9807-02c3a7416cac.vfb838inbk.jpg",
-      "AssetFile": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\8aae5246-a439-4541-9807-02c3a7416cac.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "18458982"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"686Jw06gYvZHv8ZJ8tQmfiC4Rph98vVEVL7qeSagwgE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 16 May 2025 15:11:39 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "vfb838inbk"
-        },
-        {
-          "Name": "label",
-          "Value": "uploads/8aae5246-a439-4541-9807-02c3a7416cac.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-686Jw06gYvZHv8ZJ8tQmfiC4Rph98vVEVL7qeSagwgE="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/a5da43c3-896f-4822-9265-32f86aafca88.854ut6nump.jpg",
-      "AssetFile": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\a5da43c3-896f-4822-9265-32f86aafca88.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "695791"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"fHX8fXN4NtZFfao21tBYH5Zvmcio+oqtmbqdiT6oVpI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 16 May 2025 15:11:39 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "854ut6nump"
-        },
-        {
-          "Name": "label",
-          "Value": "uploads/a5da43c3-896f-4822-9265-32f86aafca88.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-fHX8fXN4NtZFfao21tBYH5Zvmcio+oqtmbqdiT6oVpI="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/a5da43c3-896f-4822-9265-32f86aafca88.jpg",
-      "AssetFile": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\a5da43c3-896f-4822-9265-32f86aafca88.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "695791"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"fHX8fXN4NtZFfao21tBYH5Zvmcio+oqtmbqdiT6oVpI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 16 May 2025 15:11:39 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-fHX8fXN4NtZFfao21tBYH5Zvmcio+oqtmbqdiT6oVpI="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/ab2e2861-36aa-49a7-abd1-d47073b192af.jpeg",
-      "AssetFile": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\ab2e2861-36aa-49a7-abd1-d47073b192af.jpeg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "312352"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"pw+HPAfPU020p51Ldk9E6MJMR2ODIIvUPYoS7l6Uzvo=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 16 May 2025 15:11:39 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-pw+HPAfPU020p51Ldk9E6MJMR2ODIIvUPYoS7l6Uzvo="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/ab2e2861-36aa-49a7-abd1-d47073b192af.xatg0eoasl.jpeg",
-      "AssetFile": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\ab2e2861-36aa-49a7-abd1-d47073b192af.jpeg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "312352"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"pw+HPAfPU020p51Ldk9E6MJMR2ODIIvUPYoS7l6Uzvo=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 16 May 2025 15:11:39 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "xatg0eoasl"
-        },
-        {
-          "Name": "label",
-          "Value": "uploads/ab2e2861-36aa-49a7-abd1-d47073b192af.jpeg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-pw+HPAfPU020p51Ldk9E6MJMR2ODIIvUPYoS7l6Uzvo="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/cf79f4e2-be0c-478e-bad3-51de2639c9da.d3oop2x6wz.jpg",
-      "AssetFile": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\cf79f4e2-be0c-478e-bad3-51de2639c9da.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6940754"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"+SAK1LlYM/5a/Qjr9W93tMZvklRL7sqRHjhgOc0ZKQs=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 16 May 2025 15:11:39 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "d3oop2x6wz"
-        },
-        {
-          "Name": "label",
-          "Value": "uploads/cf79f4e2-be0c-478e-bad3-51de2639c9da.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-+SAK1LlYM/5a/Qjr9W93tMZvklRL7sqRHjhgOc0ZKQs="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/cf79f4e2-be0c-478e-bad3-51de2639c9da.jpg",
-      "AssetFile": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\cf79f4e2-be0c-478e-bad3-51de2639c9da.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6940754"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"+SAK1LlYM/5a/Qjr9W93tMZvklRL7sqRHjhgOc0ZKQs=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 16 May 2025 15:11:39 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-+SAK1LlYM/5a/Qjr9W93tMZvklRL7sqRHjhgOc0ZKQs="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/d6b40ab2-f74c-4d7c-8c8d-1f388dcb2a62.png",
-      "AssetFile": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\d6b40ab2-f74c-4d7c-8c8d-1f388dcb2a62.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1545011"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"oVdlWyeArcQelGryGZoKTsSW72Bp4UIEp/TfALarvz8=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 16 May 2025 15:11:39 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-oVdlWyeArcQelGryGZoKTsSW72Bp4UIEp/TfALarvz8="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/d6b40ab2-f74c-4d7c-8c8d-1f388dcb2a62.pulg9voq9x.png",
-      "AssetFile": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\d6b40ab2-f74c-4d7c-8c8d-1f388dcb2a62.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1545011"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"oVdlWyeArcQelGryGZoKTsSW72Bp4UIEp/TfALarvz8=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 16 May 2025 15:11:39 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "pulg9voq9x"
-        },
-        {
-          "Name": "label",
-          "Value": "uploads/d6b40ab2-f74c-4d7c-8c8d-1f388dcb2a62.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-oVdlWyeArcQelGryGZoKTsSW72Bp4UIEp/TfALarvz8="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/e6509c46-ac36-4bfb-8c97-619290260313.jpeg",
-      "AssetFile": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\e6509c46-ac36-4bfb-8c97-619290260313.jpeg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "312352"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"pw+HPAfPU020p51Ldk9E6MJMR2ODIIvUPYoS7l6Uzvo=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 16 May 2025 15:11:39 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-pw+HPAfPU020p51Ldk9E6MJMR2ODIIvUPYoS7l6Uzvo="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/e6509c46-ac36-4bfb-8c97-619290260313.xatg0eoasl.jpeg",
-      "AssetFile": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\e6509c46-ac36-4bfb-8c97-619290260313.jpeg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "312352"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"pw+HPAfPU020p51Ldk9E6MJMR2ODIIvUPYoS7l6Uzvo=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 16 May 2025 15:11:39 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "xatg0eoasl"
-        },
-        {
-          "Name": "label",
-          "Value": "uploads/e6509c46-ac36-4bfb-8c97-619290260313.jpeg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-pw+HPAfPU020p51Ldk9E6MJMR2ODIIvUPYoS7l6Uzvo="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/f64eabaf-b704-4ae4-9b4d-3dfacd854f06.jg5kh2et85.jpeg",
-      "AssetFile": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\f64eabaf-b704-4ae4-9b4d-3dfacd854f06.jpeg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "54157"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"o3HDLNAYQyBqpDdm7azc4g7MVPSvhMTHOCtyjzocEUM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 16 May 2025 15:11:39 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "jg5kh2et85"
-        },
-        {
-          "Name": "label",
-          "Value": "uploads/f64eabaf-b704-4ae4-9b4d-3dfacd854f06.jpeg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-o3HDLNAYQyBqpDdm7azc4g7MVPSvhMTHOCtyjzocEUM="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/f64eabaf-b704-4ae4-9b4d-3dfacd854f06.jpeg",
-      "AssetFile": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\wwwroot\\uploads\\f64eabaf-b704-4ae4-9b4d-3dfacd854f06.jpeg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "54157"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"o3HDLNAYQyBqpDdm7azc4g7MVPSvhMTHOCtyjzocEUM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 16 May 2025 15:11:39 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-o3HDLNAYQyBqpDdm7azc4g7MVPSvhMTHOCtyjzocEUM="
-        }
-      ]
     }
   ]
 }
