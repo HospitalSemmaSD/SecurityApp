@@ -1691,33 +1691,6 @@
             "rid": "win"
           }
         }
-      },
-      "SecApp.Data/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.SqlServer": "9.0.5",
-          "SecApp.Model": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/SecApp.Data.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/SecApp.Data.dll": {}
-        }
-      },
-      "SecApp.Model/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.SqlServer": "9.0.5"
-        },
-        "compile": {
-          "bin/placeholder/SecApp.Model.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/SecApp.Model.dll": {}
-        }
       }
     }
   },
@@ -5152,22 +5125,12 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
-    },
-    "SecApp.Data/1.0.0": {
-      "type": "project",
-      "path": "../SecApp.Data/SecApp.Data.csproj",
-      "msbuildProject": "../SecApp.Data/SecApp.Data.csproj"
-    },
-    "SecApp.Model/1.0.0": {
-      "type": "project",
-      "path": "../SecApp.Model/SecApp.Model.csproj",
-      "msbuildProject": "../SecApp.Model/SecApp.Model.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.5",
       "Microsoft.EntityFrameworkCore.Tools >= 9.0.5",
-      "SecApp.Data >= 1.0.0",
       "Swashbuckle.AspNetCore >= 8.1.1"
     ]
   },
@@ -5203,11 +5166,7 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {
-            "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Data\\SecApp.Data.csproj": {
-              "projectPath": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Data\\SecApp.Data.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
@@ -5225,6 +5184,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": {
+            "target": "Package",
+            "version": "[9.0.5, )"
+          },
           "Microsoft.EntityFrameworkCore.Tools": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",

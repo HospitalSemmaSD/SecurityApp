@@ -1,19 +1,19 @@
-﻿
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace SecApp.Api.Models
+namespace SecApp.Api.DTOs
 {
-    public class Agent
+    public class AgentDTO
     {
+
         public int AgentId { get; set; }
-        [Required(ErrorMessage ="El campo {0} es requerido")]
-        [StringLength(50, ErrorMessage ="El campo {0} debe tener {1} caracteres o menos")]
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [StringLength(50, ErrorMessage = "El campo {0} debe tener {1} caracteres o menos")]
         public required string Name { get; set; } = string.Empty;
         [Required]
         [StringLength(50, ErrorMessage = "El campo {0} debe tener {1} caracteres o menos")]
         public string LastName { get; set; } = string.Empty;
         [Required]
-        [StringLength(10, ErrorMessage ="Campo {0}: debe tener {1} digitos")]
+        [StringLength(10, ErrorMessage = "Campo {0}: debe tener {1} digitos")]
         public string Phone { get; set; } = string.Empty;
         [Required]
         [StringLength(11, ErrorMessage = "El campo {0} debe tener {1} caracteres o menos")]
@@ -27,6 +27,5 @@ namespace SecApp.Api.Models
         [Required]
         public int AgentCode { get; set; }
         public int RangeId { get; set; }
-
     }
 }

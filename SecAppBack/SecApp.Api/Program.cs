@@ -29,11 +29,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<SecurityDBContext>(options => options.UseSqlServer("name=DefaultConnection"));
-//var mySqlConnection = new MySQLConfiguration(builder.Configuration.GetConnectionString("SecAppconnection")!);
-//builder.Services.AddSingleton(mySqlConnection);
 
-//DEBERIA DE SER DE ESTA FORMA... QUE CREE UNA CONNECION POR CADA SOLICITUD
-//builder.Services.AddSingleton(new MySqlConnection(builder.Configuration.GetConnectionString("SecAppconnection")));
 
 builder.Services.AddScoped<ICRUDtRepository<Agent>, AgentRepository>();
 

@@ -8,6 +8,12 @@ namespace SecApp.Api.Repositories
 {
     public class AgentRepository : ICRUDtRepository<Agent>
     {
+        private readonly SecurityDBContext context;
+
+        public AgentRepository(SecurityDBContext context)
+        {
+            this.context = context;
+        }
         //private readonly MySQLConfiguration connection;
 
         //public AgentRepository(MySQLConfiguration connection)
@@ -35,24 +41,11 @@ namespace SecApp.Api.Repositories
         }
         public async Task<bool> InsertAgent(Agent agent)
         {
-            //var db = dbConnection();
-            //var sql = @"INSERT INTO agents(name, lastname, phone, identification, birthday, email, status, photo, rangeid, agentcode)
-            //            VALUES(@name, @lastname, @phone, @identification, @birthday, @email, @status, @photo, @rangeid, @agentcode)";
-            //var result = await db.ExecuteAsync(sql, new
-            //{
-            //    agent.Name,
-            //    agent.LastName,
-            //    agent.Phone,
-            //    agent.Identification,
-            //    agent.BirthDay,
-            //    agent.Email,
-            //    agent.Status,
-            //    agent.Photo,
-            //    agent.RangeId,
-            //    agent.AgentCode
-            //});
-            //return result > 0;
-            throw new NotImplementedException();
+           
+            context.Add(agent);
+            await context.SaveChangesAsync();
+            return true;
+           
 
         }
         public async Task<bool> UpdateAgent(Agent agent)

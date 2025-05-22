@@ -1,25 +1,37 @@
 import { Component, inject } from '@angular/core';
 import { AgentFormComponent } from '../agent-form/agent-form.component';
-import { AgentCreateDto, AgentDto } from '../../models/agent';
+import { AgentCreateDto } from '../models/agent';
 import { AgentServiceService } from '../agent-service.service';
 import { Router } from '@angular/router';
+import { getErgetErrorsFromAPI } from '../../shared/funtions/getErrorsFromAPI';
+import { ShowErrorsComponent } from '../../shared/components/show-errors/show-errors.component';
 
 @Component({
   selector: 'app-create-gent',
-  imports: [AgentFormComponent],
+  imports: [AgentFormComponent, ShowErrorsComponent],
   templateUrl: './create-agent.component.html',
   styleUrl: './create-agent.component.css',
 })
 export class CreateAGentComponent {
   private router = inject(Router);
-  constructor(private agentService: AgentServiceService) {}
+  private agentService = inject(AgentServiceService);
+  errors: string[] = [];
 
   saveChange(agent: AgentCreateDto) {
     console.log('Agent to be created:', agent);
-    this.agentService.createAgent(agent).subscribe((data) => {
-      // Optionally, navigate to another page or show a success message
-      console.log('Agent created successfully:', data);
-      this.router.navigate(['/agents']);
+    this.agentService.createAgent(agent).subscribe({
+      next: (data) => {
+        console.log('Agent created successfully:', data);
+        this.router.navigate(['/agents']);
+      },
+      error: (err) => {
+        console.error('Error creating agent:', err);
+        const errors = getErgetErrorsFromAPI(err);
+        this.errors = errors;
+      },
     });
   }
+}
+function getErrors() {
+  throw new Error('Function not implemented.');
 }

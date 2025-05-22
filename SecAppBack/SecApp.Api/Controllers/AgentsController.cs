@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SecApp.Data.Interfaces;
-using SecApp.Model;
-using SecApp.Data;
+
 using Microsoft.AspNetCore.OutputCaching;
+using SecApp.Api.DTOs;
+using SecApp.Api.Interfaces;
+using SecApp.Api.Models;
 
 namespace SecApp.Controllers
 {
@@ -11,14 +12,13 @@ namespace SecApp.Controllers
     public class AgentsController : ControllerBase
     {
         private readonly ICRUDtRepository<Agent> agentsRepository;
-        private readonly IOutputCacheStore outputCache;
-        private readonly MySQLConfiguration connection;
+        private readonly IOutputCacheStore outputCache;       
 
-        public AgentsController(MySQLConfiguration connection,
+        public AgentsController( 
                                 ICRUDtRepository<Agent> agentsRepository,
                                 IOutputCacheStore outputCache)
         {
-            this.connection = connection;
+          
             this.agentsRepository = agentsRepository;
             this.outputCache = outputCache;
         }
@@ -34,9 +34,9 @@ namespace SecApp.Controllers
             return Ok(await agentsRepository.GetAgents());
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id }", Name = "GetAgentByID")]
         [OutputCache(Tags = ["agents"])]
-        public async Task<IActionResult> Get([FromRoute] int id)
+        public async Task<IActionResult> Get(int id)
         {
             return Ok(await agentsRepository.GetDetails(id));
         }
@@ -71,9 +71,9 @@ namespace SecApp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateAgent([FromBody] Agent agent)
+        public async Task<IActionResult> CreateAgent([FromBody] AgentCreateDTO agentDTO)
         {
-            if (agent == null)
+            if (agentDTO == null)
             {
                 return BadRequest();
 
@@ -82,9 +82,23 @@ namespace SecApp.Controllers
             {
                 return BadRequest(ModelState);
             }
+            var agent = new Agent
+            {
+                Name = agentDTO.Name,
+                LastName = agentDTO.LastName,
+                Phone = agentDTO.Phone,
+                Identification = agentDTO.Identification,
+                Email = agentDTO.Email,
+                BirthDay = agentDTO.BirthDay,
+                Status = agentDTO.Status,
+                Photo = agentDTO.Photo,
+                AgentCode = agentDTO.AgentCode,
+                RangeId = agentDTO.RangeId,
+
+            };
             var created = await agentsRepository.InsertAgent(agent);
             await outputCache.EvictByTagAsync("agents", default);
-            return Created("Created", created);
+            return CreatedAtRoute("GetAgentByID", new {id = agent.AgentId }, agent);
         }
 
         [HttpPut]

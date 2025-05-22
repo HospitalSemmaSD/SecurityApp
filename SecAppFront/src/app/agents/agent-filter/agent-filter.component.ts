@@ -6,10 +6,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { AgentFilter } from '../../models/agentFilter';
+import { AgentFilter } from '../models/agentFilter';
 import { AgentsListComponent } from '../agents-list/agents-list.component';
 import { AgentServiceService } from '../agent-service.service';
-import { AgentDto } from '../../models/agent';
+import { AgentDto } from '../models/agent';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 

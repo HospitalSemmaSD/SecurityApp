@@ -1,6 +1,6 @@
 import { Component, Input, numberAttribute } from '@angular/core';
 import { AgentFormComponent } from '../agent-form/agent-form.component';
-import { AgentCreateDto, AgentDto } from '../../models/agent';
+import { AgentCreateDto, AgentDto } from '../models/agent';
 
 @Component({
   selector: 'app-edit-agent',
