@@ -284,11 +284,6 @@ C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\
 C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\obj\Debug\net8.0\scopedcss\bundle\SecApp.Api.styles.css
 C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\obj\Debug\net8.0\staticwebassets.development.json
-C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\obj\Debug\net8.0\staticwebassets\msbuild.SecApp.Api.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\obj\Debug\net8.0\staticwebassets\msbuild.build.SecApp.Api.props
-C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.SecApp.Api.props
-C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.SecApp.Api.props
-C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\obj\Debug\net8.0\SecApp.Api.csproj.Up2Date
 C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\obj\Debug\net8.0\SecApp.Api.dll
 C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\obj\Debug\net8.0\refint\SecApp.Api.dll
@@ -327,3 +322,8 @@ C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\
 C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\bin\Debug\net8.0\SecApp.Api.staticwebassets.endpoints.json
+C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\bin\Debug\net8.0\AutoMapper.dll

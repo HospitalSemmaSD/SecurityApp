@@ -1,0 +1,108 @@
+[
+  {
+    "ContainingType": "SecApp.Controllers.AgentsController",
+    "Method": "Get",
+    "RelativePath": "api/Agents",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SecApp.Controllers.AgentsController",
+    "Method": "CreateAgent",
+    "RelativePath": "api/Agents",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "agentDTO",
+        "Type": "SecApp.Api.DTOs.AgentCreateDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SecApp.Controllers.AgentsController",
+    "Method": "UpdateAgent",
+    "RelativePath": "api/Agents",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "agent",
+        "Type": "SecApp.Api.Models.Agent",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SecApp.Controllers.AgentsController",
+    "Method": "Delete",
+    "RelativePath": "api/Agents",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SecApp.Controllers.AgentsController",
+    "Method": "Get",
+    "RelativePath": "api/Agents/{id }",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "id ",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "GetAgentByID"
+  },
+  {
+    "ContainingType": "SecApp.Controllers.AgentsController",
+    "Method": "GetAgentsRanges",
+    "RelativePath": "api/Agents/GetAgentsRanges",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SecApp.Controllers.AgentsController",
+    "Method": "UploadPhoto",
+    "RelativePath": "api/Agents/upload-photo",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

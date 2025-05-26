@@ -1,6 +1,7 @@
 ﻿
 
 
+using Microsoft.EntityFrameworkCore;
 using SecApp.Api.Interfaces;
 using SecApp.Api.Models;
 
@@ -14,22 +15,15 @@ namespace SecApp.Api.Repositories
         {
             this.context = context;
         }
-        //private readonly MySQLConfiguration connection;
-
-        //public AgentRepository(MySQLConfiguration connection)
-        //{
-        //    this.connection = connection;
-        //}
-        //protected MySqlConnection dbConnection()
-        //{
-        //    return new MySqlConnection(connection.ConnectionString);
-        //}
-        public Task<IEnumerable<Agent>> GetAgents()
+       
+        public async Task<List<Agent>> GetAgents()
         {
             //var db = dbConnection();
             //var sql = @"SELECT * FROM agents";
             //return db.QueryAsync<Agent>(sql, new { });
-            throw new NotImplementedException();
+            var agents = await context.agents.ToListAsync();
+            return agents;
+            
         }
         public async Task<Agent> GetDetails(int id)
         {

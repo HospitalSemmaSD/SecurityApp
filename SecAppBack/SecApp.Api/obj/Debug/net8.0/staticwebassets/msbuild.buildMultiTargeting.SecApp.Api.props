@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\SecApp.Api.props" />
-</Project>

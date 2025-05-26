@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 
 using Microsoft.AspNetCore.OutputCaching;
 using SecApp.Api.DTOs;
@@ -12,26 +13,27 @@ namespace SecApp.Controllers
     public class AgentsController : ControllerBase
     {
         private readonly ICRUDtRepository<Agent> agentsRepository;
-        private readonly IOutputCacheStore outputCache;       
+        private readonly IOutputCacheStore outputCache;
+        private readonly IMapper mapper;
 
         public AgentsController( 
                                 ICRUDtRepository<Agent> agentsRepository,
-                                IOutputCacheStore outputCache)
+                                IOutputCacheStore outputCache, IMapper mapper)
         {
           
             this.agentsRepository = agentsRepository;
             this.outputCache = outputCache;
+            this.mapper = mapper;
         }
 
-        //protected MySqlConnection dbConnection()
-        //{
-        //    return new MySqlConnection(connection.ConnectionString);
-        //}
+        
 
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return Ok(await agentsRepository.GetAgents());
+            var agents = await agentsRepository.GetAgents();
+            var agentsDTOs = mapper.Map<List<AgentDTO>>(agents);
+            return Ok(agentsDTOs);
         }
 
         [HttpGet("{id }", Name = "GetAgentByID")]
@@ -82,20 +84,7 @@ namespace SecApp.Controllers
             {
                 return BadRequest(ModelState);
             }
-            var agent = new Agent
-            {
-                Name = agentDTO.Name,
-                LastName = agentDTO.LastName,
-                Phone = agentDTO.Phone,
-                Identification = agentDTO.Identification,
-                Email = agentDTO.Email,
-                BirthDay = agentDTO.BirthDay,
-                Status = agentDTO.Status,
-                Photo = agentDTO.Photo,
-                AgentCode = agentDTO.AgentCode,
-                RangeId = agentDTO.RangeId,
-
-            };
+            var agent = mapper.Map<Agent>(agentDTO);
             var created = await agentsRepository.InsertAgent(agent);
             await outputCache.EvictByTagAsync("agents", default);
             return CreatedAtRoute("GetAgentByID", new {id = agent.AgentId }, agent);

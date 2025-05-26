@@ -43,9 +43,6 @@ export class AgentsListComponent implements OnInit {
 
   private agentService = inject(AgentServiceService);
 
-  constructor() {
-    this.agentService.getAgents().subscribe((agents) => {});
-  }
   getAgents() {
     this.agentService.getAgents().subscribe((data: any) => {
       for (let i = 0; i < data.length; i++) {

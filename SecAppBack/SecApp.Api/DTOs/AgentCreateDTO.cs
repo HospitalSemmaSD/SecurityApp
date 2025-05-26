@@ -5,7 +5,9 @@ namespace SecApp.Api.DTOs
     public class AgentCreateDTO
     {
   
+   
         [Required(ErrorMessage = "El campo {0} es requerido")]
+        [MinLength(3, ErrorMessage = "El campo {0} debe tener al menos {1} caracteres")]
         [StringLength(50, ErrorMessage = "El campo {0} debe tener {1} caracteres o menos")]
         public required string Name { get; set; } = string.Empty;
         [Required]
