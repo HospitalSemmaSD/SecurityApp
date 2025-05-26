@@ -1,0 +1,18 @@
+@if (!items){
+
+<span #loading><ng-content select="[loading]"></ng-content></span>
+
+@if (!loading.innerHTML.trim()){
+<div>
+  <img src="logo-semma.png" />
+</div>
+} } @else if (items.length === 0){
+<span #empty><ng-content select="[empty]"></ng-content></span>
+
+@if (!empty.innerHTML.trim()){
+<div>
+  <p>There are no elements to display</p>
+</div>
+} } @else {
+<ng-content select="[content]"></ng-content>
+}

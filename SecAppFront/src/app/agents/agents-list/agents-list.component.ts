@@ -9,6 +9,8 @@ import { MatDividerModule } from '@angular/material/divider';
 
 import { AgentServiceService } from '../agent-service.service';
 import { AgentDto } from '../models/agent';
+import { GenericListComponent } from '../../shared/components/generic-list/generic-list.component';
+import { MatTableModule } from '@angular/material/table';
 //import { MatFormFieldModule } from '@angular/material/form-field';
 //import { MatInputModule } from '@angular/material/input';
 
@@ -16,16 +18,14 @@ import { AgentDto } from '../models/agent';
   selector: 'app-listado-agentes',
   imports: [
     UpperCasePipe,
-    DatePipe,
     MatButtonModule,
     MatGridListModule,
-    NgClass,
     RouterLink,
     MatIcon,
     MatCardModule,
     MatDividerModule,
-    //MatFormFieldModule,
-    // MatInputModule,
+    GenericListComponent,
+    MatTableModule,
   ],
   templateUrl: './agents-list.component.html',
   styleUrl: './agents-list.component.css',
@@ -33,24 +33,34 @@ import { AgentDto } from '../models/agent';
 export class AgentsListComponent implements OnInit {
   //constructor(private agentService: AgentServiceService) {} change to inject
   ngOnInit(): void {
-    setTimeout(() => {
-      this.getAgents();
-    }, 3000);
+    setTimeout(() => {}, 3000);
   }
-
-  @Input({ required: true })
-  agents: AgentDto[] = [];
 
   private agentService = inject(AgentServiceService);
+  @Input({ required: true })
+  agents: AgentDto[] = [];
+  columnsToDisplay: string[] = [
+    'AgentId',
+    'Name',
+    'Email',
+    'Phone',
+    'Photo',
+    'Actions',
+  ];
 
-  getAgents() {
-    this.agentService.getAgents().subscribe((data: any) => {
-      for (let i = 0; i < data.length; i++) {
-        if (data[i].photo.length === 0) {
-          data[i].photo = 'DefaultAgent.jpg';
-        }
-      }
-      this.agents = data;
+  constructor() {
+    this.agentService.getAgents().subscribe((agents) => {
+      this.agents = agents;
     });
   }
+  // getAgents() {
+  //   this.agentService.getAgents().subscribe((data: any) => {
+  //     for (let i = 0; i < data.length; i++) {
+  //       if (data[i].photo.length === 0) {
+  //         data[i].photo = 'DefaultAgent.jpg';
+  //       }
+  //     }
+  //     this.agents = data;
+  //   });
+  // }
 }

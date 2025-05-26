@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-
 using Microsoft.AspNetCore.OutputCaching;
 using SecApp.Api.DTOs;
 using SecApp.Api.Interfaces;
@@ -16,17 +15,17 @@ namespace SecApp.Controllers
         private readonly IOutputCacheStore outputCache;
         private readonly IMapper mapper;
 
-        public AgentsController( 
+        public AgentsController(
                                 ICRUDtRepository<Agent> agentsRepository,
                                 IOutputCacheStore outputCache, IMapper mapper)
         {
-          
+
             this.agentsRepository = agentsRepository;
             this.outputCache = outputCache;
             this.mapper = mapper;
         }
 
-        
+
 
         [HttpGet]
         public async Task<IActionResult> Get()
@@ -87,7 +86,7 @@ namespace SecApp.Controllers
             var agent = mapper.Map<Agent>(agentDTO);
             var created = await agentsRepository.InsertAgent(agent);
             await outputCache.EvictByTagAsync("agents", default);
-            return CreatedAtRoute("GetAgentByID", new {id = agent.AgentId }, agent);
+            return CreatedAtRoute("GetAgentByID", new { id = agent.AgentId }, agent);
         }
 
         [HttpPut]

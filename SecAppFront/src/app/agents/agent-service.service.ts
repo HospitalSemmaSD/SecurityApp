@@ -14,7 +14,7 @@ export class AgentServiceService {
   private baseURL = environment.API_URL + 'agents';
 
   public getAgents(): Observable<AgentDto[]> {
-    return this.http.get<AgentDto[]>(this.baseURL + '/GetAgentsRanges');
+    return this.http.get<AgentDto[]>(this.baseURL);
   }
 
   public createAgent(agent: AgentCreateDto) {

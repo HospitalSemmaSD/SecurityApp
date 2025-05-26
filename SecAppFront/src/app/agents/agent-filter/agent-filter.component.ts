@@ -12,19 +12,19 @@ import { AgentServiceService } from '../agent-service.service';
 import { AgentDto } from '../models/agent';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { GenericListComponent } from '../../shared/components/generic-list/generic-list.component';
 
 @Component({
   selector: 'app-agent-filter',
   imports: [
     MatButtonModule,
-
     MatFormFieldModule,
     ReactiveFormsModule,
     MatInputModule,
     MatSelectModule,
     MatCheckboxModule,
     MatIconModule,
-    AgentsListComponent,
+    GenericListComponent,
   ],
   templateUrl: './agent-filter.component.html',
   styleUrl: './agent-filter.component.css',
