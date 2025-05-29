@@ -1,5 +1,11 @@
 <h2>Editando Agente</h2>
+@if (agent) {
+<app-show-errors [errors]="errors"></app-show-errors>
 <app-agent-form
   [model]="agent"
   (formPost)="saveChange($event)"
 ></app-agent-form>
+}@else {
+
+<app-loading></app-loading>
+}

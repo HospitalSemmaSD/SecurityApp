@@ -1,36 +1,34 @@
-﻿
-
-
+﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using Microsoft.EntityFrameworkCore;
 using SecApp.Api.Interfaces;
 using SecApp.Api.Models;
+using SecApp.Api.Utilities;
 
 namespace SecApp.Api.Repositories
 {
     public class AgentRepository : ICRUDtRepository<Agent>
     {
         private readonly SecurityDBContext context;
+        private readonly IMapper mapper;
 
-        public AgentRepository(SecurityDBContext context)
+        public AgentRepository(SecurityDBContext context, IMapper mapper)
         {
             this.context = context;
+            this.mapper = mapper;
         }
-       
+
         public async Task<List<Agent>> GetAgents()
         {
-            //var db = dbConnection();
-            //var sql = @"SELECT * FROM agents";
-            //return db.QueryAsync<Agent>(sql, new { });
             var agents = await context.agents.ToListAsync();
             return agents;
-            
         }
+
         public async Task<Agent> GetDetails(int id)
         {
-            //var db = dbConnection();
-            //var sql = @"SELECT * FROM agents WHERE agentId =@id";
-            //return await db.QueryFirstOrDefaultAsync<Agent>(sql, new { id = id })!;
-            throw new NotImplementedException();
+            var agent = await context.agents.FirstOrDefaultAsync(x => x.AgentId == id);
+
+            return agent;
 
         }
         public async Task<bool> InsertAgent(Agent agent)
@@ -43,40 +41,16 @@ namespace SecApp.Api.Repositories
 
         }
         public async Task<bool> UpdateAgent(Agent agent)
-        {
-            //var db = dbConnection();
-            //var sql = @"UPDATE agents
-            //            SET name = @Name, 
-            //                lastname = @lastName,
-            //                phone = @Phone,
-            //                identification = @Identification,
-            //                birthday = @Birthday, 
-            //                status = @Status,
-            //                rangeid = @RangeId
-            //                WHERE agentId = @AgentId";
-            //var result = await db.ExecuteAsync(sql, new
-            //{
-            //    agent.Name,
-            //    agent.LastName,
-            //    agent.Phone,
-            //    agent.Identification,
-            //    agent.BirthDay,
-            //    agent.Status,
-            //    agent.RangeId,
-            //    agent.AgentId
-            //});
-            //return result > 0;
-            throw new NotImplementedException();
+        {           
+            context.agents.Update(agent);
+            return await context.SaveChangesAsync() > 0;
 
         }
-        public async Task<bool> DeleteAgent(Agent agent)
+        public async Task<bool> DeleteAgent(int id)
         {
 
-            //var db = dbConnection();
-            //var sql = @"DELETE FROM Agents WHERE agentId = @Id";
-            //var result = await db.ExecuteAsync(sql, new { Id = agent.AgentId });
-            //return result > 0;
-            throw new NotImplementedException();
+            var agentsDeteled = await context.agents.Where(x => x.AgentId == id).ExecuteDeleteAsync();
+            return true;
 
         }
         //public bool IdentificationExist(string identification)

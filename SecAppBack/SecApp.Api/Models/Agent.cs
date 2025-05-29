@@ -18,12 +18,12 @@ namespace SecApp.Api.Models
         [Required]
         [StringLength(11, ErrorMessage = "El campo {0} debe tener {1} caracteres o menos")]
         public string Identification { get; set; } = string.Empty;
-        public string Email { get; set; } = string.Empty;
+        public string? Email { get; set; } 
         [Required]
         public DateTime BirthDay { get; set; }
         [Required]
         public bool Status { get; set; }
-        public string Photo { get; set; } = string.Empty;
+        public string? Photo { get; set; } 
         [Required]
         public int AgentCode { get; set; }
         public int RangeId { get; set; }

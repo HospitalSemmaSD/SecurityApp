@@ -41,7 +41,7 @@ export class AgentFilterComponent implements OnInit {
     });
   }
 
-  // constructor(private agentService: AgentServiceService) {}
+  //constructor(private agentService: AgentServiceService) {}
   private formBuilder = inject(FormBuilder);
   private location = inject(Location);
   private activatedRoute = inject(ActivatedRoute);
@@ -50,6 +50,14 @@ export class AgentFilterComponent implements OnInit {
   @Output()
   agents: AgentDto[] = [];
   agentsFiltered: AgentDto[] = [];
+  columnsToDisplay: string[] = [
+    'AgentId',
+    'Name',
+    'Email',
+    'Phone',
+    'Photo',
+    'Actions',
+  ];
 
   form = this.formBuilder.group({
     name: [''],
@@ -63,6 +71,7 @@ export class AgentFilterComponent implements OnInit {
         }
       }
       this.agents = data;
+      this.agentsFiltered = this.agents;
     });
   }
   searchAgent(value: AgentFilter) {

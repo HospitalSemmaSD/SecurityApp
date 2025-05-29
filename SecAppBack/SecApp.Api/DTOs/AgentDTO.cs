@@ -14,12 +14,12 @@ namespace SecApp.Api.DTOs
         public string Phone { get; set; } = string.Empty;
         
         public string Identification { get; set; } = string.Empty;
-        public string Email { get; set; } = string.Empty;
+        public string? Email { get; set; }
   
         public DateTime BirthDay { get; set; }
      
         public bool Status { get; set; }
-        public string Photo { get; set; } = string.Empty;
+        public string? Photo { get; set; }
        
         public int AgentCode { get; set; }
         public int RangeId { get; set; }

@@ -11,6 +11,10 @@ import { AgentServiceService } from '../agent-service.service';
 import { AgentDto } from '../models/agent';
 import { GenericListComponent } from '../../shared/components/generic-list/generic-list.component';
 import { MatTableModule } from '@angular/material/table';
+import { HttpResponse } from '@angular/common/http';
+import { PaginationDTO } from '../../shared/models/paginationDTO';
+import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 //import { MatFormFieldModule } from '@angular/material/form-field';
 //import { MatInputModule } from '@angular/material/input';
 
@@ -26,6 +30,8 @@ import { MatTableModule } from '@angular/material/table';
     MatDividerModule,
     GenericListComponent,
     MatTableModule,
+    MatPaginatorModule,
+    SweetAlert2Module,
   ],
   templateUrl: './agents-list.component.html',
   styleUrl: './agents-list.component.css',
@@ -47,20 +53,32 @@ export class AgentsListComponent implements OnInit {
     'Photo',
     'Actions',
   ];
-
+  pagination: PaginationDTO = { page: 1, recordsPerPage: 10 };
+  totalCount!: number;
   constructor() {
-    this.agentService.getAgents().subscribe((agents) => {
-      this.agents = agents;
+    this.getAgents();
+  }
+
+  onPaginateChange(data: PageEvent) {
+    this.pagination.page = data.pageIndex + 1; // PageEvent is zero-based
+    this.pagination.recordsPerPage = data.pageSize;
+    this.getAgents();
+  }
+  getAgents() {
+    this.agentService
+      .getAgentsPagedList(this.pagination)
+      .subscribe((response: HttpResponse<AgentDto[]>) => {
+        this.agents = response.body as [];
+        const header = response.headers.get('totalCount') as string;
+        this.totalCount = parseInt(header, 10);
+      });
+  }
+
+  deleteAgent(id: number) {
+    this.agentService.deleteAgent(id).subscribe({
+      next: () => {
+        this.getAgents();
+      },
     });
   }
-  // getAgents() {
-  //   this.agentService.getAgents().subscribe((data: any) => {
-  //     for (let i = 0; i < data.length; i++) {
-  //       if (data[i].photo.length === 0) {
-  //         data[i].photo = 'DefaultAgent.jpg';
-  //       }
-  //     }
-  //     this.agents = data;
-  //   });
-  // }
 }

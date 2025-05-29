@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.OutputCaching;
 using SecApp.Api.DTOs;
 using SecApp.Api.Interfaces;
 using SecApp.Api.Models;
+using SecApp.Api.Utilities;
+using System.Threading.Tasks;
 
 namespace SecApp.Controllers
 {
@@ -14,6 +16,7 @@ namespace SecApp.Controllers
         private readonly ICRUDtRepository<Agent> agentsRepository;
         private readonly IOutputCacheStore outputCache;
         private readonly IMapper mapper;
+        private const string cacheTag = "agents";
 
         public AgentsController(
                                 ICRUDtRepository<Agent> agentsRepository,
@@ -28,22 +31,43 @@ namespace SecApp.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get(/*[FromQuery] PaginationDTO pagination*/)
         {
+            //if (pagination == null)
+            //{
+            //    return BadRequest("Pagination parameters are required.");
+            //}
+  
             var agents = await agentsRepository.GetAgents();
+            if (agents is null)
+            {
+                return NotFound();
+            }
+            //await HttpContext.InsertParamsHeader((IQueryable<AgentDTO>)agents);
+            ////agents = agents.OrderBy(a => a.Name)
+            //    .AsQueryable()
+            //    .Pager(pagination).ToList();
             var agentsDTOs = mapper.Map<List<AgentDTO>>(agents);
+
             return Ok(agentsDTOs);
         }
 
-        [HttpGet("{id }", Name = "GetAgentByID")]
-        [OutputCache(Tags = ["agents"])]
-        public async Task<IActionResult> Get(int id)
+        [HttpGet("{id:int}", Name = "GetAgentByID")]
+        [OutputCache(Tags = [cacheTag])]
+        public async Task<ActionResult<AgentDTO>> Get(int id)
         {
-            return Ok(await agentsRepository.GetDetails(id));
+            var agent = await agentsRepository.GetDetails(id);
+            if (agent is null)
+            {
+                return NotFound();
+            }
+            var agentDTO = mapper.Map<AgentDTO>(agent);
+
+            return agentDTO;
         }
 
         [HttpGet("GetAgentsRanges")]
-        [OutputCache(Tags = ["agents"])] //how to know that this item is in the cache?
+        [OutputCache(Tags = [cacheTag])] //how to know that this item is in the cache?
         public async Task<IActionResult> GetAgentsRanges()
         {
             //List<AgentVM> agents = new List<AgentVM>();
@@ -85,30 +109,34 @@ namespace SecApp.Controllers
             }
             var agent = mapper.Map<Agent>(agentDTO);
             var created = await agentsRepository.InsertAgent(agent);
-            await outputCache.EvictByTagAsync("agents", default);
+            await outputCache.EvictByTagAsync(cacheTag, default);
             return CreatedAtRoute("GetAgentByID", new { id = agent.AgentId }, agent);
         }
 
-        [HttpPut]
-        public async Task<IActionResult> UpdateAgent([FromBody] Agent agent)
+        [HttpPut("{id:int}")]
+        public async Task<IActionResult> UpdateAgent(int id, [FromBody] AgentCreateDTO agentCreateDTO)
         {
-            if (agent == null)
+            var existingAgent = await agentsRepository.GetDetails(id);
+            if (existingAgent == null)
             {
-                return BadRequest();
-
+                return NotFound();
             }
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-            var updated = await agentsRepository.UpdateAgent(agent);
+            var updatedAgent = mapper.Map(agentCreateDTO, existingAgent);
+            existingAgent.AgentId = id; // Ensure the ID is set correctly
+            await agentsRepository.UpdateAgent(updatedAgent);
+            await outputCache.EvictByTagAsync(cacheTag,default);
             return NoContent();
         }
 
-        [HttpDelete]
+        [HttpDelete("{id:int}")]
         public async Task<IActionResult> Delete(int id)
         {
-            //await agentsRepository.DeleteAgent(new Agent { AgentId = id });
+            var agentsDeleted = await agentsRepository.DeleteAgent(id);
+            if (!agentsDeleted)
+            {
+                return NotFound();
+            }
+            await outputCache.EvictByTagAsync(cacheTag, default);
             return NoContent();
         }
 

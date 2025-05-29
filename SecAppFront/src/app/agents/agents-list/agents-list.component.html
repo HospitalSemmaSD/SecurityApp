@@ -40,13 +40,35 @@
           <a routerLink="/agents/edit/{{ agent.agentId }}" mat-flat-button
             >Editar</a
           >
-          <button mat-flat-button color="warn">Borrar</button>
+          <button
+            mat-flat-button
+            color="warn"
+            [swal]="{
+              title: '¿Estás seguro?',
+              text: 'Esta acción no se puede deshacer.',
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonText: 'Sí, borrar',
+              cancelButtonText: 'Cancelar'
+            }"
+            (confirm)="deleteAgent(agent.agentId)"
+          >
+            Borrar
+          </button>
         </td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
       <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
     </table>
+    <mat-paginator
+      showFirstLastButtons
+      [length]="totalCount"
+      [pageSize]="pagination.recordsPerPage"
+      [pageSizeOptions]="[5, 10, 50]"
+      class="mat-elevation-z8"
+      (page)="onPaginateChange($event)"
+    ></mat-paginator>
   </ng-container>
 </app-generic-list>
 

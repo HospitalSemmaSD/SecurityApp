@@ -14,7 +14,8 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowAllOrigins",
         builder => builder.AllowAnyOrigin()
                           .AllowAnyMethod()
-                          .AllowAnyHeader());
+                          .AllowAnyHeader()
+                          .WithExposedHeaders("TotalCount"));
     //options.AddDefaultPolicy(corsOptions =>
     //{
     //    corsOptions.WithOrigins(allowedHosts)

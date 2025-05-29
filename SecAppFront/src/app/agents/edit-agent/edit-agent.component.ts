@@ -1,35 +1,48 @@
-import { Component, Input, numberAttribute } from '@angular/core';
+import {
+  Component,
+  inject,
+  Input,
+  numberAttribute,
+  OnInit,
+} from '@angular/core';
 import { AgentFormComponent } from '../agent-form/agent-form.component';
 import { AgentCreateDto, AgentDto } from '../models/agent';
+import { AgentServiceService } from '../agent-service.service';
+import { LoadingComponent } from '../../shared/components/loading/loading.component';
+import { ShowErrorsComponent } from '../../shared/components/show-errors/show-errors.component';
+import { Router } from '@angular/router';
+import { getErgetErrorsFromAPI } from '../../shared/funtions/getErrorsFromAPI';
 
 @Component({
   selector: 'app-edit-agent',
-  imports: [AgentFormComponent],
+  imports: [AgentFormComponent, LoadingComponent, ShowErrorsComponent],
   templateUrl: './edit-agent.component.html',
   styleUrl: './edit-agent.component.css',
 })
-export class EditAgentComponent {
+export class EditAgentComponent implements OnInit {
+  ngOnInit(): void {
+    this.agentService.getAgentById(this.id).subscribe((agent) => {
+      this.agent = agent;
+      console.log('Agent fetched for editing:', this.agent);
+    });
+  }
   @Input({ transform: numberAttribute })
-  agentId!: number;
-
-  //agent to be edited example
-  agent: AgentDto = {
-    agentId: 5,
-    name: 'Agent Name',
-    lastName: 'Agent Last Name',
-    phone: '8497825245',
-    identification: '00100055896',
-    email: 'agent@email.com',
-    birthday: new Date(),
-    status: true,
-    photo:
-      'https://img.freepik.com/foto-gratis/atractivo-policia-masculino-municiones-sosteniendo-pistola-ambas-manos-vista-frontal-hombre-barbudo-vestido-negro_7502-10633.jpg?ga=GA1.1.689866545.1743427208&semt=ais_hybrid',
-    agentCode: 12345,
-    rangeId: 1,
-    rangeName: 'Agent Range',
-  };
+  id!: number;
+  agent?: AgentDto;
+  agentService = inject(AgentServiceService);
+  errors: string[] = [];
+  router = inject(Router);
 
   saveChange(agent: AgentCreateDto) {
-    console.log('Editing agent', agent);
+    this.agentService.updateAgent(this.id, agent).subscribe({
+      next: (response) => {
+        console.log('Agent updated successfully:', response);
+        this.router.navigate(['/agents']);
+      },
+      error: (error) => {
+        const errors = getErgetErrorsFromAPI(error);
+        this.errors = errors;
+      },
+    });
   }
 }

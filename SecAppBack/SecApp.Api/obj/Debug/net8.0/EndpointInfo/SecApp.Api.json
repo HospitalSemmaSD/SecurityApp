@@ -44,26 +44,78 @@
             "description": "OK"
           }
         }
+      }
+    },
+    "/api/Agents/{id}": {
+      "get": {
+        "tags": [
+          "Agents"
+        ],
+        "operationId": "GetAgentByID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentDTO"
+                }
+              }
+            }
+          }
+        }
       },
       "put": {
         "tags": [
           "Agents"
         ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Agent"
+                "$ref": "#/components/schemas/AgentCreateDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Agent"
+                "$ref": "#/components/schemas/AgentCreateDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Agent"
+                "$ref": "#/components/schemas/AgentCreateDTO"
               }
             }
           }
@@ -81,41 +133,11 @@
         "parameters": [
           {
             "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Agents/{id }": {
-      "get": {
-        "tags": [
-          "Agents"
-        ],
-        "operationId": "GetAgentByID",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "id ",
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "integer",
+              "format": "int32"
             }
           }
         ],
@@ -173,7 +195,7 @@
   },
   "components": {
     "schemas": {
-      "Agent": {
+      "AgentCreateDTO": {
         "required": [
           "agentCode",
           "birthDay",
@@ -185,10 +207,6 @@
         ],
         "type": "object",
         "properties": {
-          "agentId": {
-            "type": "integer",
-            "format": "int32"
-          },
           "name": {
             "maxLength": 50,
             "minLength": 0,
@@ -235,37 +253,31 @@
         },
         "additionalProperties": false
       },
-      "AgentCreateDTO": {
+      "AgentDTO": {
         "required": [
-          "agentCode",
-          "birthDay",
-          "identification",
-          "lastName",
-          "name",
-          "phone",
-          "status"
+          "name"
         ],
         "type": "object",
         "properties": {
+          "agentId": {
+            "type": "integer",
+            "format": "int32"
+          },
           "name": {
-            "maxLength": 50,
-            "minLength": 0,
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "lastName": {
-            "maxLength": 50,
-            "minLength": 0,
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "phone": {
-            "maxLength": 10,
-            "minLength": 0,
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "identification": {
-            "maxLength": 11,
-            "minLength": 0,
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "email": {
             "type": "string",
