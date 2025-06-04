@@ -32,7 +32,10 @@ builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddDbContext<SecurityDBContext>(options => options.UseSqlServer("name=DefaultConnection"));
 
 
-builder.Services.AddScoped<ICRUDtRepository<Agent>, AgentRepository>();
+builder.Services.AddScoped<ICRUDRepository<Agent>, AgentRepository>();
+builder.Services.AddScoped<ICRUDRepository<Institution>, InstitutionRepository>();
+builder.Services.AddTransient<IFileSaver, LocalFileSaver>();
+builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddOutputCache(options =>
 {
@@ -58,6 +61,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseStaticFiles();
 app.UseCors("AllowAllOrigins");
 app.UseHttpsRedirection();
 app.UseOutputCache();

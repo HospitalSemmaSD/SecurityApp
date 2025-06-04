@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SecApp.Api.Models;
+using Range = SecApp.Api.Models.Range;
 
 
 namespace SecApp.Api
@@ -10,6 +11,8 @@ namespace SecApp.Api
         {
         }
 
-        public DbSet<Agent> agents { get; set; }
+        public DbSet<Agent> Agents { get; set; }
+        public DbSet<Institution> Institutions { get; set; }
+        public DbSet<Range> Ranges  { get; set; }
     }
 }

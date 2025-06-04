@@ -34,16 +34,19 @@ namespace SecApp.Api.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("BirthDay")
+                        .IsRequired()
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Identification")
                         .IsRequired()
                         .HasMaxLength(11)
                         .HasColumnType("nvarchar(11)");
+
+                    b.Property<int>("InstitutionId")
+                        .HasColumnType("int");
 
                     b.Property<string>("LastName")
                         .IsRequired()
@@ -61,8 +64,8 @@ namespace SecApp.Api.Migrations
                         .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("Photo")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(max)");
 
                     b.Property<int>("RangeId")
                         .HasColumnType("int");
@@ -72,7 +75,75 @@ namespace SecApp.Api.Migrations
 
                     b.HasKey("AgentId");
 
-                    b.ToTable("agents");
+                    b.HasIndex("InstitutionId");
+
+                    b.HasIndex("RangeId");
+
+                    b.ToTable("Agents");
+                });
+
+            modelBuilder.Entity("SecApp.Api.Models.Institution", b =>
+                {
+                    b.Property<int>("InstitutionId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("InstitutionId"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("InstitutionId");
+
+                    b.ToTable("Institutions");
+                });
+
+            modelBuilder.Entity("SecApp.Api.Models.Range", b =>
+                {
+                    b.Property<int>("RangeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RangeId"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("RangeId");
+
+                    b.ToTable("Ranges");
+                });
+
+            modelBuilder.Entity("SecApp.Api.Models.Agent", b =>
+                {
+                    b.HasOne("SecApp.Api.Models.Institution", "Institution")
+                        .WithMany("Agents")
+                        .HasForeignKey("InstitutionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SecApp.Api.Models.Range", "Range")
+                        .WithMany("Agents")
+                        .HasForeignKey("RangeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Institution");
+
+                    b.Navigation("Range");
+                });
+
+            modelBuilder.Entity("SecApp.Api.Models.Institution", b =>
+                {
+                    b.Navigation("Agents");
+                });
+
+            modelBuilder.Entity("SecApp.Api.Models.Range", b =>
+                {
+                    b.Navigation("Agents");
                 });
 #pragma warning restore 612, 618
         }

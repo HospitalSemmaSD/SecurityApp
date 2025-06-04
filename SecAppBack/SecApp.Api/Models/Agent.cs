@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 
 namespace SecApp.Api.Models
@@ -23,10 +24,14 @@ namespace SecApp.Api.Models
         public DateTime BirthDay { get; set; }
         [Required]
         public bool Status { get; set; }
+        [Unicode(false)]
         public string? Photo { get; set; } 
         [Required]
         public int AgentCode { get; set; }
         public int RangeId { get; set; }
+        public Range? Range { get; set; } // Navigation property to Range entity
+        public int InstitutionId { get; set; }
+        public Institution? Institution { get; set; } // Navigation property to Institution entity
 
     }
 }

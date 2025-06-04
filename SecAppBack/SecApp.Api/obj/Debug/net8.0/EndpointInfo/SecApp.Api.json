@@ -22,19 +22,101 @@
         ],
         "requestBody": {
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/AgentCreateDTO"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AgentCreateDTO"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/AgentCreateDTO"
+                "required": [
+                  "AgentCode",
+                  "BirthDay",
+                  "Identification",
+                  "LastName",
+                  "Name",
+                  "Phone",
+                  "Status"
+                ],
+                "type": "object",
+                "properties": {
+                  "Name": {
+                    "maxLength": 50,
+                    "minLength": 0,
+                    "type": "string"
+                  },
+                  "LastName": {
+                    "maxLength": 50,
+                    "minLength": 0,
+                    "type": "string"
+                  },
+                  "Phone": {
+                    "maxLength": 10,
+                    "minLength": 0,
+                    "type": "string"
+                  },
+                  "Identification": {
+                    "maxLength": 11,
+                    "minLength": 0,
+                    "type": "string"
+                  },
+                  "Email": {
+                    "type": "string"
+                  },
+                  "BirthDay": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "Status": {
+                    "type": "boolean"
+                  },
+                  "Photo": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "AgentCode": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "RangeId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "InstitutionId": {
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              },
+              "encoding": {
+                "Name": {
+                  "style": "form"
+                },
+                "LastName": {
+                  "style": "form"
+                },
+                "Phone": {
+                  "style": "form"
+                },
+                "Identification": {
+                  "style": "form"
+                },
+                "Email": {
+                  "style": "form"
+                },
+                "BirthDay": {
+                  "style": "form"
+                },
+                "Status": {
+                  "style": "form"
+                },
+                "Photo": {
+                  "style": "form"
+                },
+                "AgentCode": {
+                  "style": "form"
+                },
+                "RangeId": {
+                  "style": "form"
+                },
+                "InstitutionId": {
+                  "style": "form"
+                }
               }
             }
           }
@@ -191,6 +273,93 @@
           }
         }
       }
+    },
+    "/api/Institutions": {
+      "get": {
+        "tags": [
+          "Institutions"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Institutions"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "Name"
+                ],
+                "type": "object",
+                "properties": {
+                  "Name": {
+                    "maxLength": 100,
+                    "minLength": 0,
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "Name": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Institutions/{id}": {
+      "get": {
+        "tags": [
+          "Institutions"
+        ],
+        "operationId": "GetInstitutionByID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/InstitutionDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InstitutionDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InstitutionDTO"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -240,6 +409,7 @@
           },
           "photo": {
             "type": "string",
+            "format": "binary",
             "nullable": true
           },
           "agentCode": {
@@ -247,6 +417,10 @@
             "format": "int32"
           },
           "rangeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "institutionId": {
             "type": "integer",
             "format": "int32"
           }
@@ -301,6 +475,23 @@
           "rangeId": {
             "type": "integer",
             "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "InstitutionDTO": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "institutionId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

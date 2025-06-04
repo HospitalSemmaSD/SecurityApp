@@ -24,10 +24,11 @@ namespace SecApp.Api.DTOs
         public DateTime BirthDay { get; set; }
         [Required]
         public bool Status { get; set; }
-        public string Photo { get; set; } = string.Empty;
+        public IFormFile? Photo { get; set; }
         [Required]
         public int AgentCode { get; set; }
         public int RangeId { get; set; }
+        public int InstitutionId { get; set; }
 
     }
 }

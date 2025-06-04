@@ -13,19 +13,22 @@ namespace SecApp.Controllers
     [ApiController]
     public class AgentsController : ControllerBase
     {
-        private readonly ICRUDtRepository<Agent> agentsRepository;
+        private readonly ICRUDRepository<Agent> agentsRepository;
         private readonly IOutputCacheStore outputCache;
         private readonly IMapper mapper;
+        private readonly IFileSaver fileSaver;
         private const string cacheTag = "agents";
+        private const string AgentFolderPath = "agents"; // "wwwroot/uploads/agents"; // Ensure this path exists in your project
 
         public AgentsController(
-                                ICRUDtRepository<Agent> agentsRepository,
-                                IOutputCacheStore outputCache, IMapper mapper)
+                                ICRUDRepository<Agent> agentsRepository,
+                                IOutputCacheStore outputCache, IMapper mapper, IFileSaver fileSaver)
         {
 
             this.agentsRepository = agentsRepository;
             this.outputCache = outputCache;
             this.mapper = mapper;
+            this.fileSaver = fileSaver;
         }
 
 
@@ -38,7 +41,7 @@ namespace SecApp.Controllers
             //    return BadRequest("Pagination parameters are required.");
             //}
   
-            var agents = await agentsRepository.GetAgents();
+            var agents = await agentsRepository.GetAll();
             if (agents is null)
             {
                 return NotFound();
@@ -70,33 +73,13 @@ namespace SecApp.Controllers
         [OutputCache(Tags = [cacheTag])] //how to know that this item is in the cache?
         public async Task<IActionResult> GetAgentsRanges()
         {
-            //List<AgentVM> agents = new List<AgentVM>();
-            //var db = dbConnection();
-            //var sql = @"SELECT a.name as Name, a.lastname as LastName, a.phone as Phone, a.photo as Photo,
-            //            a.AgentCode, a.Identification, r.name as RangeName 
-            //            FROM agents a 
-            //            join ranges r
-            //            on a.rangeId = r.rangeId";
-            //var result = await db.QueryAsync<AgentVM>(sql, new { });
-            //foreach (var item in result)
-            //{
-            //    agents.Add(new AgentVM
-            //    {
-            //        Name = item.Name,
-            //        LastName = item.LastName,
-            //        Phone = item.Phone,
-            //        RangeName = item.RangeName,
-            //        Photo = item.Photo,
-            //        Identification = item.Identification,
-            //        AgentCode = item.AgentCode
-            //    });
-            //}
+            
             var agents = new List<Agent>();
             return Ok(agents);
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateAgent([FromBody] AgentCreateDTO agentDTO)
+        public async Task<IActionResult> CreateAgent([FromForm] AgentCreateDTO agentDTO)
         {
             if (agentDTO == null)
             {
@@ -108,7 +91,17 @@ namespace SecApp.Controllers
                 return BadRequest(ModelState);
             }
             var agent = mapper.Map<Agent>(agentDTO);
-            var created = await agentsRepository.InsertAgent(agent);
+            if (agentDTO.Photo != null)
+            {
+               
+                var url = await fileSaver.SaveFile(AgentFolderPath, agentDTO.Photo);
+                agent.Photo = url;
+            }
+            else
+            {
+                agent.Photo = null; // or set a default photo path if needed
+            }
+            await agentsRepository.Insert(agent);
             await outputCache.EvictByTagAsync(cacheTag, default);
             return CreatedAtRoute("GetAgentByID", new { id = agent.AgentId }, agent);
         }
@@ -123,7 +116,7 @@ namespace SecApp.Controllers
             }
             var updatedAgent = mapper.Map(agentCreateDTO, existingAgent);
             existingAgent.AgentId = id; // Ensure the ID is set correctly
-            await agentsRepository.UpdateAgent(updatedAgent);
+            await agentsRepository.Update(updatedAgent);
             await outputCache.EvictByTagAsync(cacheTag,default);
             return NoContent();
         }
@@ -131,7 +124,7 @@ namespace SecApp.Controllers
         [HttpDelete("{id:int}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var agentsDeleted = await agentsRepository.DeleteAgent(id);
+            var agentsDeleted = await agentsRepository.Delete(id);
             if (!agentsDeleted)
             {
                 return NotFound();

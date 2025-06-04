@@ -26,7 +26,8 @@ export class AgentServiceService {
   }
 
   public createAgent(agent: AgentCreateDto) {
-    return this.http.post<AgentCreateDto>(this.baseURL, agent).pipe(
+    const formData = this.formData(agent);
+    return this.http.post<AgentCreateDto>(this.baseURL, formData).pipe(
       catchError((error) => {
         console.error('ERROR CREANTO EL AGENTE:', error);
         throw error;
@@ -68,6 +69,24 @@ export class AgentServiceService {
     return this.http.delete<void>(`${this.baseURL}/${id}`);
   }
 
+  private formData(agent: AgentCreateDto): FormData {
+    const formData = new FormData();
+    formData.append('name', agent.name);
+    formData.append('lastName', agent.lastName);
+    formData.append('phone', agent.phone);
+    formData.append('identification', agent.identification);
+    formData.append('email', agent.email || '');
+    formData.append('birthday', agent.birthday.toISOString().split('T')[0]);
+    formData.append('status', String(agent.status));
+    formData.append('rangeId', String(agent.rangeId));
+    formData.append('institutionId', String(agent.institutionId));
+    formData.append('agentCode', String(agent.agentCode));
+    if (agent.photo) {
+      formData.append('photo', agent.photo);
+    }
+
+    return formData;
+  }
   uploadImage(file: File): Observable<{ imageUrl: string }> {
     const formData = new FormData();
     formData.append('file', file);

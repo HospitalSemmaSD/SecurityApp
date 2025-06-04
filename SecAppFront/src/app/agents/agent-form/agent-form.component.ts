@@ -84,6 +84,10 @@ export class AgentFormComponent implements OnInit {
     { id: 12, name: 'Mayor General' },
     { id: 13, name: 'Teniente General' },
   ];
+  institutions: any[] = [
+    { id: 1, name: 'Policia Nacional -PN-' },
+    { id: 2, name: 'Fuerzas Armadas -FFAA-' },
+  ];
 
   form = this.formBuilder.group({
     name: ['', { validators: [Validators.required] }],
@@ -108,6 +112,9 @@ export class AgentFormComponent implements OnInit {
     }),
     photo: new FormControl<File | string | null>(null),
     rangeId: new FormControl<number | null>(null, {
+      validators: [Validators.required],
+    }),
+    institutionId: new FormControl<number | null>(null, {
       validators: [Validators.required],
     }),
     //agentId: new FormControl<number | null>(null),

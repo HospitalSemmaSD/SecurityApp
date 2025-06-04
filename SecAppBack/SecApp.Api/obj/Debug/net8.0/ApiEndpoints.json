@@ -18,9 +18,59 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "agentDTO",
-        "Type": "SecApp.Api.DTOs.AgentCreateDTO",
-        "IsRequired": true
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "LastName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Phone",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Identification",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "BirthDay",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "Status",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Photo",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "AgentCode",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "RangeId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "InstitutionId",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -114,5 +164,58 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SecApp.Api.Controllers.InstitutionsController",
+    "Method": "Get",
+    "RelativePath": "api/Institutions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SecApp.Api.Controllers.InstitutionsController",
+    "Method": "Post",
+    "RelativePath": "api/Institutions",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SecApp.Api.Controllers.InstitutionsController",
+    "Method": "Get",
+    "RelativePath": "api/Institutions/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SecApp.Api.DTOs.InstitutionDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetInstitutionByID"
   }
 ]

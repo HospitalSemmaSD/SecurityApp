@@ -1,13 +1,11 @@
 ﻿using AutoMapper;
-using AutoMapper.QueryableExtensions;
 using Microsoft.EntityFrameworkCore;
 using SecApp.Api.Interfaces;
 using SecApp.Api.Models;
-using SecApp.Api.Utilities;
 
 namespace SecApp.Api.Repositories
 {
-    public class AgentRepository : ICRUDtRepository<Agent>
+    public class AgentRepository : ICRUDRepository<Agent>
     {
         private readonly SecurityDBContext context;
         private readonly IMapper mapper;
@@ -18,38 +16,35 @@ namespace SecApp.Api.Repositories
             this.mapper = mapper;
         }
 
-        public async Task<List<Agent>> GetAgents()
+        public async Task<List<Agent>> GetAll()
         {
-            var agents = await context.agents.ToListAsync();
+            var agents = await context.Agents.ToListAsync();
             return agents;
         }
 
         public async Task<Agent> GetDetails(int id)
         {
-            var agent = await context.agents.FirstOrDefaultAsync(x => x.AgentId == id);
+            var agent = await context.Agents.FirstOrDefaultAsync(x => x.AgentId == id);
 
             return agent;
 
         }
-        public async Task<bool> InsertAgent(Agent agent)
+        public async Task<bool> Insert(Agent agent)
         {
-           
             context.Add(agent);
-            await context.SaveChangesAsync();
-            return true;
-           
-
-        }
-        public async Task<bool> UpdateAgent(Agent agent)
-        {           
-            context.agents.Update(agent);
             return await context.SaveChangesAsync() > 0;
 
         }
-        public async Task<bool> DeleteAgent(int id)
+        public async Task<bool> Update(Agent agent)
+        {
+            context.Agents.Update(agent);
+            return await context.SaveChangesAsync() > 0;
+
+        }
+        public async Task<bool> Delete(int id)
         {
 
-            var agentsDeteled = await context.agents.Where(x => x.AgentId == id).ExecuteDeleteAsync();
+            var agentsDeteled = await context.Agents.Where(x => x.AgentId == id).ExecuteDeleteAsync();
             return true;
 
         }

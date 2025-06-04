@@ -84,15 +84,7 @@
           placeholder="Codigo"
         />
       </mat-form-field>
-      <!-- <mat-form-field appearance="outline" class="m-width">
-        <mat-label>Id</mat-label>
-        <input
-          matInput
-          [formControl]="form.controls.agentId"
-          type="number"
-          placeholder="Codigo"
-        />
-      </mat-form-field> -->
+
       <mat-form-field appearance="outline" class="m-width">
         <mat-label>Rango</mat-label>
         <mat-select [formControl]="form.controls.rangeId" required>
@@ -101,6 +93,18 @@
 
           <mat-option [value]="range.id">
             {{ range.name }}
+          </mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="m-width">
+        <mat-label>Institucion</mat-label>
+        <mat-select [formControl]="form.controls.institutionId" required>
+          <mat-option [value]="0">--Seleccione la Institucion</mat-option>
+          @for (institution of institutions; track $index) {
+
+          <mat-option [value]="institution.id">
+            {{ institution.name }}
           </mat-option>
           }
         </mat-select>
