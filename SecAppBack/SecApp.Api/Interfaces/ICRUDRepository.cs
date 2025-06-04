@@ -2,7 +2,7 @@
 {
     public interface ICRUDRepository<T> where T : class
     {
-        Task<List<T>> GetAll();
+        Task<IQueryable<T>>  GetAll();
 
         Task<T> GetDetails(int id);
         Task<bool> Insert(T obj);

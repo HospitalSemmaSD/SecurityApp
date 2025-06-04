@@ -16,9 +16,10 @@ namespace SecApp.Api.Repositories
             this.mapper = mapper;
         }
 
-        public async Task<List<Agent>> GetAll()
+        public  async Task<IQueryable<Agent>> GetAll()
         {
-            var agents = await context.Agents.ToListAsync();
+            var agents =  context.Agents.AsQueryable();
+
             return agents;
         }
 

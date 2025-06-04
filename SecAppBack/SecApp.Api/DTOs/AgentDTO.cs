@@ -9,7 +9,7 @@ namespace SecApp.Api.DTOs
         
         public required string Name { get; set; } = string.Empty;
         
-        public string LastName { get; set; } = string.Empty;
+        public required string LastName { get; set; } = string.Empty;
       
         public string Phone { get; set; } = string.Empty;
         

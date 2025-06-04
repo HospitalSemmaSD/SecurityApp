@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
-import { User } from '../models/user';
+import { User } from '../shared/models/user'; // Adjust the import path as necessary
 
 @Injectable({
   providedIn: 'root',

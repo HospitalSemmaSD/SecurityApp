@@ -16,10 +16,10 @@ namespace SecApp.Api.Repositories
             this.mapper = mapper;
         }
 
-        public async Task<List<Institution>> GetAll()
+        public async Task<IQueryable<Institution>> GetAll()
         {
             var institutions = await context.Institutions.ToListAsync();
-            return institutions;
+            return institutions.AsQueryable();
         }
 
         public async Task<Institution> GetDetails(int id)

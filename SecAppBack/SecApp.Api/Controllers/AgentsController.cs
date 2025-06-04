@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OutputCaching;
+using Microsoft.EntityFrameworkCore;
 using SecApp.Api.DTOs;
 using SecApp.Api.Interfaces;
 using SecApp.Api.Models;
@@ -32,27 +34,19 @@ namespace SecApp.Controllers
         }
 
 
-
         [HttpGet]
-        public async Task<IActionResult> Get(/*[FromQuery] PaginationDTO pagination*/)
+        public async Task<List<AgentDTO>> Get([FromQuery] PaginationDTO pagination)
         {
-            //if (pagination == null)
-            //{
-            //    return BadRequest("Pagination parameters are required.");
-            //}
-  
-            var agents = await agentsRepository.GetAll();
-            if (agents is null)
-            {
-                return NotFound();
-            }
-            //await HttpContext.InsertParamsHeader((IQueryable<AgentDTO>)agents);
-            ////agents = agents.OrderBy(a => a.Name)
-            //    .AsQueryable()
-            //    .Pager(pagination).ToList();
-            var agentsDTOs = mapper.Map<List<AgentDTO>>(agents);
+            var queryable = await agentsRepository.GetAll();
 
-            return Ok(agentsDTOs);
+            await HttpContext.InsertParamsHeader(queryable);
+            queryable = queryable
+                .OrderBy(a => a.Name)
+                .Pager(pagination);
+
+            var agentsDTOs = mapper.Map<List<AgentDTO>>(queryable);
+
+            return agentsDTOs;
         }
 
         [HttpGet("{id:int}", Name = "GetAgentByID")]
@@ -73,7 +67,7 @@ namespace SecApp.Controllers
         [OutputCache(Tags = [cacheTag])] //how to know that this item is in the cache?
         public async Task<IActionResult> GetAgentsRanges()
         {
-            
+
             var agents = new List<Agent>();
             return Ok(agents);
         }
@@ -93,7 +87,7 @@ namespace SecApp.Controllers
             var agent = mapper.Map<Agent>(agentDTO);
             if (agentDTO.Photo != null)
             {
-               
+
                 var url = await fileSaver.SaveFile(AgentFolderPath, agentDTO.Photo);
                 agent.Photo = url;
             }
@@ -117,7 +111,7 @@ namespace SecApp.Controllers
             var updatedAgent = mapper.Map(agentCreateDTO, existingAgent);
             existingAgent.AgentId = id; // Ensure the ID is set correctly
             await agentsRepository.Update(updatedAgent);
-            await outputCache.EvictByTagAsync(cacheTag,default);
+            await outputCache.EvictByTagAsync(cacheTag, default);
             return NoContent();
         }
 
