@@ -1,2 +1,12 @@
-wwwroot\agents\6f12c586-9131-46c2-83fd-fbd421b31071.PNG
+wwwroot\agents\9ed59969-860a-4c23-ba60-8d7017db28d6.png
+wwwroot\agents\62f786f8-d886-46f8-8c7c-278afaa98663.jpeg
+wwwroot\agents\5204e41e-d9f0-4b5f-8707-bb85ba37d58d.jpeg
+wwwroot\agents\prueba.txt
+wwwroot\agents\c0234779-36db-4531-9804-e91f7b392bae.jpg
 wwwroot\agents\a31c13a8-2089-4693-aaf0-bbeeaafe42f5.JPG
+wwwroot\prueba.txt
+wwwroot\agents\6f12c586-9131-46c2-83fd-fbd421b31071.PNG
+wwwroot\agents\2a5c1c07-40c4-44ae-aa88-6a5a4eb4af56.jpg
+wwwroot\agents\1f8fe5d3-8f90-42e8-9a32-04b14dc74960.jpeg
+wwwroot\.DS_Store
+wwwroot\uploads\prueba.txt

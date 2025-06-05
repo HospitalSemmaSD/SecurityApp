@@ -26,7 +26,7 @@ export class AgentServiceService {
   }
 
   public createAgent(agent: AgentCreateDto) {
-    const formData = this.formData(agent);
+    const formData = this.setFormData(agent);
     return this.http.post<AgentCreateDto>(this.baseURL, formData).pipe(
       catchError((error) => {
         console.error('ERROR CREANTO EL AGENTE:', error);
@@ -44,24 +44,12 @@ export class AgentServiceService {
     );
   }
   public getAgentById(agentId: number): Observable<AgentDto> {
-    return this.http.get<AgentDto>(`${this.baseURL}/${agentId}`).pipe(
-      catchError((error) => {
-        console.error('ERROR OBTENIENDO EL AGENTE:', error);
-        throw error; // Rethrow the error to propagate it to the caller
-      })
-    );
+    return this.http.get<AgentDto>(`${this.baseURL}/${agentId}`);
   }
   public updateAgent(id: number, agent: AgentCreateDto) {
-    // if (!agent.photo) {
-    //   agent.photo = '';
-    // }
-    // return this.http.patch<AgentDto>(this.baseURL, agent).pipe(
-    //   catchError((error) => {
-    //     console.error('ERROR CREANTO EL AGENTE:', error);
-    //     throw error; // Rethrow the error to propagate it to the caller
-    //   })
-    // );
-    return this.http.put(` + this.baseURL + /${id}`, agent);
+    const formData = this.setFormData(agent);
+    console.log('FormData for update:', formData.values());
+    return this.http.put(`${this.baseURL}/${id}`, formData);
   }
 
   public deleteAgent(id: number): Observable<void> {
@@ -69,7 +57,7 @@ export class AgentServiceService {
     return this.http.delete<void>(`${this.baseURL}/${id}`);
   }
 
-  private formData(agent: AgentCreateDto): FormData {
+  private setFormData(agent: AgentCreateDto): FormData {
     const formData = new FormData();
     formData.append('name', agent.name);
     formData.append('lastName', agent.lastName);
@@ -84,7 +72,7 @@ export class AgentServiceService {
     if (agent.photo) {
       formData.append('photo', agent.photo);
     }
-
+    console.log('FormData created:', formData);
     return formData;
   }
   uploadImage(file: File): Observable<{ imageUrl: string }> {

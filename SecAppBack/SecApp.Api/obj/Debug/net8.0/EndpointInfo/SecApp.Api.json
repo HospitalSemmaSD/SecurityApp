@@ -229,19 +229,101 @@
         ],
         "requestBody": {
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/AgentCreateDTO"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AgentCreateDTO"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/AgentCreateDTO"
+                "required": [
+                  "AgentCode",
+                  "BirthDay",
+                  "Identification",
+                  "LastName",
+                  "Name",
+                  "Phone",
+                  "Status"
+                ],
+                "type": "object",
+                "properties": {
+                  "Name": {
+                    "maxLength": 50,
+                    "minLength": 0,
+                    "type": "string"
+                  },
+                  "LastName": {
+                    "maxLength": 50,
+                    "minLength": 0,
+                    "type": "string"
+                  },
+                  "Phone": {
+                    "maxLength": 10,
+                    "minLength": 0,
+                    "type": "string"
+                  },
+                  "Identification": {
+                    "maxLength": 11,
+                    "minLength": 0,
+                    "type": "string"
+                  },
+                  "Email": {
+                    "type": "string"
+                  },
+                  "BirthDay": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "Status": {
+                    "type": "boolean"
+                  },
+                  "Photo": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "AgentCode": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "RangeId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "InstitutionId": {
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              },
+              "encoding": {
+                "Name": {
+                  "style": "form"
+                },
+                "LastName": {
+                  "style": "form"
+                },
+                "Phone": {
+                  "style": "form"
+                },
+                "Identification": {
+                  "style": "form"
+                },
+                "Email": {
+                  "style": "form"
+                },
+                "BirthDay": {
+                  "style": "form"
+                },
+                "Status": {
+                  "style": "form"
+                },
+                "Photo": {
+                  "style": "form"
+                },
+                "AgentCode": {
+                  "style": "form"
+                },
+                "RangeId": {
+                  "style": "form"
+                },
+                "InstitutionId": {
+                  "style": "form"
+                }
               }
             }
           }
@@ -408,69 +490,6 @@
   },
   "components": {
     "schemas": {
-      "AgentCreateDTO": {
-        "required": [
-          "agentCode",
-          "birthDay",
-          "identification",
-          "lastName",
-          "name",
-          "phone",
-          "status"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "maxLength": 50,
-            "minLength": 0,
-            "type": "string"
-          },
-          "lastName": {
-            "maxLength": 50,
-            "minLength": 0,
-            "type": "string"
-          },
-          "phone": {
-            "maxLength": 10,
-            "minLength": 0,
-            "type": "string"
-          },
-          "identification": {
-            "maxLength": 11,
-            "minLength": 0,
-            "type": "string"
-          },
-          "email": {
-            "type": "string",
-            "nullable": true
-          },
-          "birthDay": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "status": {
-            "type": "boolean"
-          },
-          "photo": {
-            "type": "string",
-            "format": "binary",
-            "nullable": true
-          },
-          "agentCode": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "rangeId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "institutionId": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
       "AgentDTO": {
         "required": [
           "lastName",

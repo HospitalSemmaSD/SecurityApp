@@ -34,7 +34,7 @@ namespace SecApp.Api.Repositories
             {
                 Directory.CreateDirectory(folder);
             }
-            var filePath = Path.Combine(folder, fileName);
+            string filePath = Path.Combine(folder, fileName);
             using (var ms = new MemoryStream())
             {
                 await file.CopyToAsync(ms);
@@ -42,11 +42,11 @@ namespace SecApp.Api.Repositories
                 await File.WriteAllBytesAsync(filePath, content);
 
             }
-
-            var request = httpContextAccessor.HttpContext?.Request!;
-            var url = $"{request.Scheme}://{request.Host}";
-            var imageUrl = Path.Combine(url, filePath,fileName).Replace("\\","/");
-            return imageUrl;
+            var publicUrl = $"/agents/{fileName}";
+            //var request = httpContextAccessor.HttpContext!.Request!;
+            //var url = $"{request.Scheme}://{request.Host}";
+            //var imageUrl = Path.Combine(url, filePath).Replace("\\","/");
+            return publicUrl;
 
         }
     }

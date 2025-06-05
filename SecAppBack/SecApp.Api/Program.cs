@@ -46,13 +46,13 @@ builder.Services.AddOutputCache(options =>
 
 var app = builder.Build();
 
-app.UseStaticFiles();
+//app.UseStaticFiles();
 
 app.UseStaticFiles(new StaticFileOptions
 {
     FileProvider = new PhysicalFileProvider(
-        Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Uploads")),
-    RequestPath = "/images"
+        Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")),
+        RequestPath = ""
 });
 
 // Configure the HTTP request pipeline.
@@ -61,9 +61,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-app.UseStaticFiles();
-app.UseCors("AllowAllOrigins");
+
 app.UseHttpsRedirection();
+app.UseRouting();
+app.UseCors("AllowAllOrigins");
 app.UseOutputCache();
 app.UseAuthorization();
 app.MapControllers();

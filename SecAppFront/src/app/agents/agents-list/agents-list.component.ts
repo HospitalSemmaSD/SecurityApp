@@ -59,11 +59,6 @@ export class AgentsListComponent implements OnInit {
     this.getAgents();
   }
 
-  onPaginateChange(data: PageEvent) {
-    this.pagination.page = data.pageIndex + 1; // PageEvent is zero-based
-    this.pagination.recordsPerPage = data.pageSize;
-    this.getAgents();
-  }
   getAgents() {
     this.agentService
       .getAgentsPagedList(this.pagination)
@@ -72,6 +67,14 @@ export class AgentsListComponent implements OnInit {
         const header = response.headers.get('totalCount') as string;
         this.totalCount = parseInt(header, 10);
       });
+  }
+
+  onPaginateChange(data: PageEvent) {
+    this.pagination = {
+      page: data.pageIndex + 1, // PageEvent is zero-based
+      recordsPerPage: data.pageSize,
+    };
+    this.getAgents();
   }
 
   deleteAgent(id: number) {

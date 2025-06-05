@@ -20,7 +20,7 @@ namespace SecApp.Controllers
         private readonly IMapper mapper;
         private readonly IFileSaver fileSaver;
         private const string cacheTag = "agents";
-        private const string AgentFolderPath = "agents"; // "wwwroot/uploads/agents"; // Ensure this path exists in your project
+        private readonly string AgentFolderPath = "agents"; // "wwwroot/uploads/agents"; // Ensure this path exists in your project
 
         public AgentsController(
                                 ICRUDRepository<Agent> agentsRepository,
@@ -75,15 +75,7 @@ namespace SecApp.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateAgent([FromForm] AgentCreateDTO agentDTO)
         {
-            if (agentDTO == null)
-            {
-                return BadRequest();
-
-            }
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            
             var agent = mapper.Map<Agent>(agentDTO);
             if (agentDTO.Photo != null)
             {
@@ -91,25 +83,27 @@ namespace SecApp.Controllers
                 var url = await fileSaver.SaveFile(AgentFolderPath, agentDTO.Photo);
                 agent.Photo = url;
             }
-            else
-            {
-                agent.Photo = null; // or set a default photo path if needed
-            }
+          
             await agentsRepository.Insert(agent);
             await outputCache.EvictByTagAsync(cacheTag, default);
             return CreatedAtRoute("GetAgentByID", new { id = agent.AgentId }, agent);
         }
 
         [HttpPut("{id:int}")]
-        public async Task<IActionResult> UpdateAgent(int id, [FromBody] AgentCreateDTO agentCreateDTO)
+        public async Task<IActionResult> UpdateAgent(int id, [FromForm] AgentCreateDTO agentCreateDTO)
         {
-            var existingAgent = await agentsRepository.GetDetails(id);
-            if (existingAgent == null)
+            var agent = await agentsRepository.GetDetails(id);
+            
+            if (agent == null)
             {
                 return NotFound();
             }
-            var updatedAgent = mapper.Map(agentCreateDTO, existingAgent);
-            existingAgent.AgentId = id; // Ensure the ID is set correctly
+            var updatedAgent = mapper.Map(agentCreateDTO, agent);
+            updatedAgent.AgentId = id; // Ensure the ID is set correctly
+            if (agent.Photo is not null)
+            {
+                agent.Photo = await fileSaver.Update(updatedAgent.Photo, AgentFolderPath, agentCreateDTO.Photo);
+            }
             await agentsRepository.Update(updatedAgent);
             await outputCache.EvictByTagAsync(cacheTag, default);
             return NoContent();
