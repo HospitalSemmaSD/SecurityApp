@@ -8,13 +8,14 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 
 import { AgentServiceService } from '../agent-service.service';
-import { AgentDto } from '../models/agent';
+import { AgentCreateDto, AgentDto } from '../models/agent';
 import { GenericListComponent } from '../../shared/components/generic-list/generic-list.component';
 import { MatTableModule } from '@angular/material/table';
 import { HttpResponse } from '@angular/common/http';
 import { PaginationDTO } from '../../shared/models/paginationDTO';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { ICRUDService } from '../../shared/interfaces/ICRUDService';
 //import { MatFormFieldModule } from '@angular/material/form-field';
 //import { MatInputModule } from '@angular/material/input';
 
@@ -42,7 +43,10 @@ export class AgentsListComponent implements OnInit {
     setTimeout(() => {}, 3000);
   }
 
-  private agentService = inject(AgentServiceService);
+  private agentService = inject(AgentServiceService) as ICRUDService<
+    AgentDto,
+    AgentCreateDto
+  >;
   @Input({ required: true })
   agents: AgentDto[] = [];
   columnsToDisplay: string[] = [
@@ -61,7 +65,7 @@ export class AgentsListComponent implements OnInit {
 
   getAgents() {
     this.agentService
-      .getAgentsPagedList(this.pagination)
+      .getPagedList(this.pagination)
       .subscribe((response: HttpResponse<AgentDto[]>) => {
         this.agents = response.body as [];
         const header = response.headers.get('totalCount') as string;
@@ -78,7 +82,7 @@ export class AgentsListComponent implements OnInit {
   }
 
   deleteAgent(id: number) {
-    this.agentService.deleteAgent(id).subscribe({
+    this.agentService.delete(id).subscribe({
       next: () => {
         this.getAgents();
       },

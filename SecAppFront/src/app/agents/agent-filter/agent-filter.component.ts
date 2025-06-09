@@ -64,7 +64,7 @@ export class AgentFilterComponent implements OnInit {
   });
 
   getAgents() {
-    this.agentService.getAgents().subscribe((data: any) => {
+    this.agentService.getALL().subscribe((data: any) => {
       for (let i = 0; i < data.length; i++) {
         if (data[i].photo.length === 0) {
           data[i].photo = 'DefaultAgent.jpg';

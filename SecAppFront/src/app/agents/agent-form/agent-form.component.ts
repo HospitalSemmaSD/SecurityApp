@@ -54,7 +54,6 @@ import moment from 'moment';
 export class AgentFormComponent implements OnInit {
   ngOnInit(): void {
     if (this.model !== undefined) {
-      console.log('Foto del agente:', this.model.photo);
       this.form.patchValue(this.model);
     }
   }

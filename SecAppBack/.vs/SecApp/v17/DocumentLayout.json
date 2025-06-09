@@ -36,7 +36,7 @@
               "RelativeDocumentMoniker": "SecApp.Api\\Program.cs",
               "ToolTip": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\Program.cs",
               "RelativeToolTip": "SecApp.Api\\Program.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAADgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-05T13:05:57.114Z",
               "EditorCaption": ""
@@ -51,8 +51,7 @@
               "RelativeToolTip": "SecApp.Api\\Repositories\\LocalFileSaver.cs",
               "ViewState": "AgIAACUAAAAAAAAAAAAAwDIAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T18:06:51.141Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-04T18:06:51.141Z"
             },
             {
               "$type": "Document",
@@ -64,8 +63,7 @@
               "RelativeToolTip": "SecApp.Api\\Repositories\\AgentRepository.cs",
               "ViewState": "AgIAABgAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T17:42:42.328Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-04T17:42:42.328Z"
             },
             {
               "$type": "Document",
@@ -77,8 +75,7 @@
               "RelativeToolTip": "SecApp.Api\\Controllers\\AgentsController.cs",
               "ViewState": "AgIAADQAAAAAAAAAAAAcwFQAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T17:27:14.551Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-04T17:27:14.551Z"
             }
           ]
         }

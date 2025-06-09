@@ -1,5 +1,10 @@
 
-
+.delete-button {
+    
+    background: transparent;
+    
+    background-color: red;
+  }
 .agent-elements {
   margin-top: 1rem;
 }

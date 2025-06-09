@@ -18,8 +18,7 @@ export class CreateAGentComponent {
   errors: string[] = [];
 
   saveChange(agent: AgentCreateDto) {
-    console.log('Agent to be created:', agent);
-    this.agentService.createAgent(agent).subscribe({
+    this.agentService.create(agent).subscribe({
       next: (data) => {
         console.log('Agent created successfully:', data);
         this.router.navigate(['/agents']);

@@ -1,11 +1,4 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  input,
-  OnInit,
-  Output,
-} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { toBase64 } from '../../funtions/toBase64';
 import { CommonModule } from '@angular/common';
@@ -15,11 +8,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './input-img.component.html',
   styleUrl: './input-img.component.css',
 })
-export class InputImgComponent implements OnInit {
-  ngOnInit(): void {
-    console.log('imagen actual', this.actualPhoto);
-  }
-
+export class InputImgComponent {
   @Input({ required: true })
   title: string = 'Input Image Component';
 

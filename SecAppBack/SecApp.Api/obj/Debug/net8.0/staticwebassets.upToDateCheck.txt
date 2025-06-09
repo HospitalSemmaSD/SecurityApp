@@ -10,3 +10,4 @@ wwwroot\agents\2a5c1c07-40c4-44ae-aa88-6a5a4eb4af56.jpg
 wwwroot\agents\1f8fe5d3-8f90-42e8-9a32-04b14dc74960.jpeg
 wwwroot\.DS_Store
 wwwroot\uploads\prueba.txt
+wwwroot\agents\a2897568-edd4-4465-b82c-1024631a4f84.jpg

@@ -3,19 +3,21 @@ import { inject, Injectable } from '@angular/core';
 import { catchError, Observable } from 'rxjs';
 import { AgentCreateDto, AgentDto } from './models/agent';
 import { environment } from '../../environments/environment'; // Adjust the import path as needed
-import { DatePipe } from '@angular/common';
+
 import { PaginationDTO } from '../shared/models/paginationDTO';
 import { getQueryParams } from '../shared/funtions/queryParams';
+import { ICRUDService } from '../shared/interfaces/ICRUDService';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AgentServiceService {
+export class AgentServiceService
+  implements ICRUDService<AgentDto, AgentCreateDto>
+{
   constructor() {}
   private http = inject(HttpClient);
   private baseURL = environment.API_URL + 'agents';
-
-  public getAgentsPagedList(
+  getPagedList(
     pagination: PaginationDTO
   ): Observable<HttpResponse<AgentDto[]>> {
     let queryParams = getQueryParams(pagination);
@@ -24,9 +26,20 @@ export class AgentServiceService {
       observe: 'response',
     });
   }
-
-  public createAgent(agent: AgentCreateDto) {
-    const formData = this.setFormData(agent);
+  getALL(): Observable<HttpResponse<AgentDto[]>> {
+    throw new Error('Method not implemented.');
+    // return this.http.get<AgentDto[]>(this.baseURL).pipe(
+    //   catchError((error) => {
+    //     console.error('ERROR OBTENIENDO EL AGENTE:', error);
+    //     throw error; // Rethrow the error to propagate it to the caller
+    //   })
+    // );
+  }
+  getByFilter(filter: any): Observable<HttpResponse<AgentDto[]>> {
+    throw new Error('Method not implemented.');
+  }
+  create(tdto: AgentCreateDto): Observable<any> {
+    const formData = this.setFormData(tdto);
     return this.http.post<AgentCreateDto>(this.baseURL, formData).pipe(
       catchError((error) => {
         console.error('ERROR CREANTO EL AGENTE:', error);
@@ -34,27 +47,16 @@ export class AgentServiceService {
       })
     );
   }
+  update(id: number, entity: AgentCreateDto): Observable<any> {
+    const formData = this.setFormData(entity);
 
-  public getAgents(): Observable<AgentDto> {
-    return this.http.get<AgentDto>(this.baseURL).pipe(
-      catchError((error) => {
-        console.error('ERROR OBTENIENDO EL AGENTE:', error);
-        throw error; // Rethrow the error to propagate it to the caller
-      })
-    );
-  }
-  public getAgentById(agentId: number): Observable<AgentDto> {
-    return this.http.get<AgentDto>(`${this.baseURL}/${agentId}`);
-  }
-  public updateAgent(id: number, agent: AgentCreateDto) {
-    const formData = this.setFormData(agent);
-    console.log('FormData for update:', formData.values());
     return this.http.put(`${this.baseURL}/${id}`, formData);
   }
-
-  public deleteAgent(id: number): Observable<void> {
-    console.log('Deleting agent with ID:', id);
-    return this.http.delete<void>(`${this.baseURL}/${id}`);
+  delete(id: number): Observable<any> {
+    return this.http.delete(`${this.baseURL}/${id}`);
+  }
+  getById(id: number): Observable<AgentDto> {
+    return this.http.get<AgentDto>(`${this.baseURL}/${id}`);
   }
 
   private setFormData(agent: AgentCreateDto): FormData {

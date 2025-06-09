@@ -21,9 +21,8 @@ import { getErgetErrorsFromAPI } from '../../shared/funtions/getErrorsFromAPI';
 })
 export class EditAgentComponent implements OnInit {
   ngOnInit(): void {
-    this.agentService.getAgentById(this.id).subscribe((agent) => {
+    this.agentService.getById(this.id).subscribe((agent) => {
       this.agent = agent;
-      console.log('Agent fetched for editing:', this.agent);
     });
   }
   @Input({ transform: numberAttribute })
@@ -34,7 +33,7 @@ export class EditAgentComponent implements OnInit {
   router = inject(Router);
 
   saveChange(agent: AgentCreateDto) {
-    this.agentService.updateAgent(this.id, agent).subscribe({
+    this.agentService.update(this.id, agent).subscribe({
       next: (response) => {
         console.log('Agent updated successfully:', response);
         this.router.navigate(['/agents']);
