@@ -16,6 +16,7 @@ import { PaginationDTO } from '../../shared/models/paginationDTO';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { ICRUDService } from '../../shared/interfaces/ICRUDService';
+import { AgentsAutocompleteComponent } from '../agents-autocomplete/agents-autocomplete.component';
 //import { MatFormFieldModule } from '@angular/material/form-field';
 //import { MatInputModule } from '@angular/material/input';
 
@@ -33,6 +34,7 @@ import { ICRUDService } from '../../shared/interfaces/ICRUDService';
     MatTableModule,
     MatPaginatorModule,
     SweetAlert2Module,
+    AgentsAutocompleteComponent,
   ],
   templateUrl: './agents-list.component.html',
   styleUrl: './agents-list.component.css',

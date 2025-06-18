@@ -3,6 +3,7 @@ using AutoMapper.QueryableExtensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OutputCaching;
 using Microsoft.EntityFrameworkCore;
+using SecApp.Api;
 using SecApp.Api.DTOs;
 using SecApp.Api.Interfaces;
 using SecApp.Api.Models;
@@ -19,18 +20,20 @@ namespace SecApp.Controllers
         private readonly IOutputCacheStore outputCache;
         private readonly IMapper mapper;
         private readonly IFileSaver fileSaver;
+        private readonly SecurityDBContext context;
         private const string cacheTag = "agents";
         private readonly string AgentFolderPath = "agents"; // "wwwroot/uploads/agents"; // Ensure this path exists in your project
 
         public AgentsController(
                                 ICRUDRepository<Agent> agentsRepository,
-                                IOutputCacheStore outputCache, IMapper mapper, IFileSaver fileSaver)
+                                IOutputCacheStore outputCache, IMapper mapper, IFileSaver fileSaver, SecurityDBContext context)
         {
 
             this.agentsRepository = agentsRepository;
             this.outputCache = outputCache;
             this.mapper = mapper;
             this.fileSaver = fileSaver;
+            this.context = context;
         }
 
 
@@ -72,6 +75,15 @@ namespace SecApp.Controllers
             return Ok(agents);
         }
 
+        [HttpGet("GetByName")]
+        [OutputCache(Tags = [cacheTag])]
+        public async Task <List<AgentDTO>> Get(string name)
+        {
+                                
+            return await context.Agents.AsQueryable().Where(a => a.Name.Contains(name) || a.LastName.Contains(name))
+                .ProjectTo<AgentDTO>(mapper.ConfigurationProvider)
+                .ToListAsync(); 
+        }
         [HttpPost]
         public async Task<IActionResult> CreateAgent([FromForm] AgentCreateDTO agentDTO)
         {

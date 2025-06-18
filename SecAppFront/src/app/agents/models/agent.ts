@@ -27,3 +27,11 @@ export interface AgentCreateDto {
   institutionId: number;
   agentCode: number;
 }
+
+export interface AgentAutoCompleDto {
+  id: number;
+  name: string;
+  lastName: string;
+  phone: string;
+  photo: string;
+}

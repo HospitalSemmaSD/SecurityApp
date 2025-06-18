@@ -15,13 +15,7 @@ builder.Services.AddCors(options =>
         builder => builder.AllowAnyOrigin()
                           .AllowAnyMethod()
                           .AllowAnyHeader()
-                          .WithExposedHeaders("TotalCount"));
-    //options.AddDefaultPolicy(corsOptions =>
-    //{
-    //    corsOptions.WithOrigins(allowedHosts)
-    //        .AllowAnyMethod()
-    //        .AllowAnyHeader();
-    //});
+                          .WithExposedHeaders("TotalCount"));   
 });
 
 builder.Services.AddControllers();

@@ -2,6 +2,8 @@
 <button mat-flat-button routerLink="/agents/create">
   <mat-icon>person_add</mat-icon> Crear Agente
 </button>
+<h4>Seleccione un Agente</h4>
+<app-agents-autocomplete></app-agents-autocomplete>
 <app-generic-list [items]="agents">
   <ng-container content>
     <table

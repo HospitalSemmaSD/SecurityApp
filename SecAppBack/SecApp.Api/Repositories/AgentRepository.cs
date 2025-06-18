@@ -30,6 +30,11 @@ namespace SecApp.Api.Repositories
             return agent;
 
         }
+        public async  Task<Agent> GetByName(string name)
+        {
+            var agent = await context.Agents.FirstOrDefaultAsync(x => x.Name.Contains(name) || x.LastName.Contains(name));
+            return agent;
+        }
         public async Task<bool> Insert(Agent agent)
         {
             context.Add(agent);
@@ -49,9 +54,6 @@ namespace SecApp.Api.Repositories
             return true;
 
         }
-        //public bool IdentificationExist(string identification)
-        //{
-        //    return GetAgents.Any();
-        //}
+        
     }
 }

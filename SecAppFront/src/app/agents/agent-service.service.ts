@@ -35,6 +35,13 @@ export class AgentServiceService
     //   })
     // );
   }
+  getById(id: number): Observable<AgentDto> {
+    return this.http.get<AgentDto>(`${this.baseURL}/${id}`);
+  }
+  getByName(name: string): Observable<AgentDto[]> {
+    return this.http.get<AgentDto[]>(`${this.baseURL}/GetByName/${name}`);
+  }
+
   getByFilter(filter: any): Observable<HttpResponse<AgentDto[]>> {
     throw new Error('Method not implemented.');
   }
@@ -54,9 +61,6 @@ export class AgentServiceService
   }
   delete(id: number): Observable<any> {
     return this.http.delete(`${this.baseURL}/${id}`);
-  }
-  getById(id: number): Observable<AgentDto> {
-    return this.http.get<AgentDto>(`${this.baseURL}/${id}`);
   }
 
   private setFormData(agent: AgentCreateDto): FormData {
