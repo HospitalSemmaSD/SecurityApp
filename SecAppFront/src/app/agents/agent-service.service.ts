@@ -1,7 +1,7 @@
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { catchError, Observable } from 'rxjs';
-import { AgentCreateDto, AgentDto } from './models/agent';
+import { AgentAutoCompleDto, AgentCreateDto, AgentDto } from './models/agent';
 import { environment } from '../../environments/environment'; // Adjust the import path as needed
 
 import { PaginationDTO } from '../shared/models/paginationDTO';
@@ -38,8 +38,8 @@ export class AgentServiceService
   getById(id: number): Observable<AgentDto> {
     return this.http.get<AgentDto>(`${this.baseURL}/${id}`);
   }
-  getByName(name: string): Observable<AgentDto[]> {
-    return this.http.get<AgentDto[]>(`${this.baseURL}/GetByName/${name}`);
+  getByName(name: string): Observable<AgentAutoCompleDto[]> {
+    return this.http.get<AgentAutoCompleDto[]>(`${this.baseURL}/${name}`);
   }
 
   getByFilter(filter: any): Observable<HttpResponse<AgentDto[]>> {

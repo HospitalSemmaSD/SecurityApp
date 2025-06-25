@@ -75,14 +75,15 @@ namespace SecApp.Controllers
             return Ok(agents);
         }
 
-        [HttpGet("GetByName")]
+        [HttpGet("{name}")]
         [OutputCache(Tags = [cacheTag])]
-        public async Task <List<AgentDTO>> Get(string name)
+        public async Task <ActionResult<List<AgentDTO>>> Get(string name)
         {
                                 
-            return await context.Agents.AsQueryable().Where(a => a.Name.Contains(name) || a.LastName.Contains(name))
+            return await context.Agents.Where(a => a.Name.Contains(name) || a.LastName.Contains(name))
                 .ProjectTo<AgentDTO>(mapper.ConfigurationProvider)
                 .ToListAsync(); 
+            
         }
         [HttpPost]
         public async Task<IActionResult> CreateAgent([FromForm] AgentCreateDTO agentDTO)

@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, inject, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {
@@ -14,6 +14,7 @@ import {
   DragDropModule,
   moveItemInArray,
 } from '@angular/cdk/drag-drop';
+import { AgentServiceService } from '../agent-service.service';
 
 @Component({
   selector: 'app-agents-autocomplete',
@@ -30,46 +31,20 @@ import {
   templateUrl: './agents-autocomplete.component.html',
   styleUrl: './agents-autocomplete.component.css',
 })
-export class AgentsAutocompleteComponent {
-  agentControl = new FormControl();
-  agents: AgentAutoCompleDto[] = [
-    {
-      id: 1,
-      name: 'Welinton Aleiner',
-      lastName: 'Gonzalez',
-      phone: `+593 99 999 9999`,
-      photo: `https://i.pravatar.cc/150?img=1`,
-    },
-    {
-      id: 2,
-      name: 'John',
-      lastName: 'Doe',
-      phone: `+593 99 999 9999`,
-      photo: `https://i.pravatar.cc/150?img=2`,
-    },
-    {
-      id: 3,
-      name: 'Jane',
-      lastName: 'Smith',
-      phone: `+593 99 999 9999`,
-      photo: `https://i.pravatar.cc/150?img=3`,
-    },
-    {
-      id: 4,
-      name: 'Alice',
-      lastName: 'Johnson',
-      phone: `+593 99 999 9999`,
-      photo: `https://i.pravatar.cc/150?img=4`,
-    },
-    {
-      id: 5,
-      name: 'Bob',
-      lastName: 'Brown',
-      phone: `+593 99 999 9999`,
-      photo: `https://i.pravatar.cc/150?img=5`,
-    },
-  ];
+export class AgentsAutocompleteComponent implements OnInit {
+  ngOnInit(): void {
+    this.agentControl.valueChanges.subscribe((value) => {
+      if (typeof value === 'string' && value) {
+        this.agentService
+          .getByName(value)
+          .subscribe((agents) => (this.agents = agents));
+      }
+    });
+  }
 
+  agentControl = new FormControl();
+  agents: AgentAutoCompleDto[] = [];
+  agentService = inject(AgentServiceService);
   agentsSelected: AgentAutoCompleDto[] = [];
   columnstoDisplay: string[] = [
     'photo',

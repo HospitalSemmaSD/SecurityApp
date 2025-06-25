@@ -339,3 +339,7 @@ C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\
 C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\bin\Debug\net8.0\wwwroot\uploads\prueba.txt
 C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\bin\Debug\net8.0\wwwroot\agents\a2897568-edd4-4465-b82c-1024631a4f84.jpg
 C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\bin\Debug\net8.0\wwwroot\agents\ed0dc9da-16f5-48be-9c02-0d0219a81572.jpg
+C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json

@@ -368,7 +368,7 @@
         }
       }
     },
-    "/api/Agents/GetByName": {
+    "/api/Agents/{name}": {
       "get": {
         "tags": [
           "Agents"
@@ -376,7 +376,8 @@
         "parameters": [
           {
             "name": "name",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "string"
             }

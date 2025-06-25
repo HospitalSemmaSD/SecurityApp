@@ -11,6 +11,7 @@ import { CreateInstitutionComponent } from './institutions/create-institution/cr
 import { EditInstitutionComponent } from './institutions/edit-institution/edit-institution.component';
 import { LoginComponent } from './login/login.component';
 import { AgentFilterComponent } from './agents/agent-filter/agent-filter.component';
+import { AgentDetailComponent } from './agents/agent-detail/agent-detail.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -20,6 +21,7 @@ export const routes: Routes = [
   { path: 'agents/create', component: CreateAGentComponent },
   { path: 'agents/edit/:id', component: EditAgentComponent },
   { path: 'agents/filter', component: AgentFilterComponent },
+  {path: 'agents/:id', component: AgentDetailComponent}, // Route to view agent details by ID
 
   { path: 'ranges', component: RangesListComponent },
   { path: 'ranges/create', component: CreateRangeComponent },

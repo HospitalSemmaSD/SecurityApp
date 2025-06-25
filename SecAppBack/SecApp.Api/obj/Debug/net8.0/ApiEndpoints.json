@@ -212,18 +212,8 @@
   },
   {
     "ContainingType": "SecApp.Controllers.AgentsController",
-    "Method": "GetAgentsRanges",
-    "RelativePath": "api/Agents/GetAgentsRanges",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SecApp.Controllers.AgentsController",
     "Method": "Get",
-    "RelativePath": "api/Agents/GetByName",
+    "RelativePath": "api/Agents/{name}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -231,7 +221,7 @@
       {
         "Name": "name",
         "Type": "System.String",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [
@@ -245,6 +235,16 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "SecApp.Controllers.AgentsController",
+    "Method": "GetAgentsRanges",
+    "RelativePath": "api/Agents/GetAgentsRanges",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "SecApp.Controllers.AgentsController",
