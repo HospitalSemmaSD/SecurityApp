@@ -17,6 +17,7 @@ import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { ICRUDService } from '../../shared/interfaces/ICRUDService';
 import { AgentsAutocompleteComponent } from '../agents-autocomplete/agents-autocomplete.component';
+import { AuthorizedComponent } from "../../security/authorized/authorized.component";
 //import { MatFormFieldModule } from '@angular/material/form-field';
 //import { MatInputModule } from '@angular/material/input';
 
@@ -35,7 +36,8 @@ import { AgentsAutocompleteComponent } from '../agents-autocomplete/agents-autoc
     MatPaginatorModule,
     SweetAlert2Module,
     AgentsAutocompleteComponent,
-  ],
+    AuthorizedComponent
+],
   templateUrl: './agents-list.component.html',
   styleUrl: './agents-list.component.css',
 })

@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 
 import { Router, RouterLink } from '@angular/router';
-import { AuthService } from '../services/auth-service.service';
+import { AuthService } from '../../services/auth-service.service';
 import { MatButtonModule } from '@angular/material/button';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';

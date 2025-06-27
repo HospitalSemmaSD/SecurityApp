@@ -6,11 +6,7 @@
 <app-agents-autocomplete></app-agents-autocomplete>
 <app-generic-list [items]="agents">
   <ng-container content>
-    <table
-      mat-table
-      [dataSource]="agents"
-      class="mat-elevation-z8 agent-elements"
-    >
+    <table mat-table [dataSource]="agents" class="mat-elevation-z8 agent-elements">
       <ng-container matColumnDef="AgentId">
         <th mat-header-cell *matHeaderCellDef>Id</th>
         <td mat-cell *matCellDef="let agent">{{ agent.agentId }}</td>
@@ -36,42 +32,35 @@
         <td mat-cell *matCellDef="let agent">{{ agent.photo }}</td>
       </ng-container>
 
+      
       <ng-container matColumnDef="Actions">
         <th mat-header-cell *matHeaderCellDef>Acciones</th>
         <td mat-cell *matCellDef="let agent">
-          <a routerLink="/agents/edit/{{ agent.agentId }}" mat-flat-button
-            >Editar</a
-          >
-          <button
-            mat-flat-button
-            color="warn"
-            class="delete-button"
-            [swal]="{
-              title: '¿Estás seguro?',
-              text: 'Esta acción no se puede deshacer.',
-              icon: 'warning',
-              showCancelButton: true,
-              confirmButtonText: 'Sí, borrar',
-              cancelButtonText: 'Cancelar'
-            }"
-            (confirm)="deleteAgent(agent.agentId)"
-          >
-            Borrar
-          </button>
-        </td>
-      </ng-container>
+              <app-authorized rol="admin">
+            <ng-content authorized>
+              <a routerLink="/agents/edit/{{ agent.agentId }}" mat-flat-button>Editar</a>
+              <button mat-flat-button color="warn" class="delete-button" [swal]="{
+                    title: '¿Estás seguro?',
+                    text: 'Esta acción no se puede deshacer.',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Sí, borrar',
+                    cancelButtonText: 'Cancelar'
+                  }" (confirm)="deleteAgent(agent.agentId)">
+                Borrar
+              </button>
+            </ng-content>
+          </app-authorized>
+            </td>         
+    </ng-container>
+
+
 
       <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
       <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
     </table>
-    <mat-paginator
-      showFirstLastButtons
-      [length]="totalCount"
-      [pageSize]="pagination.recordsPerPage"
-      [pageSizeOptions]="[5, 10, 50]"
-      class="mat-elevation-z8"
-      (page)="onPaginateChange($event)"
-    ></mat-paginator>
+    <mat-paginator showFirstLastButtons [length]="totalCount" [pageSize]="pagination.recordsPerPage"
+      [pageSizeOptions]="[5, 10, 50]" class="mat-elevation-z8" (page)="onPaginateChange($event)"></mat-paginator>
   </ng-container>
 </app-generic-list>
 

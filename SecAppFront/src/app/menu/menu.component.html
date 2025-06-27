@@ -9,12 +9,19 @@
     <a mat-button routerLink="/agents/filter" class="menu-button"
       ><mat-icon>search</mat-icon> Buscar Agentes</a
     >
-    <a mat-button routerLink="/ranges" class="menu-button">
-      <mat-icon>shield</mat-icon> Rangos</a
-    >
-    <a mat-button routerLink="/institutions" class="menu-button"
-      ><mat-icon>apartment</mat-icon> Instituciones</a
-    >
+    <app-authorized rol="admin">
+      <ng-container authorized>
+        <a mat-button routerLink="/agents/create" class="menu-button"
+          ><mat-icon>person_add</mat-icon> Crear Agente</a
+        >
+        <a mat-button routerLink="/ranges" class="menu-button">
+          <mat-icon>shield</mat-icon> Rangos</a
+        >
+        <a mat-button routerLink="/institutions" class="menu-button"
+          ><mat-icon>apartment</mat-icon> Instituciones</a
+        >
+      </ng-container>
+    </app-authorized>
     <a mat-button routerLink="/login" class="menu-button"
       ><mat-icon>login</mat-icon> Login</a
     >

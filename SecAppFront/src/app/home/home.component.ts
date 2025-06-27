@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { LandingComponent } from '../landing/landing.component';
-import { LoginComponent } from '../login/login.component';
+import { LoginComponent } from '../security/login/login.component';
 
 @Component({
   selector: 'app-home',
