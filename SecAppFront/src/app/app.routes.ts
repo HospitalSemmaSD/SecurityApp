@@ -18,19 +18,19 @@ export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
 
-  { path: 'agents', component: AgentsListComponent, canActivate: [adminGuard] },
-  { path: 'agents/create', component: CreateAGentComponent }, // Add your guard here if needed
-  { path: 'agents/edit/:id', component: EditAgentComponent },
+  { path: 'agents', component: AgentsListComponent},
+  { path: 'agents/create', component: CreateAGentComponent, canActivate: [adminGuard] }, // Add your guard here if needed
+  { path: 'agents/edit/:id', component: EditAgentComponent, canActivate: [adminGuard] },
   { path: 'agents/filter', component: AgentFilterComponent },
   {path: 'agents/:id', component: AgentDetailComponent}, // Route to view agent details by ID
 
-  { path: 'ranges', component: RangesListComponent },
-  { path: 'ranges/create', component: CreateRangeComponent },
-  { path: 'ranges/edit/:id', component: EditRangeComponent },
+  { path: 'ranges', component: RangesListComponent, canActivate: [adminGuard]},
+  { path: 'ranges/create', component: CreateRangeComponent, canActivate: [adminGuard] },
+  { path: 'ranges/edit/:id', component: EditRangeComponent, canActivate: [adminGuard] },
 
-  { path: 'institutions', component: InstitutionsListComponent },
-  { path: 'institutions/create', component: CreateInstitutionComponent },
-  { path: 'institutions/edit/:id', component: EditInstitutionComponent },
+  { path: 'institutions', component: InstitutionsListComponent, canActivate: [adminGuard] },
+  { path: 'institutions/create', component: CreateInstitutionComponent, canActivate: [adminGuard] },
+  { path: 'institutions/edit/:id', component: EditInstitutionComponent, canActivate: [adminGuard] },
 
   { path: '**', redirectTo: '' }, // Redirect to home for any unknown routes,
 ];

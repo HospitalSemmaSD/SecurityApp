@@ -343,3 +343,9 @@ C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\
 C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\obj\Debug\net8.0\rjimswa.dswa.cache.json
 C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
 C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\wmartinez\Documents\HDSSDdevelopment\SecurityApp\SecAppBack\SecApp.Api\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll

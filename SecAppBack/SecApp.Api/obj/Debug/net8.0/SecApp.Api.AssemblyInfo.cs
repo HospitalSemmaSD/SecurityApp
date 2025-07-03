@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SecApp.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bbfd56db354cdd9e0bdce4949593724618454b0a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dd049e15886d45ddc41461925b289ec1b11eb6a8")]
 [assembly: System.Reflection.AssemblyProductAttribute("SecApp.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SecApp.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

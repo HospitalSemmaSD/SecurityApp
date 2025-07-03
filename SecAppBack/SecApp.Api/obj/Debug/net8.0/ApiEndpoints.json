@@ -314,5 +314,57 @@
       }
     ],
     "EndpointName": "GetInstitutionByID"
+  },
+  {
+    "ContainingType": "SecApp.Api.Controllers.UsersController",
+    "Method": "Login",
+    "RelativePath": "api/users/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "credentialsDTO",
+        "Type": "SecApp.Api.DTOs.UserCredentialsDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SecApp.Api.DTOs.AuthResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SecApp.Api.Controllers.UsersController",
+    "Method": "SingUp",
+    "RelativePath": "api/users/singup",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userCredentialsDTO",
+        "Type": "SecApp.Api.DTOs.UserCredentialsDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SecApp.Api.DTOs.AuthResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]

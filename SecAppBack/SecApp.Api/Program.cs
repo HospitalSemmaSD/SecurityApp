@@ -5,6 +5,9 @@ using SecApp.Api;
 using SecApp.Api.Interfaces;
 using SecApp.Api.Models;
 using SecApp.Api.Repositories;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +33,29 @@ builder.Services.AddScoped<ICRUDRepository<Agent>, AgentRepository>();
 builder.Services.AddScoped<ICRUDRepository<Institution>, InstitutionRepository>();
 builder.Services.AddTransient<IFileSaver, LocalFileSaver>();
 builder.Services.AddHttpContextAccessor();
+
+builder.Services.AddIdentityCore<IdentityUser>()
+    .AddEntityFrameworkStores<SecurityDBContext>()
+    .AddDefaultTokenProviders();
+
+builder.Services.AddScoped<UserManager<IdentityUser>>();
+builder.Services.AddScoped<SignInManager<IdentityUser>>();
+
+builder.Services.AddAuthentication().AddJwtBearer(options => 
+{
+    options.MapInboundClaims = false;
+
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = false,
+        ValidateAudience = false,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["jwtkey"]!) ),
+        ClockSkew = TimeSpan.Zero,
+
+    };
+});
 
 builder.Services.AddOutputCache(options =>
 {

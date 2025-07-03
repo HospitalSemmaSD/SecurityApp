@@ -1,12 +1,88 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BEFC4157-5B98-42E6-8F99-45D0D82A1392}|SecApp.Api\\SecApp.Api.csproj|c:\\users\\wmartinez\\documents\\hdssddevelopment\\securityapp\\secappback\\secapp.api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEFC4157-5B98-42E6-8F99-45D0D82A1392}|SecApp.Api\\SecApp.Api.csproj|solutionrelative:secapp.api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEFC4157-5B98-42E6-8F99-45D0D82A1392}|SecApp.Api\\SecApp.Api.csproj|c:\\users\\wmartinez\\documents\\hdssddevelopment\\securityapp\\secappback\\secapp.api\\dtos\\authresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEFC4157-5B98-42E6-8F99-45D0D82A1392}|SecApp.Api\\SecApp.Api.csproj|solutionrelative:secapp.api\\dtos\\authresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEFC4157-5B98-42E6-8F99-45D0D82A1392}|SecApp.Api\\SecApp.Api.csproj|c:\\users\\wmartinez\\documents\\hdssddevelopment\\securityapp\\secappback\\secapp.api\\dtos\\usercredentialsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEFC4157-5B98-42E6-8F99-45D0D82A1392}|SecApp.Api\\SecApp.Api.csproj|solutionrelative:secapp.api\\dtos\\usercredentialsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEFC4157-5B98-42E6-8F99-45D0D82A1392}|SecApp.Api\\SecApp.Api.csproj|c:\\users\\wmartinez\\documents\\hdssddevelopment\\securityapp\\secappback\\secapp.api\\migrations\\20250627192816_usersystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEFC4157-5B98-42E6-8F99-45D0D82A1392}|SecApp.Api\\SecApp.Api.csproj|solutionrelative:secapp.api\\migrations\\20250627192816_usersystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "SecApp.Api\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "SecApp.Api\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwDMAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T14:14:45.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthResponseDTO.cs",
+              "DocumentMoniker": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\DTOs\\AuthResponseDTO.cs",
+              "RelativeDocumentMoniker": "SecApp.Api\\DTOs\\AuthResponseDTO.cs",
+              "ToolTip": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\DTOs\\AuthResponseDTO.cs",
+              "RelativeToolTip": "SecApp.Api\\DTOs\\AuthResponseDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T14:12:54.973Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "20250627192816_UserSystem.cs",
+              "DocumentMoniker": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\Migrations\\20250627192816_UserSystem.cs",
+              "RelativeDocumentMoniker": "SecApp.Api\\Migrations\\20250627192816_UserSystem.cs",
+              "ToolTip": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\Migrations\\20250627192816_UserSystem.cs",
+              "RelativeToolTip": "SecApp.Api\\Migrations\\20250627192816_UserSystem.cs",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAgwGwAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-30T15:26:45.908Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserCredentialsDTO.cs",
+              "DocumentMoniker": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\DTOs\\UserCredentialsDTO.cs",
+              "RelativeDocumentMoniker": "SecApp.Api\\DTOs\\UserCredentialsDTO.cs",
+              "ToolTip": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\DTOs\\UserCredentialsDTO.cs",
+              "RelativeToolTip": "SecApp.Api\\DTOs\\UserCredentialsDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-30T15:04:47.776Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

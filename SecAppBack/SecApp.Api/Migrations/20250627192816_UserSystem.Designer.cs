@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SecApp.Api;
 
@@ -11,9 +12,11 @@ using SecApp.Api;
 namespace SecApp.Api.Migrations
 {
     [DbContext(typeof(SecurityDBContext))]
-    partial class SecurityDBContextModelSnapshot : ModelSnapshot
+    [Migration("20250627192816_UserSystem")]
+    partial class UserSystem
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
