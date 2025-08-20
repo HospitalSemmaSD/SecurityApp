@@ -78,10 +78,10 @@ namespace SecApp.Api.Controllers
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["jwtkey"]!));
             var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
-            var time = DateTime.UtcNow.AddYears(1);
-            var securityToken = new JwtSecurityToken(issuer: null, audience: null, claims: claims, expires: time, signingCredentials: credentials);
+            var expiration = DateTime.UtcNow.AddYears(1);
+            var securityToken = new JwtSecurityToken(issuer: null, audience: null, claims: claims, expires: expiration, signingCredentials: credentials);
             var token = new JwtSecurityTokenHandler().WriteToken(securityToken);
-            return new AuthResponseDTO { Token = token, TokenTime =  time };
+            return new AuthResponseDTO { Token = token, TokenExpiration =  expiration };
         }
     }
 }

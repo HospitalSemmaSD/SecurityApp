@@ -3,7 +3,7 @@ import { AgentFormComponent } from '../agent-form/agent-form.component';
 import { AgentCreateDto } from '../models/agent';
 import { AgentServiceService } from '../agent-service.service';
 import { Router } from '@angular/router';
-import { getErgetErrorsFromAPI } from '../../shared/funtions/getErrorsFromAPI';
+import { getErrorsFromAPI } from '../../shared/funtions/getErrorsFromAPI';
 import { ShowErrorsComponent } from '../../shared/components/show-errors/show-errors.component';
 
 @Component({
@@ -25,7 +25,7 @@ export class CreateAGentComponent {
       },
       error: (err) => {
         console.error('Error creating agent:', err);
-        const errors = getErgetErrorsFromAPI(err);
+        const errors = getErrorsFromAPI(err);
         this.errors = errors;
       },
     });

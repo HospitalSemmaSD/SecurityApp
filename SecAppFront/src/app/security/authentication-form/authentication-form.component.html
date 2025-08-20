@@ -1,0 +1,18 @@
+{{title}}
+<app-show-errors [errors]="errors"></app-show-errors>
+<form (submit)="saveChanges()" [formGroup]="form">
+
+    <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput [formControl]="form.controls.email"  />
+        <mat-error>{{getErrorMessageEmail()}}</mat-error>
+    </mat-form-field>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" [formControl]="form.controls.password" />
+        <mat-error>{{getErrorMessagePassword()}}</mat-error>
+    </mat-form-field>
+    <div class="button-container">
+        <button mat-flat-button type="submit" [disabled]="form.invalid">Acceder</button>
+    </div>
+</form>

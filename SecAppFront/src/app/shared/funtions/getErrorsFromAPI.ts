@@ -1,4 +1,4 @@
-export function getErgetErrorsFromAPI(obj: any): string[] {
+export function getErrorsFromAPI(obj: any): string[] {
   const error = obj.error.errors;
   let messagesErrors: string[] = [];
 
@@ -10,4 +10,15 @@ export function getErgetErrorsFromAPI(obj: any): string[] {
     messagesErrors = messagesErrors.concat(messageWithField);
   }
   return messagesErrors;
+}
+
+export function getErrorsIdentity(obj: any): string[]{
+  console.log('Viendo que trae obj', obj);
+  let errorMessage: string[] = [];
+  for (let i = 0; i < obj.error.length; i++) {
+    const element = obj.error[i];
+    errorMessage.push(element.description);
+  }
+  return errorMessage;
+
 }

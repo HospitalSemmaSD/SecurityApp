@@ -11,7 +11,7 @@ import { AgentServiceService } from '../agent-service.service';
 import { LoadingComponent } from '../../shared/components/loading/loading.component';
 import { ShowErrorsComponent } from '../../shared/components/show-errors/show-errors.component';
 import { Router } from '@angular/router';
-import { getErgetErrorsFromAPI } from '../../shared/funtions/getErrorsFromAPI';
+import { getErrorsFromAPI } from '../../shared/funtions/getErrorsFromAPI';
 
 @Component({
   selector: 'app-edit-agent',
@@ -39,7 +39,7 @@ export class EditAgentComponent implements OnInit {
         this.router.navigate(['/agents']);
       },
       error: (error) => {
-        const errors = getErgetErrorsFromAPI(error);
+        const errors = getErrorsFromAPI(error);
         this.errors = errors;
       },
     });

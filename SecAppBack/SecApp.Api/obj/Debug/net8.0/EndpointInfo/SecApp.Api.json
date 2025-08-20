@@ -697,7 +697,7 @@
             "type": "string",
             "nullable": true
           },
-          "tokenTime": {
+          "tokenExpiration": {
             "type": "string",
             "format": "date-time"
           }

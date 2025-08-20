@@ -1,4 +1,7 @@
-<div class="login-container">
+<app-authentication-form [errors]="errors" title="login" (formPost)="login($event)"></app-authentication-form>
+
+
+<!-- <div class="login-container">
   <mat-card class="login-card">
     <mat-card-header class="card-header">
       <img src="logo-semma.png" alt="Hospital Docente Semma" class="logo" />
@@ -43,4 +46,4 @@
       <span class="spacer"></span>
     </mat-card-actions>
   </mat-card>
-</div>
+</div> -->
