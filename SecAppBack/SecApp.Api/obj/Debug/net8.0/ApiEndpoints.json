@@ -343,8 +343,40 @@
   },
   {
     "ContainingType": "SecApp.Api.Controllers.UsersController",
-    "Method": "SingUp",
-    "RelativePath": "api/users/singup",
+    "Method": "MakeAdmin",
+    "RelativePath": "api/users/MakeAdmin",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "editClaimDTO",
+        "Type": "SecApp.Api.DTOs.EditClaimDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SecApp.Api.Controllers.UsersController",
+    "Method": "RemoveAdmin",
+    "RelativePath": "api/users/RemoveAdmin",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "editClaimDTO",
+        "Type": "SecApp.Api.DTOs.EditClaimDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SecApp.Api.Controllers.UsersController",
+    "Method": "SignUp",
+    "RelativePath": "api/users/signup",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -358,6 +390,37 @@
     "ReturnTypes": [
       {
         "Type": "SecApp.Api.DTOs.AuthResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SecApp.Api.Controllers.UsersController",
+    "Method": "UsersList",
+    "RelativePath": "api/users/UsersList",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "RecordsPerPage",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[SecApp.Api.DTOs.UserDTO, SecApp.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

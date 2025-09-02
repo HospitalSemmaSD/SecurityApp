@@ -7,6 +7,38 @@
       "RelativeMoniker": "D:0:0:{BEFC4157-5B98-42E6-8F99-45D0D82A1392}|SecApp.Api\\SecApp.Api.csproj|solutionrelative:secapp.api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{BEFC4157-5B98-42E6-8F99-45D0D82A1392}|SecApp.Api\\SecApp.Api.csproj|c:\\users\\wmartinez\\documents\\hdssddevelopment\\securityapp\\secappback\\secapp.api\\dtos\\editclaimdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEFC4157-5B98-42E6-8F99-45D0D82A1392}|SecApp.Api\\SecApp.Api.csproj|solutionrelative:secapp.api\\dtos\\editclaimdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEFC4157-5B98-42E6-8F99-45D0D82A1392}|SecApp.Api\\SecApp.Api.csproj|c:\\users\\wmartinez\\documents\\hdssddevelopment\\securityapp\\secappback\\secapp.api\\controllers\\agentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEFC4157-5B98-42E6-8F99-45D0D82A1392}|SecApp.Api\\SecApp.Api.csproj|solutionrelative:secapp.api\\controllers\\agentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEFC4157-5B98-42E6-8F99-45D0D82A1392}|SecApp.Api\\SecApp.Api.csproj|c:\\users\\wmartinez\\documents\\hdssddevelopment\\securityapp\\secappback\\secapp.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEFC4157-5B98-42E6-8F99-45D0D82A1392}|SecApp.Api\\SecApp.Api.csproj|solutionrelative:secapp.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEFC4157-5B98-42E6-8F99-45D0D82A1392}|SecApp.Api\\SecApp.Api.csproj|c:\\users\\wmartinez\\documents\\hdssddevelopment\\securityapp\\secappback\\secapp.api\\utilities\\usersservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEFC4157-5B98-42E6-8F99-45D0D82A1392}|SecApp.Api\\SecApp.Api.csproj|solutionrelative:secapp.api\\utilities\\usersservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEFC4157-5B98-42E6-8F99-45D0D82A1392}|SecApp.Api\\SecApp.Api.csproj|c:\\users\\wmartinez\\documents\\hdssddevelopment\\securityapp\\secappback\\secapp.api\\interfaces\\iusersservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEFC4157-5B98-42E6-8F99-45D0D82A1392}|SecApp.Api\\SecApp.Api.csproj|solutionrelative:secapp.api\\interfaces\\iusersservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEFC4157-5B98-42E6-8F99-45D0D82A1392}|SecApp.Api\\SecApp.Api.csproj|c:\\users\\wmartinez\\documents\\hdssddevelopment\\securityapp\\secappback\\secapp.api\\utilities\\automapperprofiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEFC4157-5B98-42E6-8F99-45D0D82A1392}|SecApp.Api\\SecApp.Api.csproj|solutionrelative:secapp.api\\utilities\\automapperprofiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEFC4157-5B98-42E6-8F99-45D0D82A1392}|SecApp.Api\\SecApp.Api.csproj|c:\\users\\wmartinez\\documents\\hdssddevelopment\\securityapp\\secappback\\secapp.api\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEFC4157-5B98-42E6-8F99-45D0D82A1392}|SecApp.Api\\SecApp.Api.csproj|solutionrelative:secapp.api\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEFC4157-5B98-42E6-8F99-45D0D82A1392}|SecApp.Api\\SecApp.Api.csproj|c:\\users\\wmartinez\\documents\\hdssddevelopment\\securityapp\\secappback\\secapp.api\\controllers\\institutionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEFC4157-5B98-42E6-8F99-45D0D82A1392}|SecApp.Api\\SecApp.Api.csproj|solutionrelative:secapp.api\\controllers\\institutionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BEFC4157-5B98-42E6-8F99-45D0D82A1392}|SecApp.Api\\SecApp.Api.csproj|c:\\users\\wmartinez\\documents\\hdssddevelopment\\securityapp\\secappback\\secapp.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{BEFC4157-5B98-42E6-8F99-45D0D82A1392}|SecApp.Api\\SecApp.Api.csproj|solutionrelative:secapp.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -22,11 +54,112 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IUsersServices.cs",
+              "DocumentMoniker": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\Interfaces\\IUsersServices.cs",
+              "RelativeDocumentMoniker": "SecApp.Api\\Interfaces\\IUsersServices.cs",
+              "ToolTip": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\Interfaces\\IUsersServices.cs",
+              "RelativeToolTip": "SecApp.Api\\Interfaces\\IUsersServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-02T15:30:00.013Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UsersServices.cs",
+              "DocumentMoniker": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\Utilities\\UsersServices.cs",
+              "RelativeDocumentMoniker": "SecApp.Api\\Utilities\\UsersServices.cs",
+              "ToolTip": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\Utilities\\UsersServices.cs",
+              "RelativeToolTip": "SecApp.Api\\Utilities\\UsersServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-02T15:23:27.342Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AutoMapperProfiles.cs",
+              "DocumentMoniker": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\Utilities\\AutoMapperProfiles.cs",
+              "RelativeDocumentMoniker": "SecApp.Api\\Utilities\\AutoMapperProfiles.cs",
+              "ToolTip": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\Utilities\\AutoMapperProfiles.cs",
+              "RelativeToolTip": "SecApp.Api\\Utilities\\AutoMapperProfiles.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T17:23:25.115Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserDTO.cs",
+              "DocumentMoniker": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\DTOs\\UserDTO.cs",
+              "RelativeDocumentMoniker": "SecApp.Api\\DTOs\\UserDTO.cs",
+              "ToolTip": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\DTOs\\UserDTO.cs",
+              "RelativeToolTip": "SecApp.Api\\DTOs\\UserDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T18:48:30.822Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "EditClaimDTO.cs",
+              "DocumentMoniker": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\DTOs\\EditClaimDTO.cs",
+              "RelativeDocumentMoniker": "SecApp.Api\\DTOs\\EditClaimDTO.cs",
+              "ToolTip": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\DTOs\\EditClaimDTO.cs",
+              "RelativeToolTip": "SecApp.Api\\DTOs\\EditClaimDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T17:51:49.706Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AgentsController.cs",
+              "DocumentMoniker": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\Controllers\\AgentsController.cs",
+              "RelativeDocumentMoniker": "SecApp.Api\\Controllers\\AgentsController.cs",
+              "ToolTip": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\Controllers\\AgentsController.cs",
+              "RelativeToolTip": "SecApp.Api\\Controllers\\AgentsController.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAowEYAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T17:32:16.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "InstitutionsController.cs",
+              "DocumentMoniker": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\Controllers\\InstitutionsController.cs",
+              "RelativeDocumentMoniker": "SecApp.Api\\Controllers\\InstitutionsController.cs",
+              "ToolTip": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\Controllers\\InstitutionsController.cs",
+              "RelativeToolTip": "SecApp.Api\\Controllers\\InstitutionsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T17:30:24.273Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\Program.cs",
+              "RelativeDocumentMoniker": "SecApp.Api\\Program.cs",
+              "ToolTip": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\Program.cs",
+              "RelativeToolTip": "SecApp.Api\\Program.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAAAD8AAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T17:27:29.547Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\appsettings.Development.json",
               "RelativeDocumentMoniker": "SecApp.Api\\appsettings.Development.json",
@@ -34,8 +167,7 @@
               "RelativeToolTip": "SecApp.Api\\appsettings.Development.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-07-04T14:44:04.147Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-04T14:44:04.147Z"
             },
             {
               "$type": "Document",
@@ -45,14 +177,14 @@
               "RelativeDocumentMoniker": "SecApp.Api\\Controllers\\UsersController.cs",
               "ToolTip": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\Controllers\\UsersController.cs",
               "RelativeToolTip": "SecApp.Api\\Controllers\\UsersController.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAowC4AAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAmwC8AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-03T14:14:45.2Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 10,
               "Title": "UserCredentialsDTO.cs",
               "DocumentMoniker": "C:\\Users\\wmartinez\\Documents\\HDSSDdevelopment\\SecurityApp\\SecAppBack\\SecApp.Api\\DTOs\\UserCredentialsDTO.cs",
               "RelativeDocumentMoniker": "SecApp.Api\\DTOs\\UserCredentialsDTO.cs",
@@ -60,8 +192,7 @@
               "RelativeToolTip": "SecApp.Api\\DTOs\\UserCredentialsDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-30T15:04:47.776Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-30T15:04:47.776Z"
             }
           ]
         }

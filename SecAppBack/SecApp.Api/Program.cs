@@ -8,6 +8,7 @@ using SecApp.Api.Repositories;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using SecApp.Api.Utilities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -40,6 +41,7 @@ builder.Services.AddIdentityCore<IdentityUser>()
 
 builder.Services.AddScoped<UserManager<IdentityUser>>();
 builder.Services.AddScoped<SignInManager<IdentityUser>>();
+builder.Services.AddTransient<IUsersServices, UsersServices>();
 
 builder.Services.AddAuthentication().AddJwtBearer(options => 
 {
@@ -57,6 +59,10 @@ builder.Services.AddAuthentication().AddJwtBearer(options =>
     };
 });
 
+builder.Services.AddAuthorization(options => 
+{
+    options.AddPolicy("isAdmin", policy => policy.RequireClaim("isAdmin"));
+}); ;
 builder.Services.AddOutputCache(options =>
 {
     options.DefaultExpirationTimeSpan = TimeSpan.FromMinutes(3);

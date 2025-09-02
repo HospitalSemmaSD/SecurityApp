@@ -1,4 +1,4 @@
-@if (isLoged()) {
+@if (isAutorized()) {
 <ng-content select="[authorized]"></ng-content>
 }@else {
     <ng-content select="[not-authorized]"></ng-content>

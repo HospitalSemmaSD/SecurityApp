@@ -7,3 +7,7 @@ export interface AuthResponseDTO {
     token: string;
     tokenExpiration: Date;
 }
+
+export interface UserProfileDTO {
+    emai: string;
+}

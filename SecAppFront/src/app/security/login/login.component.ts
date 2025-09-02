@@ -31,70 +31,64 @@ export class LoginComponent implements OnInit {
     // Aquí puedes agregar lógica adicional si es necesario
   }
 
-  isLoading = false;
-  errorMessage = '';
-  errors: string[] = [];
-
+  // isLoading = false;
+  // errorMessage = '';
+  
   constructor(
-    private fb: FormBuilder,
-    private authService: AuthService,
-   
+    // private fb: FormBuilder,
+    // private authService: AuthService,
+    
   ) {}
-  private readonly formBuilder = inject(FormBuilder);
+  //private readonly formBuilder = inject(FormBuilder);
   private readonly securityService = inject(SecurityService); 
   private readonly router = inject(Router);
+  errors: string[] = [];
+  
+  
 
-  form = this.formBuilder.group({
-    codigo: ['', { validators: [Validators.required] }],
-    password: ['', { validators: [Validators.required] }],
-  });
+  // form = this.formBuilder.group({
+  //   codigo: ['', { validators: [Validators.required] }],
+  //   password: ['', { validators: [Validators.required] }],
+  // });
 
   login(credentials: UserCredentialsDTO) {
     this.securityService.login(credentials).subscribe({
-      next: (response) => {        
-        this.router.navigate(['/agents']); 
+      next: () => {        
+        //const token = response.token;
+        this.router.navigate(['agents']); 
       },
       error: (err) => {
         const errors = getErrorsIdentity(err);
-
         console.error('Login failed', errors);
         this.errors = errors;
       },
     });
 
   }
-  onSubmit() {
-    if (this.form.invalid) {
-      return;
-    }
+  // onSubmit() {
+  //   if (this.form.invalid) {
+  //     return;
+  //   }
 
-    this.isLoading = true;
-    this.errorMessage = '';
+  //   this.isLoading = true;
+  //   this.errorMessage = '';
 
   
-    // this.authService.login(username, password).subscribe({
-    //   next: () => {
-    //     this.router.navigate(['/dashboard']); // Ajusta la ruta según tu aplicación
-    //   },
-    //   error: (err) => {
-    //     this.isLoading = false;
-    //     this.errorMessage = err.message || 'Error al iniciar sesión';
-    //   },
-    // });
-  }
+  
+  // }
 
-  errorCodigo() {
-    let codigo = this.form.controls.codigo;
-    if (codigo.errors?.['required'] && codigo.touched) {
-      return 'Codigo necesario ';
-    }
-    return '';
-  }
-  errorPassword() {
-    let pass = this.form.controls.password;
-    if (pass.errors?.['required'] && pass.touched) {
-      return 'Necesitas una contraseña';
-    }
-    return '';
-  }
+  // errorCodigo() {
+  //   let codigo = this.form.controls.codigo;
+  //   if (codigo.errors?.['required'] && codigo.touched) {
+  //     return 'Codigo necesario ';
+  //   }
+  //   return '';
+  // }
+  // errorPassword() {
+  //   let pass = this.form.controls.password;
+  //   if (pass.errors?.['required'] && pass.touched) {
+  //     return 'Necesitas una contraseña';
+  //   }
+  //   return '';
+  // }
 }

@@ -10,8 +10,8 @@ import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-authentication-form',
-  imports: [ShowErrorsComponent, ReactiveFormsModule, MatFormFieldModule, 
-            MatButtonModule, MatInputModule ],
+  imports: [ShowErrorsComponent, ReactiveFormsModule, MatFormFieldModule,
+    MatButtonModule, MatInputModule],
   templateUrl: './authentication-form.component.html',
   styleUrl: './authentication-form.component.css'
 })
@@ -19,12 +19,12 @@ export class AuthenticationFormComponent {
 
   private formBuilder = inject(FormBuilder)
   form = this.formBuilder.group({
-    email : ['', {validators: [Validators.required, Validators.email]}],
-    password : ['', {validators: [Validators.required, Validators.minLength(6)]}],
+    email: ['', { validators: [Validators.required, Validators.email] }],
+    password: ['', { validators: [Validators.required, Validators.minLength(6)] }],
   });
 
-  @Input({required:true})
-  title!:string;
+  @Input({ required: true })
+  title!: string;
   @Input()
   errors: string[] = [];
 
@@ -33,15 +33,16 @@ export class AuthenticationFormComponent {
 
   getErrorMessageEmail(): string {
     const field = this.form.controls.email;
-     if (field?.hasError('email')) {
+    if (field?.hasError('email')) {
       return 'Introduzca un email valido';
-    } else if (field?.hasError('required')) {
+    }
+    if (field?.hasError('required')) {
       return 'Email es requerido';
     }
     return '';
   }
 
-   getErrorMessagePassword(): string {
+  getErrorMessagePassword(): string {
     const field = this.form.controls.email;
     if (field?.hasError('required')) {
       return 'Password es requerido';
@@ -50,13 +51,12 @@ export class AuthenticationFormComponent {
   }
 
   saveChanges(): void {
-    if(!this.form.valid){
+    if (!this.form.valid) {
       return;
     }
     const credentials = this.form.value as UserCredentialsDTO;
-    console.log(credentials);
     this.formPost.emit(credentials);
-    this.form.reset();
+
 
   }
 }

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Identity;
 using SecApp.Api.DTOs;
 using SecApp.Api.Models;
 
@@ -10,6 +11,12 @@ namespace SecApp.Api.Utilities
         {
             AgentMappings();
             InstitutionMappings();
+            UserMappings();
+        }
+
+        private void UserMappings()
+        {
+            CreateMap<IdentityUser,UserDTO>().ReverseMap();
         }
 
         private void AgentMappings()

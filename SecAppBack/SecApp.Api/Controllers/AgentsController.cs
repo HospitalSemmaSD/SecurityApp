@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OutputCaching;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +16,7 @@ namespace SecApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Policy = "isAdmin")]
     public class AgentsController : ControllerBase
     {
         private readonly ICRUDRepository<Agent> agentsRepository;
@@ -38,6 +41,7 @@ namespace SecApp.Controllers
 
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<List<AgentDTO>> Get([FromQuery] PaginationDTO pagination)
         {
             var queryable = await agentsRepository.GetAll();
@@ -54,6 +58,7 @@ namespace SecApp.Controllers
 
         [HttpGet("{id:int}", Name = "GetAgentByID")]
         [OutputCache(Tags = [cacheTag])]
+        [AllowAnonymous]
         public async Task<ActionResult<AgentDTO>> Get(int id)
         {
             var agent = await agentsRepository.GetDetails(id);
@@ -68,6 +73,7 @@ namespace SecApp.Controllers
 
         [HttpGet("GetAgentsRanges")]
         [OutputCache(Tags = [cacheTag])] //how to know that this item is in the cache?
+        [AllowAnonymous]
         public async Task<IActionResult> GetAgentsRanges()
         {
 
@@ -86,6 +92,7 @@ namespace SecApp.Controllers
             
         }
         [HttpPost]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Policy ="isAdmin")]
         public async Task<IActionResult> CreateAgent([FromForm] AgentCreateDTO agentDTO)
         {
             

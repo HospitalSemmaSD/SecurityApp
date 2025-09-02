@@ -12,8 +12,7 @@ export function getErrorsFromAPI(obj: any): string[] {
   return messagesErrors;
 }
 
-export function getErrorsIdentity(obj: any): string[]{
-  console.log('Viendo que trae obj', obj);
+export function getErrorsIdentity(obj: any): string[]{  
   let errorMessage: string[] = [];
   for (let i = 0; i < obj.error.length; i++) {
     const element = obj.error[i];

@@ -13,12 +13,14 @@ import { LoginComponent } from './security/login/login.component';
 import { AgentFilterComponent } from './agents/agent-filter/agent-filter.component';
 import { AgentDetailComponent } from './agents/agent-detail/agent-detail.component';
 import { adminGuard } from './shared/admin.guard';
+import { SingupComponent } from './security/singup/signup.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
+  {path: 'signup', component: SingupComponent },
 
-  { path: 'agents', component: AgentsListComponent},
+  { path: 'agents', component: AgentsListComponent  },
   { path: 'agents/create', component: CreateAGentComponent, canActivate: [adminGuard] }, // Add your guard here if needed
   { path: 'agents/edit/:id', component: EditAgentComponent, canActivate: [adminGuard] },
   { path: 'agents/filter', component: AgentFilterComponent },

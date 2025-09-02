@@ -1,5 +1,5 @@
 <mat-toolbar>
-  <span>
+
     <a mat-button routerLink="" class="menu-button"
       ><mat-icon>home</mat-icon> Inicio
     </a>
@@ -21,9 +21,28 @@
           ><mat-icon>apartment</mat-icon> Instituciones</a
         >
       </ng-container>
+    </app-authorized>    
+
+
+  <div class="space">
+  </div>
+    <app-authorized style="display: inline;">
+
+      <ng-container authorized>
+        <span class="greeting">Saludos, {{securityService.getJWTClaims('email')}}</span>
+        <button mat-button (click)="securityService.logout()" class="menu-button">
+          <mat-icon>logout</mat-icon> Cerrar Sessión
+        </button>
+      </ng-container>
+
+      <ng-container not-authorized>
+        <a mat-button routerLink="login" class="menu-button"
+          ><mat-icon>login</mat-icon> Login</a
+        >
+        <a mat-button routerLink="signup" class="menu-button"
+          ><mat-icon>person_add</mat-icon> Sing Up</a
+        >
+      </ng-container>
     </app-authorized>
-    <a mat-button routerLink="/login" class="menu-button"
-      ><mat-icon>login</mat-icon> Login</a
-    >
-  </span>
+
 </mat-toolbar>

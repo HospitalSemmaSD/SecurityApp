@@ -12,7 +12,11 @@ securityService = inject(SecurityService);
 
 @Input()
 rol?: string ;
+isAutorized(): boolean {
+  return this.securityService.isLoged();
+}
 isLoged(): boolean {
+  console.log('rol', this.rol);
   if (this.rol) {
     return this.securityService.getRol()===this.rol;
   }else {
