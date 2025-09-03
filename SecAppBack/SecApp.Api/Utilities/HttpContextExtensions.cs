@@ -12,7 +12,7 @@ namespace SecApp.Api.Utilities
                 throw new ArgumentException(nameof(httpContext));
             }
             double count = await queryable.CountAsync();
-            httpContext.Response.Headers.Append("TotalCount", count.ToString());
+            httpContext.Response.Headers.Append("TotalRecords", count.ToString());
         }
     }
 }

@@ -19,7 +19,7 @@ builder.Services.AddCors(options =>
         builder => builder.AllowAnyOrigin()
                           .AllowAnyMethod()
                           .AllowAnyHeader()
-                          .WithExposedHeaders("TotalCount"));   
+                          .WithExposedHeaders("totalRecords"));   
 });
 
 builder.Services.AddControllers();
@@ -84,10 +84,11 @@ app.UseStaticFiles(new StaticFileOptions
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    //app.UseSwagger();
+    //app.UseSwaggerUI();
 }
-
+app.UseSwagger();
+app.UseSwaggerUI();
 app.UseHttpsRedirection();
 app.UseRouting();
 app.UseCors("AllowAllOrigins");

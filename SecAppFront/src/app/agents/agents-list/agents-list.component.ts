@@ -62,7 +62,7 @@ export class AgentsListComponent implements OnInit {
     'Actions',
   ];
   pagination: PaginationDTO = { page: 1, recordsPerPage: 10 };
-  totalCount!: number;
+  totalRecords!: number;
   constructor() {
     this.getAgents();
   }
@@ -72,8 +72,8 @@ export class AgentsListComponent implements OnInit {
       .getPagedList(this.pagination)
       .subscribe((response: HttpResponse<AgentDto[]>) => {
         this.agents = response.body as [];
-        const header = response.headers.get('totalCount') as string;
-        this.totalCount = parseInt(header, 10);
+        const header = response.headers.get('TotalRecords') as string;
+        this.totalRecords = parseInt(header, 10);
       });
   }
 

@@ -14,6 +14,7 @@ import { AgentFilterComponent } from './agents/agent-filter/agent-filter.compone
 import { AgentDetailComponent } from './agents/agent-detail/agent-detail.component';
 import { adminGuard } from './shared/admin.guard';
 import { SingupComponent } from './security/singup/signup.component';
+import { UsersIndexComponent } from './security/users-index/users-index.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -33,6 +34,8 @@ export const routes: Routes = [
   { path: 'institutions', component: InstitutionsListComponent, canActivate: [adminGuard] },
   { path: 'institutions/create', component: CreateInstitutionComponent, canActivate: [adminGuard] },
   { path: 'institutions/edit/:id', component: EditInstitutionComponent, canActivate: [adminGuard] },
+
+  {path: 'users', component:  UsersIndexComponent, canActivate: [adminGuard]},
 
   { path: '**', redirectTo: '' }, // Redirect to home for any unknown routes,
 ];

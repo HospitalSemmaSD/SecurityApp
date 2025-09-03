@@ -40,8 +40,8 @@ export class SecurityService {
     return this.http.get<UserProfileDTO[]>(`${this.baseUrl}/UsersList`, { observe: 'response', params: queryParams });
   }
 
-  makeAdmin(emai: string) {
-    return this.http.post(`${this.baseUrl}/makeAdmin`, { email: emai });
+  makeAdmin(email: string) {
+    return this.http.post(`${this.baseUrl}/makeAdmin`, { email: email });
   }
 
   removeAdmin(email: string) {
@@ -69,8 +69,7 @@ export class SecurityService {
 
   getRol(): string {
     const isAdmin = this.getJWTClaims('isAdmin');
-    console.log('isAdmin', isAdmin);
-    if (isAdmin === 'true') {
+    if (isAdmin) {
       return 'admin';
     }
     return ''; // This should be replaced with actual logic to get the user's role

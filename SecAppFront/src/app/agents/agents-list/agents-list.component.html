@@ -55,7 +55,7 @@
       <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
       <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
     </table>
-    <mat-paginator showFirstLastButtons [length]="totalCount" [pageSize]="pagination.recordsPerPage"
+    <mat-paginator showFirstLastButtons [length]="totalRecords" [pageSize]="pagination.recordsPerPage"
       [pageSizeOptions]="[5, 10, 50]" class="mat-elevation-z8" (page)="onPaginateChange($event)"></mat-paginator>
   </ng-container>
 </app-generic-list>
