@@ -211,6 +211,9 @@
               </button>
             }
 
+            <button type="button" class="btn btn-outline-success btn-sm rounded-pill fw-bold px-3" (click)="exportRosterToExcel()" [disabled]="assignments().length === 0" title="Exportar Excel">
+              <i class="bi bi-file-earmark-excel-fill me-1"></i>Excel
+            </button>
             <button type="button" class="btn btn-outline-primary btn-sm rounded-pill fw-bold px-3" (click)="downloadRoster()" [disabled]="assignments().length === 0" title="Descargar PDF">
               <i class="bi bi-download me-1"></i>Descargar
             </button>

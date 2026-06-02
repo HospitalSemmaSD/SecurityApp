@@ -7,6 +7,7 @@ import { catchError, debounceTime, distinctUntilChanged, map, of, Subject, switc
 import { environment } from '../../../../environments/environment';
 import { Agent } from '../../../core/models/agent.model';
 import { AgentService } from '../../../core/services/agent.service';
+import { ExcelExportService } from '../../../core/services/excel-export.service';
 
 @Component({
   selector: 'app-agents-list',
@@ -18,6 +19,7 @@ import { AgentService } from '../../../core/services/agent.service';
 export class AgentsListComponent implements OnInit {
   private agentService = inject(AgentService);
   private router = inject(Router);
+  private excelService = inject(ExcelExportService);
 
   agents = signal<Agent[]>([]);
   loading = signal(true);
@@ -140,6 +142,62 @@ export class AgentsListComponent implements OnInit {
       },
       error: (err) => {
         console.error('Error eliminando agente:', err);
+      }
+    });
+  }
+
+  exportToExcel() {
+    this.loading.set(true);
+    const status = this.statusFilter();
+    let statusBool: boolean | undefined = undefined;
+    if (status === 'active') statusBool = true;
+    if (status === 'inactive') statusBool = false;
+
+    // Obtener todos los registros sin paginación (límite de 10,000 registros para descarga completa)
+    this.agentService.getAgents(1, 10000, statusBool).subscribe({
+      next: (result) => {
+        const headers = [
+          'Código Empleado', 
+          'Nombre Completo', 
+          'Cédula', 
+          'Género', 
+          'Teléfono', 
+          'Correo Electrónico', 
+          'Rango', 
+          'Institución', 
+          'Estado'
+        ];
+        const keys = [
+          'agentCode', 
+          'fullName', 
+          'identification', 
+          'genderText', 
+          'phone', 
+          'email', 
+          'rankName', 
+          'institutionName', 
+          'statusText'
+        ];
+
+        const mappedData = result.agents.map(a => ({
+          ...a,
+          genderText: a.gender === 'F' ? 'Femenino' : 'Masculino',
+          statusText: a.status ? 'Activo' : 'Inactivo',
+          email: a.email || 'N/A'
+        }));
+
+        this.excelService.exportToExcel(
+          mappedData,
+          headers,
+          keys,
+          `Listado_Agentes_HDSSD_${new Date().toISOString().split('T')[0]}`,
+          'Agentes'
+        );
+        this.loading.set(false);
+      },
+      error: (err) => {
+        console.error('Error al exportar agentes a Excel', err);
+        this.loading.set(false);
       }
     });
   }
