@@ -11,11 +11,24 @@ import * as pdfFonts from 'pdfmake/build/vfs_fonts';
 @Injectable({ providedIn: 'root' })
 export class PdfReportService {
 
+  private logoSemmaBase64 = '';
+  private logoPNBase64 = '';
+
   constructor() {
     const pdfm = (pdfMake as any).default || (pdfMake as any);
     const pdff = (pdfFonts as any).default || (pdfFonts as any);
     const vfs = pdff.pdfMake ? pdff.pdfMake.vfs : (pdff.vfs || pdff);
     pdfm.vfs = vfs;
+    this.preloadLogos();
+  }
+
+  private async preloadLogos() {
+    try {
+      this.logoSemmaBase64 = await getBase64ImageFromURL('/img/logos/logo-semma.JPG');
+      this.logoPNBase64 = await getBase64ImageFromURL('/img/logos/PN.jpg');
+    } catch (e) {
+      console.warn('No se pudieron precargar los logos para el PDF', e);
+    }
   }
 
   private formatPhone(phone: string): string {
@@ -27,17 +40,10 @@ export class PdfReportService {
     return phone;
   }
 
-  async generateDutyRosterPdf(startDate: string, assignments: DutyAssignment[], preparer?: any, approver?: any, action: 'download' | 'print' = 'download') {
-    // 1. Cargar Logos Institucionales
-    let logoSemmaBase64 = '';
-    let logoPNBase64 = '';
-    
-    try {
-        logoSemmaBase64 = await getBase64ImageFromURL('/img/logos/logo-semma.JPG');
-        logoPNBase64 = await getBase64ImageFromURL('/img/logos/PN.jpg');
-    } catch (e) {
-        console.warn('No se pudieron cargar los logos para el PDF', e);
-    }
+  generateDutyRosterPdf(startDate: string, assignments: DutyAssignment[], preparer?: any, approver?: any, action: 'download' | 'print' = 'download') {
+    // 1. Cargar Logos Institucionales (ya precargados)
+    const logoSemmaBase64 = this.logoSemmaBase64;
+    const logoPNBase64 = this.logoPNBase64;
 
     // 2. Preparar fechas
     const d = new Date(startDate + 'T12:00:00'); 
