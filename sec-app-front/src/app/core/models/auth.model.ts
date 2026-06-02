@@ -6,4 +6,5 @@ export interface UserCredentials {
 export interface AuthResponse {
   token: string;
   tokenExpiration: string;
+  refreshToken?: string;
 }

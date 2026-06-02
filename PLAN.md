@@ -44,25 +44,25 @@ Este archivo sirve como referencia de las tareas identificadas para mantener la 
 ## 4. Nuevas Funcionalidades Propuestas (Roadmap de Desarrollo)
 
 ### 📈 Auditoría y Trazabilidad Completa
-- [ ] **Registrar Acciones de Agentes:** Inyectar `IAuditService` en `AgentService` y registrar en la bitácora la creación, modificación y desactivación de agentes.
-- [ ] **Registrar Acciones de Usuarios:** Registrar el inicio y cierre de sesión de los usuarios de la plataforma en `AuditLogs`.
+- [x] **Registrar Acciones de Agentes:** Inyectar `IAuditService` en `AgentService` y registrar en la bitácora la creación, modificación y desactivación de agentes.
+- [x] **Registrar Acciones de Usuarios:** Registrar el inicio y cierre de sesión de los usuarios de la plataforma en `AuditLogs`.
 
 ### 🌓 Modo Oscuro (UI/UX para Monitoreo Nocturno)
-- [ ] **Soporte de Estilos CSS:** Diseñar los tokens de color del modo oscuro y agregarlos al sistema CSS.
-- [ ] **Toggle de Modo Oscuro:** Añadir un botón o selector de tema (Claro / Oscuro) en la barra superior o menú lateral (`main-layout`).
+- [x] **Soporte de Estilos CSS:** Diseñar los tokens de color del modo oscuro y agregarlos al sistema CSS.
+- [x] **Toggle de Modo Oscuro:** Añadir un botón o selector de tema (Claro / Oscuro) en la barra superior o menú lateral (`main-layout`).
 
 ### 📊 Exportación Completa a Excel (.xlsx)
-- [ ] **Instalar Librería de Excel:** Configurar `xlsx` (SheetJS) en el frontend.
-- [ ] **Exportación de Catálogo de Agentes:** Botón para descargar el listado filtrado de personal.
-- [ ] **Exportación de Bitácora:** Botón para exportar el historial de auditoría de seguridad.
-- [ ] **Exportación de Lista de Servicios:** Botón para exportar a planilla excel la guardia de la semana.
+- [x] **Instalar Librería de Excel:** Configurar `xlsx` (SheetJS) en el frontend.
+- [x] **Exportación de Catálogo de Agentes:** Botón para descargar el listado filtrado de personal.
+- [x] **Exportación de Bitácora:** Botón para exportar el historial de auditoría de seguridad.
+- [x] **Exportación de Lista de Servicios:** Botón para exportar a planilla excel la guardia de la semana.
 
 ### 🛡️ Seguridad Avanzada (Autenticación)
-- [ ] **Refresh Tokens:** Implementar la lógica para refrescar tokens JWT automáticamente sin obligar al usuario a iniciar sesión repetidamente.
-- [ ] **Bloqueo Temporal de Cuentas:** Añadir control de intentos fallidos en el backend para bloquear la cuenta temporalmente.
+- [x] **Refresh Tokens:** Implementar la lógica para refrescar tokens JWT automáticamente sin obligar al usuario a iniciar sesión repetidamente.
+- [x] **Bloqueo Temporal de Cuentas:** Añadir control de intentos fallidos en el backend para bloquear la cuenta temporalmente.
 
 ### 📝 Registro de Logs del Servidor (Logging)
-- [ ] **Configurar Serilog/NLog:** Configurar un framework de logs en el backend (.NET Core) para registrar excepciones y trazas operativas en archivos físicos diarios rotativos (ej. `logs/log-YYYY-MM-DD.txt`).
+- [x] **Configurar Serilog/NLog:** Configurar un framework de logs en el backend (.NET Core) para registrar excepciones y trazas operativas en archivos físicos diarios rotativos (ej. `logs/log-YYYY-MM-DD.txt`).
 
 ---
 
