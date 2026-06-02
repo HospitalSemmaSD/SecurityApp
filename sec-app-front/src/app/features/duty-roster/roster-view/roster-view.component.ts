@@ -16,6 +16,7 @@ import { PdfReportService } from '../../../core/services/pdf-report.service';
 import { ResponsibleService } from '../../../core/services/responsible.service';
 import { ShiftService } from '../../../core/services/shift.service';
 import { TemplateService } from '../../../core/services/template.service';
+import { ExcelExportService } from '../../../core/services/excel-export.service';
 
 @Component({
   selector: 'app-roster-view',
@@ -33,6 +34,7 @@ export class RosterViewComponent implements OnInit {
   private pdfService = inject(PdfReportService);
   private templateService = inject(TemplateService);
   private toastr = inject(ToastrService);
+  private excelService = inject(ExcelExportService);
 
   @ViewChild('datePicker') datePicker!: ElementRef;
 
@@ -506,7 +508,53 @@ export class RosterViewComponent implements OnInit {
       this.selectedWeekStart(),
       this.assignments(),
       this.preparador(),
-      this.aprobador()
+      this.aprobador(),
+      'print'
+    );
+  }
+
+  downloadRoster() {
+    this.pdfService.generateDutyRosterPdf(
+      this.selectedWeekStart(),
+      this.assignments(),
+      this.preparador(),
+      this.aprobador(),
+      'download'
+    );
+  }
+
+  exportRosterToExcel() {
+    const headers = [
+      'Turno', 
+      'Horario', 
+      'Rango', 
+      'Nombre Completo', 
+      'Institución', 
+      'Puesto / Ubicación', 
+      'Teléfono'
+    ];
+    const keys = [
+      'shiftName', 
+      'shiftTimeRange', 
+      'agentRank', 
+      'agentName', 
+      'agentInstitution', 
+      'dutyPostName', 
+      'agentPhone'
+    ];
+
+    const sortedData = [...this.assignments()].sort((a, b) => {
+      const shiftCompare = a.shiftName.localeCompare(b.shiftName);
+      if (shiftCompare !== 0) return shiftCompare;
+      return a.agentName.localeCompare(b.agentName);
+    });
+
+    this.excelService.exportToExcel(
+      sortedData,
+      headers,
+      keys,
+      `Lista_Servicio_HDSSD_${this.selectedWeekStart()}`,
+      'Guardia Semanal'
     );
   }
 

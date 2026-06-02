@@ -15,8 +15,27 @@ using SecApp.Api.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using SecApp.Api.Middlewares;
 using SecApp.Api.Hubs;
+using Serilog;
 
-var builder = WebApplication.CreateBuilder(args);
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Information()
+    .MinimumLevel.Override("Microsoft", Serilog.Events.LogEventLevel.Warning)
+    .WriteTo.Console()
+    .WriteTo.File(
+        path: Path.Combine("logs", "log-.txt"),
+        rollingInterval: RollingInterval.Day,
+        retainedFileCountLimit: 30,
+        outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj}{NewLine}{Exception}"
+    )
+    .CreateLogger();
+
+try
+{
+    Log.Information("Iniciando la aplicación web de Seguridad...");
+
+    var builder = WebApplication.CreateBuilder(args);
+
+    builder.Host.UseSerilog();
 
 // 1. CONFIGURACIÓN DE CORS (DEBE SER MUY ESPECÍFICO PARA SIGNALR)
 builder.Services.AddCors(options =>
@@ -69,6 +88,11 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
     options.Password.RequireUppercase = false;
     options.Password.RequireLowercase = false;
     options.Password.RequiredUniqueChars = 1;
+
+    // Configuración de bloqueo de cuentas (Account Lockout)
+    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(15);
+    options.Lockout.MaxFailedAccessAttempts = 5;
+    options.Lockout.AllowedForNewUsers = true;
 })
     .AddEntityFrameworkStores<SecurityDBContext>()
     .AddDefaultTokenProviders();
@@ -158,4 +182,13 @@ if (Directory.Exists(angularPath))
     });
 }
 
-app.Run();
+    app.Run();
+}
+catch (Exception ex)
+{
+    Log.Fatal(ex, "La aplicación terminó inesperadamente.");
+}
+finally
+{
+    Log.CloseAndFlush();
+}

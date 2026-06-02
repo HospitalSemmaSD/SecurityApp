@@ -2,6 +2,7 @@ import { CommonModule, DatePipe } from '@angular/common';
 import { Component, OnInit, inject, signal } from '@angular/core';
 import { AuditService } from '../../core/services/audit.service';
 import { AuditLog } from '../../core/models/audit-log.model';
+import { ExcelExportService } from '../../core/services/excel-export.service';
 
 @Component({
   selector: 'app-audit-logs',
@@ -11,6 +12,7 @@ import { AuditLog } from '../../core/models/audit-log.model';
 })
 export class AuditLogsComponent implements OnInit {
   private auditService = inject(AuditService);
+  private excelService = inject(ExcelExportService);
 
   logs = signal<AuditLog[]>([]);
   totalRecords = signal<number>(0);
@@ -50,5 +52,52 @@ export class AuditLogsComponent implements OnInit {
     if (action.includes('Reapertura')) return 'bg-warning text-dark';
     if (action.includes('Asignación')) return 'bg-primary';
     return 'bg-secondary';
+  }
+
+  exportToExcel(): void {
+    this.isLoading.set(true);
+    // Obtener los primeros 10,000 registros para descarga completa
+    this.auditService.getLogs(1, 10000).subscribe({
+      next: (result) => {
+        const headers = [
+          'ID Usuario', 
+          'Nombre de Usuario', 
+          'Acción', 
+          'Entidad Modificada', 
+          'ID Registro', 
+          'Detalles', 
+          'Fecha y Hora (Local)'
+        ];
+        const keys = [
+          'userId', 
+          'userName', 
+          'action', 
+          'entityType', 
+          'entityId', 
+          'details', 
+          'localTime'
+        ];
+
+        const mappedData = result.logs.map(log => ({
+          ...log,
+          entityId: log.entityId || 'N/A',
+          details: log.details || 'N/A',
+          localTime: new Date(log.timestamp).toLocaleString('es-DO')
+        }));
+
+        this.excelService.exportToExcel(
+          mappedData,
+          headers,
+          keys,
+          `Bitacora_Auditoria_HDSSD_${new Date().toISOString().split('T')[0]}`,
+          'Bitácora'
+        );
+        this.isLoading.set(false);
+      },
+      error: (err) => {
+        console.error('Error al exportar bitácora a Excel', err);
+        this.isLoading.set(false);
+      }
+    });
   }
 }

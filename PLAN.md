@@ -26,22 +26,47 @@ Este archivo sirve como referencia de las tareas identificadas para mantener la 
 ## 3. Plan de Acción (Checklist de Tareas)
 
 ### 🖥️ Backend (.NET API)
-- [ ] **Resolver advertencia CS8602 en `DashboardService.cs`:**
+- [x] **Resolver advertencia CS8602 en `DashboardService.cs`:**
   - Modificar la consulta LINQ en `GetRankDistributionAsync()` para proteger la desreferencia nula utilizando un fallback (ej: `a.Rank != null ? a.Rank.Name : "Sin Rango"` o `a.Rank!.Name` con la supresión de null-safety en EF Core).
 
 ### 🎨 Frontend (Angular 19)
-- [ ] **Estandarizar Mapeo de Errores de Validación (ModelState):**
+- [x] **Estandarizar Mapeo de Errores de Validación (ModelState):**
   - Implementar la función `mapServerErrors` en los siguientes formularios para inyectar los errores de validación de la API directamente a los inputs:
-    - [ ] `UserFormComponent` (`sec-app-front/src/app/features/users/user-form/user-form.component.ts`)
-    - [ ] `IncidentFormComponent` (`sec-app-front/src/app/features/incidents/incident-form/incident-form.component.ts`)
-    - [ ] `NoticeFormComponent` (`sec-app-front/src/app/features/notices/notice-form/notice-form.component.ts`)
-    - [ ] `InstitutionListComponent` (`sec-app-front/src/app/features/institutions/institution-list/institution-list.component.ts`)
-    - [ ] `RankListComponent` (`sec-app-front/src/app/features/ranks/rank-list/rank-list.component.ts`)
+    - [x] `UserFormComponent` (`sec-app-front/src/app/features/users/user-form/user-form.component.ts`)
+    - [x] `IncidentFormComponent` (`sec-app-front/src/app/features/incidents/incident-form/incident-form.component.ts`)
+    - [x] `NoticeFormComponent` (`sec-app-front/src/app/features/notices/notice-form/notice-form.component.ts`)
+    - [x] `InstitutionListComponent` (`sec-app-front/src/app/features/institutions/institution-list/institution-list.component.ts`)
+    - [x] `RankListComponent` (`sec-app-front/src/app/features/ranks/rank-list/rank-list.component.ts`)
   - Asegurar que los componentes de la interfaz de usuario muestren la clase `is-invalid` y contengan la correspondiente visualización del error en un bloque `<div class="invalid-feedback">` en sus archivos HTML.
 
 ---
 
-## 4. Plan de Verificación
+## 4. Nuevas Funcionalidades Propuestas (Roadmap de Desarrollo)
+
+### 📈 Auditoría y Trazabilidad Completa
+- [x] **Registrar Acciones de Agentes:** Inyectar `IAuditService` en `AgentService` y registrar en la bitácora la creación, modificación y desactivación de agentes.
+- [x] **Registrar Acciones de Usuarios:** Registrar el inicio y cierre de sesión de los usuarios de la plataforma en `AuditLogs`.
+
+### 🌓 Modo Oscuro (UI/UX para Monitoreo Nocturno)
+- [x] **Soporte de Estilos CSS:** Diseñar los tokens de color del modo oscuro y agregarlos al sistema CSS.
+- [x] **Toggle de Modo Oscuro:** Añadir un botón o selector de tema (Claro / Oscuro) en la barra superior o menú lateral (`main-layout`).
+
+### 📊 Exportación Completa a Excel (.xlsx)
+- [x] **Instalar Librería de Excel:** Configurar `xlsx` (SheetJS) en el frontend.
+- [x] **Exportación de Catálogo de Agentes:** Botón para descargar el listado filtrado de personal.
+- [x] **Exportación de Bitácora:** Botón para exportar el historial de auditoría de seguridad.
+- [x] **Exportación de Lista de Servicios:** Botón para exportar a planilla excel la guardia de la semana.
+
+### 🛡️ Seguridad Avanzada (Autenticación)
+- [x] **Refresh Tokens:** Implementar la lógica para refrescar tokens JWT automáticamente sin obligar al usuario a iniciar sesión repetidamente.
+- [x] **Bloqueo Temporal de Cuentas:** Añadir control de intentos fallidos en el backend para bloquear la cuenta temporalmente.
+
+### 📝 Registro de Logs del Servidor (Logging)
+- [x] **Configurar Serilog/NLog:** Configurar un framework de logs en el backend (.NET Core) para registrar excepciones y trazas operativas en archivos físicos diarios rotativos (ej. `logs/log-YYYY-MM-DD.txt`).
+
+---
+
+## 5. Plan de Verificación
 
 *   **Pruebas de Compilación:**
     *   Ejecutar `dotnet build SecAppBack/SecApp.sln` para certificar que el backend compila con 0 advertencias.
