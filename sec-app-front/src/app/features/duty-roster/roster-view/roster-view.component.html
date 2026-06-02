@@ -211,8 +211,11 @@
               </button>
             }
 
-            <button type="button" class="btn btn-primary btn-sm rounded-pill fw-bold px-4 shadow-sm" (click)="printRoster()" [disabled]="assignments().length === 0">
-              <i class="bi bi-file-earmark-pdf-fill me-1"></i>PDF
+            <button type="button" class="btn btn-outline-primary btn-sm rounded-pill fw-bold px-3" (click)="downloadRoster()" [disabled]="assignments().length === 0" title="Descargar PDF">
+              <i class="bi bi-download me-1"></i>Descargar
+            </button>
+            <button type="button" class="btn btn-primary btn-sm rounded-pill fw-bold px-3 shadow-sm" (click)="printRoster()" [disabled]="assignments().length === 0" title="Imprimir Guardia">
+              <i class="bi bi-printer-fill me-1"></i>Imprimir
             </button>
           </div>
         </div>

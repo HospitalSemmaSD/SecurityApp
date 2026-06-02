@@ -27,7 +27,7 @@ export class PdfReportService {
     return phone;
   }
 
-  async generateDutyRosterPdf(startDate: string, assignments: DutyAssignment[], preparer?: any, approver?: any) {
+  async generateDutyRosterPdf(startDate: string, assignments: DutyAssignment[], preparer?: any, approver?: any, action: 'download' | 'print' = 'download') {
     // 1. Cargar Logos Institucionales
     let logoSemmaBase64 = '';
     let logoPNBase64 = '';
@@ -187,7 +187,12 @@ export class PdfReportService {
 
     const lib = (pdfMake as any).default || (pdfMake as any);
     if (typeof lib.createPdf === 'function') {
-        lib.createPdf(docDefinition).download(`Lista_Servicio_HDSSD_${startDate}.pdf`);
+        const pdfDoc = lib.createPdf(docDefinition);
+        if (action === 'print') {
+            pdfDoc.print();
+        } else {
+            pdfDoc.download(`Lista_Servicio_HDSSD_${startDate}.pdf`);
+        }
     }
   }
 }

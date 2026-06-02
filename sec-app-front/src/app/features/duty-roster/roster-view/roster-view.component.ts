@@ -506,7 +506,18 @@ export class RosterViewComponent implements OnInit {
       this.selectedWeekStart(),
       this.assignments(),
       this.preparador(),
-      this.aprobador()
+      this.aprobador(),
+      'print'
+    );
+  }
+
+  downloadRoster() {
+    this.pdfService.generateDutyRosterPdf(
+      this.selectedWeekStart(),
+      this.assignments(),
+      this.preparador(),
+      this.aprobador(),
+      'download'
     );
   }
 
