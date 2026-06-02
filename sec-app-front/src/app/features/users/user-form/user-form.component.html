@@ -1,0 +1,176 @@
+<div class="container-fluid py-4">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-xl-8">
+      
+      <div class="card shadow-sm border-0 rounded-4">
+        <div class="card-header bg-white border-bottom py-3">
+          <h4 class="mb-0 fw-bold text-primary">
+            <i class="bi" [ngClass]="isEditMode() ? 'bi-pencil-square' : 'bi-person-plus-fill'"></i>
+            {{ isEditMode() ? 'Editar Acceso' : 'Crear Nuevo Acceso' }}
+          </h4>
+        </div>
+
+        <div class="card-body p-4 p-md-5">
+          
+          @if (errorMessage()) {
+            <div class="alert alert-danger mb-4">
+              <i class="bi bi-exclamation-triangle-fill me-2"></i>{{ errorMessage() }}
+            </div>
+          }
+
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <label class="form-label fw-semibold">Nombre Completo <span class="text-danger">*</span></label>
+                <div class="input-group">
+                  <span class="input-group-text bg-light"><i class="bi bi-person"></i></span>
+                  <input type="text" formControlName="fullName" class="form-control" placeholder="Ej: Juan Pérez"
+                         [ngClass]="{'is-invalid': form.get('fullName')?.invalid && (form.get('fullName')?.touched || form.get('fullName')?.hasError('serverError'))}">
+                  <div class="invalid-feedback">
+                    @if (form.get('fullName')?.hasError('required')) {
+                      El nombre completo es requerido.
+                    } @else if (form.get('fullName')?.hasError('minlength')) {
+                      El nombre debe tener al menos 3 caracteres.
+                    } @else if (form.get('fullName')?.hasError('serverError')) {
+                      {{ form.get('fullName')?.getError('serverError') }}
+                    }
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-4">
+                <label class="form-label fw-semibold">Código de Empleado (Usuario) <span class="text-danger">*</span></label>
+                <div class="input-group">
+                  <span class="input-group-text bg-light"><i class="bi bi-person-badge"></i></span>
+                  <input type="text" formControlName="username" class="form-control" placeholder="Ej: 130029"
+                         [ngClass]="{'is-invalid': form.get('username')?.invalid && (form.get('username')?.touched || form.get('username')?.hasError('serverError'))}">
+                  <div class="invalid-feedback">
+                    @if (form.get('username')?.hasError('required')) {
+                      El código de empleado es requerido.
+                    } @else if (form.get('username')?.hasError('pattern')) {
+                      El código debe ser exclusivamente numérico.
+                    } @else if (form.get('username')?.hasError('serverError')) {
+                      {{ form.get('username')?.getError('serverError') }}
+                    }
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <label class="form-label fw-semibold">Cédula / Identificación <span class="text-danger">*</span></label>
+                <div class="input-group">
+                  <span class="input-group-text bg-light"><i class="bi bi-card-text"></i></span>
+                  <input type="text" formControlName="identification" class="form-control" placeholder="000-0000000-0"
+                         mask="000-0000000-0"
+                         [ngClass]="{'is-invalid': form.get('identification')?.invalid && (form.get('identification')?.touched || form.get('identification')?.hasError('serverError'))}">
+                  <div class="invalid-feedback">
+                    @if (form.get('identification')?.hasError('required')) {
+                      La cédula es requerida.
+                    } @else if (form.get('identification')?.hasError('minlength')) {
+                      La cédula debe tener 11 dígitos.
+                    } @else if (form.get('identification')?.hasError('serverError')) {
+                      {{ form.get('identification')?.getError('serverError') }}
+                    }
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-4">
+                <label class="form-label fw-semibold">Teléfono <span class="text-danger">*</span></label>
+                <div class="input-group">
+                  <span class="input-group-text bg-light"><i class="bi bi-telephone"></i></span>
+                  <input type="text" formControlName="phoneNumber" class="form-control" placeholder="(000) 000-0000"
+                         mask="(000) 000-0000"
+                         [ngClass]="{'is-invalid': form.get('phoneNumber')?.invalid && (form.get('phoneNumber')?.touched || form.get('phoneNumber')?.hasError('serverError'))}">
+                  <div class="invalid-feedback">
+                    @if (form.get('phoneNumber')?.hasError('required')) {
+                      El teléfono es requerido.
+                    } @else if (form.get('phoneNumber')?.hasError('minlength')) {
+                      El teléfono debe tener 10 dígitos.
+                    } @else if (form.get('phoneNumber')?.hasError('serverError')) {
+                      {{ form.get('phoneNumber')?.getError('serverError') }}
+                    }
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label fw-semibold">Correo Electrónico</label>
+              <div class="input-group">
+                <span class="input-group-text bg-light"><i class="bi bi-envelope"></i></span>
+                <input type="email" formControlName="email" class="form-control" placeholder="usuario@hdssd.com"
+                       [ngClass]="{'is-invalid': form.get('email')?.invalid && (form.get('email')?.touched || form.get('email')?.hasError('serverError'))}">
+                <div class="invalid-feedback">
+                  @if (form.get('email')?.hasError('email')) {
+                    El formato del correo electrónico es inválido.
+                  } @else if (form.get('email')?.hasError('serverError')) {
+                    {{ form.get('email')?.getError('serverError') }}
+                  }
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <label class="form-label fw-semibold">
+                  {{ isEditMode() ? 'Nueva Contraseña (Opcional)' : 'Contraseña Temporal *' }}
+                </label>
+                <div class="input-group">
+                  <span class="input-group-text bg-light"><i class="bi bi-key-fill"></i></span>
+                  <input type="password" formControlName="password" class="form-control" 
+                         [placeholder]="isEditMode() ? 'Dejar vacío para no cambiar' : 'Mínimo 6 caracteres'"
+                         [ngClass]="{'is-invalid': form.get('password')?.invalid && (form.get('password')?.touched || form.get('password')?.hasError('serverError'))}">
+                  <div class="invalid-feedback">
+                    @if (form.get('password')?.hasError('required')) {
+                      La contraseña es requerida.
+                    } @else if (form.get('password')?.hasError('minlength')) {
+                      Mínimo 6 caracteres.
+                    } @else if (form.get('password')?.hasError('serverError')) {
+                      {{ form.get('password')?.getError('serverError') }}
+                    }
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-5">
+                <label class="form-label fw-semibold">Nivel de Acceso <span class="text-danger">*</span></label>
+                <select formControlName="role" class="form-select"
+                        [ngClass]="{'is-invalid': form.get('role')?.invalid && (form.get('role')?.touched || form.get('role')?.hasError('serverError'))}">
+                  <option value="" disabled selected>Seleccione un nivel...</option>
+                  @for (role of availableRoles(); track role) {
+                    <option [value]="role">{{ role }}</option>
+                  }
+                </select>
+                <div class="invalid-feedback">
+                  @if (form.get('role')?.hasError('required')) {
+                    El nivel de acceso es obligatorio.
+                  } @else if (form.get('role')?.hasError('serverError')) {
+                    {{ form.get('role')?.getError('serverError') }}
+                  }
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-end gap-3 pt-3 border-top">
+              <button type="button" class="btn btn-outline-secondary px-4 fw-semibold rounded-pill" routerLink="/app/users">Cancelar</button>
+              <button type="submit" class="btn btn-primary px-5 fw-bold rounded-pill" [disabled]="form.invalid || isLoading()">
+                @if (isLoading()) {
+                  <span class="spinner-border spinner-border-sm me-2"></span>
+                } @else {
+                  <i class="bi bi-check-lg me-1"></i>
+                }
+                {{ isEditMode() ? 'Guardar Cambios' : 'Crear Usuario' }}
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

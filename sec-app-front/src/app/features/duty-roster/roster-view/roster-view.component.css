@@ -1,0 +1,147 @@
+/* Utility Classes */
+.fw-black { font-weight: 900; }
+.tracking-widest { letter-spacing: 0.15em; }
+.tracking-wider { letter-spacing: 0.05em; }
+.text-xs { font-size: 0.75rem; }
+.text-sm { font-size: 0.875rem; }
+
+/* soft backgrounds */
+.bg-primary-soft { background-color: rgba(13, 110, 253, 0.1); }
+.bg-info-soft { background-color: rgba(13, 202, 240, 0.1); }
+
+/* Animation Classes */
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hover Effects */
+.hover-lift {
+    transition: all 0.25s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1) !important;
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
+/* Component Specific */
+.week-navigator {
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.avatar-sm {
+    width: 38px;
+    height: 38px;
+    font-size: 0.9rem;
+}
+
+.scrollable-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.main-assignment-card {
+    border-top: 4px solid #0d6efd !important;
+}
+
+.table-hover-custom tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.table-hover-custom tbody tr:hover {
+    background-color: rgba(13, 110, 253, 0.02);
+}
+
+.assignment-row {
+    border-bottom: 1px solid rgba(0,0,0,0.03);
+}
+
+.active-roster {
+    background-color: rgba(13, 110, 253, 0.05) !important;
+    border-left-color: #0d6efd !important;
+}
+
+.active-roster .calendar-icon {
+    background-color: #0d6efd !important;
+}
+
+.active-roster .calendar-icon i {
+    color: white !important;
+}
+
+.btn-icon {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Optimizaciones para Móvil */
+@media (max-width: 768px) {
+    .container-fluid {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+    
+    .card-body {
+        padding: 1rem !important;
+    }
+
+    .fw-black {
+        font-weight: 800;
+    }
+    
+    .table-responsive {
+        border-radius: 12px;
+        border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .assignment-row td {
+        padding: 0.75rem !important;
+        min-width: 120px;
+    }
+
+    .assignment-row td:first-child {
+        min-width: 200px;
+    }
+
+    .text-xs.text-muted.fw-medium {
+        font-size: 0.65rem;
+    }
+
+    .btn-md-lg {
+        padding: 0.4rem 0.8rem !important;
+        font-size: 0.75rem !important;
+    }
+}
+
+/* ESTILOS DE IMPRESIÓN */
+.no-print {
+    display: block;
+}
+
+@media print {
+    .no-print { display: none !important; }
+}

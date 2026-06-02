@@ -1,0 +1,105 @@
+<div class="container-fluid py-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h3 class="fw-bold text-primary"><i class="bi bi-person-badge-fill me-2"></i>Responsables del Departamento</h3>
+  </div>
+
+  @if (showDeleteAlert()) {
+    <div class="mb-4 p-3 border border-danger rounded bg-white shadow-sm">
+      <app-ui-alert type="danger" title="Confirmar Eliminación" [message]="'¿Deseas eliminar a: ' + nameToDelete() + '?'"></app-ui-alert>
+      <div class="d-flex justify-content-end gap-2 mt-2">
+        <button class="btn btn-light btn-sm border" (click)="showDeleteAlert.set(false)">Cancelar</button>
+        <button class="btn btn-danger btn-sm" (click)="confirmDelete()">Eliminar</button>
+      </div>
+    </div>
+  }
+
+  <div class="row g-4">
+    <div class="col-lg-8">
+      <div class="card shadow-sm border-0">
+        <div class="card-body p-0">
+          <table class="table table-hover mb-0">
+            <thead class="table-light">
+              <tr>
+                <th class="px-4 py-3">Nombre Completo</th>
+                <th>Rango</th>
+                <th>Cargo</th>
+                <th class="text-end px-4">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (resp of responsibles(); track resp.id) {
+                <tr>
+                  <td class="px-4 py-3 fw-bold">{{ resp.fullName }}</td>
+                  <td>{{ resp.rank }}</td>
+                  <td><span class="badge bg-light text-dark border">{{ resp.position }}</span></td>
+                  <td class="text-end px-4">
+                    <button class="btn btn-sm btn-outline-primary me-2" (click)="onEdit(resp)"><i class="bi bi-pencil"></i></button>
+                    <button class="btn btn-sm btn-outline-danger" (click)="onDeleteRequest(resp)"><i class="bi bi-trash"></i></button>
+                  </td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="card shadow-sm border-0 bg-light">
+        <div class="card-body p-4">
+          <h5 class="fw-bold mb-3 text-primary">{{ editingId() ? 'Editar Responsable' : 'Nuevo Responsable' }}</h5>
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label class="form-label small fw-bold">Nombre Completo</label>
+              <input type="text" formControlName="fullName" class="form-control"
+                     [ngClass]="{'is-invalid': form.get('fullName')?.invalid && (form.get('fullName')?.touched || form.get('fullName')?.hasError('serverError'))}">
+              <div class="invalid-feedback">
+                @if (form.get('fullName')?.hasError('serverError')) {
+                  {{ form.get('fullName')?.getError('serverError') }}
+                } @else {
+                  El nombre completo es requerido.
+                }
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label small fw-bold">Rango</label>
+              <input type="text" formControlName="rank" class="form-control" placeholder="Ej: Mayor, E.R.D."
+                     [ngClass]="{'is-invalid': form.get('rank')?.invalid && (form.get('rank')?.touched || form.get('rank')?.hasError('serverError'))}">
+              <div class="invalid-feedback">
+                @if (form.get('rank')?.hasError('serverError')) {
+                  {{ form.get('rank')?.getError('serverError') }}
+                } @else {
+                  El rango es requerido.
+                }
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label small fw-bold">Cargo en el Reporte</label>
+              <select formControlName="position" class="form-select"
+                      [ngClass]="{'is-invalid': form.get('position')?.invalid && (form.get('position')?.touched || form.get('position')?.hasError('serverError'))}">
+                <option value="">-- Seleccione --</option>
+                <option value="Encargado">Encargado (Firma Derecha)</option>
+                <option value="Sub-Encargado">Sub-Encargado (Firma Izquierda)</option>
+              </select>
+              <div class="invalid-feedback">
+                @if (form.get('position')?.hasError('serverError')) {
+                  {{ form.get('position')?.getError('serverError') }}
+                } @else {
+                  El cargo es requerido.
+                }
+              </div>
+            </div>
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-primary fw-bold" [disabled]="form.invalid || isSaving()">
+                {{ editingId() ? 'Actualizar' : 'Guardar' }}
+              </button>
+              @if (editingId()) {
+                <button type="button" class="btn btn-outline-secondary" (click)="cancelEdit()">Cancelar</button>
+              }
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

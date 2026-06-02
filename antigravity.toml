@@ -1,0 +1,4 @@
+[workspace]
+context = "CONTEXT.md"
+instructions = "COUNCIL.md"
+plan = "PLAN.md"

@@ -1,0 +1,155 @@
+/* login.css - Diseño Premium Refinado HDSSD Security */
+
+:root {
+  /* ... tus otras variables ... */
+  --semma-green: #19a12b;
+  /* El verde de la palabra Semma */
+  --semma-green-hover: #328c3e;
+  /* Un tono más oscuro para el hover */
+}
+
+.split-login-container {
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-light);
+}
+
+/* -- LADO IZQUIERDO (Identidad) -- */
+.info-panel {
+  position: relative;
+  background-color: var(--hdssd-blue-primary);
+  color: white;
+  padding: 4rem;
+  text-align: center;
+  z-index: 1;
+}
+
+/* Efecto de gradiente sutil sobre la imagen si la pones luego */
+.info-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(135deg, rgba(26, 79, 139, 0.9) 0%, rgba(10, 50, 94, 1) 100%);
+  z-index: -1;
+}
+
+.logo-wrapper {
+  background-color: white;
+  padding: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  display: inline-block;
+  margin-bottom: 2.5rem;
+}
+
+.title-primary {
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.title-underline {
+  width: 60px;
+  border: 2px solid white;
+  margin: 1.5rem auto;
+  opacity: 0.7;
+}
+
+/* -- LADO DERECHO (Formulario) -- */
+.form-panel {
+  background-color: white;
+  padding: 4rem;
+  /* Más espacio para respirar */
+}
+
+.form-wrapper {
+  width: 100%;
+  max-width: 380px;
+  /* Un poco más estrecho para foco */
+}
+
+/* Mejora UX del encabezado */
+.header-text h2 {
+  font-weight: 800;
+  color: #111;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.header-text .text-muted {
+  font-size: 1.05rem;
+  margin-bottom: 0;
+}
+
+/* Inputs Premium con UX Refinada */
+.custom-form-group label {
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.custom-input {
+  border-radius: var(--input-radius);
+  padding: 0.85rem 1rem;
+  border: 1.5px solid #e0e6ed;
+  transition: all 0.2s ease-in-out;
+  font-size: 1rem;
+}
+
+/* Al enfocar, el borde se vuelve azul SEMMA */
+.custom-input:focus {
+  border-color: var(--hdssd-blue-primary);
+  box-shadow: var(--shadow-focus);
+}
+
+/* Al enfocar, el label también se vuelve azul */
+.custom-form-group:focus-within label {
+  color: var(--hdssd-blue-primary);
+}
+
+/* MENSAJES DE ERROR (UX) */
+.is-invalid {
+  border-color: #dc3545 !important;
+}
+
+.invalid-feedback {
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  font-weight: 500;
+  padding-left: 0.25rem;
+}
+
+.btn-semma {
+  background-color: #3ca64a !important;
+  /* Código Hex directo, sin variables */
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 0.9rem;
+  transition: all 0.2s ease;
+  margin-top: 1rem;
+  box-shadow: 0 4px 10px rgba(60, 166, 74, 0.25) !important;
+}
+
+
+.btn-semma:not(:disabled):hover {
+  background-color: #328c3e !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(60, 166, 74, 0.35) !important;
+}
+
+
+.btn-semma:disabled {
+  background-color: #e2e8f0 !important;
+  color: #94a3b8 !important;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+  transform: none !important;
+}

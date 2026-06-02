@@ -1,0 +1,77 @@
+<div class="container py-4 animate-fade-in">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+                <div class="card-header bg-dark py-4 text-center">
+                    <h4 class="text-white fw-black mb-0"><i class="bi bi-megaphone-fill me-2 text-warning"></i>Nuevo Comunicado General</h4>
+                </div>
+                <div class="card-body p-4 p-md-5">
+                    <form [formGroup]="noticeForm" (ngSubmit)="onSubmit()">
+                        <div class="mb-4">
+                            <label class="form-label fw-bold text-dark">Título del Comunicado</label>
+                            <input type="text" class="form-control form-control-lg rounded-3 shadow-none border-2" 
+                                   [ngClass]="{'is-invalid': noticeForm.get('title')?.invalid && (noticeForm.get('title')?.touched || noticeForm.get('title')?.hasError('serverError'))}"
+                                   placeholder="Ej: Cambio de uniforme, Nueva normativa..." formControlName="title">
+                            <div class="invalid-feedback">
+                                @if (noticeForm.get('title')?.hasError('serverError')) {
+                                    {{ noticeForm.get('title')?.getError('serverError') }}
+                                } @else {
+                                    El título es requerido (máximo 150 caracteres).
+                                }
+                            </div>
+                        </div>
+
+                        <div class="row g-4 mb-4">
+                            <div class="col-md-6">
+                                <div class="form-check form-switch pt-2">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="urgentSwitch" formControlName="isUrgent">
+                                    <label class="form-check-label fw-bold text-danger" for="urgentSwitch">
+                                        <i class="bi bi-exclamation-triangle-fill me-1"></i> Marcar como URGENTE
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold text-dark">Fecha de Expiración (Opcional)</label>
+                                <input type="date" class="form-control rounded-3 border-2" 
+                                       [ngClass]="{'is-invalid': noticeForm.get('expirationDate')?.invalid && (noticeForm.get('expirationDate')?.touched || noticeForm.get('expirationDate')?.hasError('serverError'))}"
+                                       formControlName="expirationDate">
+                                <div class="invalid-feedback">
+                                    @if (noticeForm.get('expirationDate')?.hasError('serverError')) {
+                                        {{ noticeForm.get('expirationDate')?.getError('serverError') }}
+                                    }
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-bold text-dark">Contenido del Mensaje</label>
+                            <textarea class="form-control rounded-3 border-2" rows="6" 
+                                      [ngClass]="{'is-invalid': noticeForm.get('content')?.invalid && (noticeForm.get('content')?.touched || noticeForm.get('content')?.hasError('serverError'))}"
+                                      placeholder="Escriba el comunicado detallado aquí..." 
+                                      formControlName="content"></textarea>
+                            <div class="invalid-feedback">
+                                @if (noticeForm.get('content')?.hasError('serverError')) {
+                                    {{ noticeForm.get('content')?.getError('serverError') }}
+                                } @else {
+                                    El contenido es requerido.
+                                }
+                            </div>
+                        </div>
+
+                        <div class="d-flex gap-3 pt-3">
+                            <button type="button" class="btn btn-light btn-lg rounded-pill px-5 border fw-bold" routerLink="/app/home">Cancelar</button>
+                            <button type="submit" class="btn btn-dark btn-lg rounded-pill px-5 fw-black shadow-sm flex-grow-1" 
+                                    [disabled]="noticeForm.invalid || isSaving()">
+                                @if (isSaving()) {
+                                    <span class="spinner-border spinner-border-sm me-2"></span>Publicando...
+                                } @else {
+                                    <i class="bi bi-cloud-upload-fill me-2"></i>Publicar Ahora
+                                }
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

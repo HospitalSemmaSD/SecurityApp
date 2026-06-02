@@ -1,0 +1,407 @@
+<div class="container-fluid py-4 animate-fade-in no-print">
+  
+  <!-- MODALES DE CONFIRMACIÓN Y PLANTILLAS -->
+  @if (showSaveTemplateModal()) {
+    <div class="modal-backdrop fade show"></div>
+    <div class="modal fade show d-block" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg rounded-4">
+          <div class="modal-header bg-primary text-white py-3">
+            <h5 class="modal-title fw-black"><i class="bi bi-save2 me-2"></i>Guardar como Plantilla</h5>
+            <button type="button" class="btn-close btn-close-white" (click)="showSaveTemplateModal.set(false)"></button>
+          </div>
+          <div class="modal-body p-4">
+            <p class="text-muted small mb-4">Esta plantilla guardará los <strong>{{ assignments().length }}</strong> agentes asignados actualmente para que puedas cargarlos en cualquier semana futura.</p>
+            <div class="mb-3">
+              <label class="form-label fw-bold">Nombre de la Plantilla</label>
+              <input type="text" class="form-control form-control-lg border-2 shadow-none" placeholder="Ej: Lunes-Miércoles-Viernes" [(ngModel)]="newTemplateName">
+            </div>
+          </div>
+          <div class="modal-footer border-0 p-4 pt-0">
+            <button class="btn btn-light rounded-pill px-4" (click)="showSaveTemplateModal.set(false)">Cancelar</button>
+            <button class="btn btn-primary rounded-pill px-4 fw-bold" [disabled]="!newTemplateName || isSavingTemplate()" (click)="saveTemplate()">
+                @if (isSavingTemplate()) { <span class="spinner-border spinner-border-sm me-1"></span> }
+                Guardar Plantilla
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+
+  @if (showTemplateModal()) {
+    <div class="modal-backdrop fade show"></div>
+    <div class="modal fade show d-block" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0 shadow-lg rounded-4">
+          <div class="modal-header bg-dark text-white py-3">
+            <h5 class="modal-title fw-black"><i class="bi bi-folder2-open me-2"></i>Mis Plantillas de Guardia</h5>
+            <button type="button" class="btn-close btn-close-white" (click)="showTemplateModal.set(false)"></button>
+          </div>
+          <div class="modal-body p-0">
+            <div class="list-group list-group-flush">
+                @for (t of templates(); track t.id) {
+                    <div class="list-group-item list-group-item-action p-4 d-flex justify-content-between align-items-center">
+                        <div class="cursor-pointer flex-grow-1" (click)="applyTemplate(t.id)">
+                            <h6 class="fw-bold text-primary mb-1">{{ t.name }}</h6>
+                            <small class="text-muted">Creada el {{ t.createdAt | date:'shortDate' }}</small>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-success btn-sm rounded-pill px-3 fw-bold" (click)="applyTemplate(t.id)" [disabled]="isLoadingTemplates()">
+                                <i class="bi bi-box-arrow-in-down me-1"></i> Cargar
+                            </button>
+                            <button class="btn btn-outline-danger btn-sm rounded-circle" (click)="deleteTemplate(t.id, $event)">
+                                <i class="bi bi-trash-fill"></i>
+                            </button>
+                        </div>
+                    </div>
+                }
+                @if (templates().length === 0) {
+                    <div class="p-5 text-center text-muted">
+                        <i class="bi bi-folder-x display-4 opacity-25 d-block mb-3"></i>
+                        <p>No tienes plantillas guardadas aún.</p>
+                    </div>
+                }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+
+  <!-- RESTO DE MODALES EXISTENTES (REACONDICIONADOS) -->
+  @if (showCloseConfirmation()) {
+    <div class="modal-backdrop fade show"></div>
+    <div class="modal fade show d-block" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg rounded-4">
+                <div class="modal-body p-5 text-center">
+                    <div class="display-1 text-success mb-4"><i class="bi bi-shield-check"></i></div>
+                    <h3 class="fw-black text-dark mb-3">¿Cerrar Guardia Oficial?</h3>
+                    <p class="text-muted mb-4">Una vez cerrada, la lista no podrá ser editada y se generará un archivo inalterable con las firmas actuales.</p>
+                    <div class="d-flex gap-2 justify-content-center mt-4">
+                        <button class="btn btn-light btn-lg rounded-pill px-4 border" (click)="showCloseConfirmation.set(false)">Cancelar</button>
+                        <button class="btn btn-success btn-lg rounded-pill px-5 fw-black shadow-sm" (click)="confirmCloseRoster()">Sí, Cerrar Oficialmente</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  }
+
+  @if (showReopenConfirmation()) {
+    <div class="modal-backdrop fade show"></div>
+    <div class="modal fade show d-block" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg rounded-4">
+                <div class="modal-body p-5 text-center">
+                    <div class="display-1 text-warning mb-4"><i class="bi bi-unlock"></i></div>
+                    <h3 class="fw-black text-dark mb-3">¿Reabrir Guardia?</h3>
+                    <p class="text-muted mb-4">La guardia volverá a modo edición. Se perderá el archivo de cierre anterior.</p>
+                    <div class="d-flex gap-2 justify-content-center mt-4">
+                        <button class="btn btn-light btn-lg rounded-pill px-4 border" (click)="showReopenConfirmation.set(false)">Cancelar</button>
+                        <button class="btn btn-warning btn-lg rounded-pill px-5 fw-black" (click)="confirmReopenRoster()">Sí, Reabrir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  }
+
+  @if (showCloneConfirmation()) {
+    <div class="modal-backdrop fade show"></div>
+    <div class="modal fade show d-block" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg rounded-4">
+                <div class="modal-body p-5 text-center">
+                    <div class="display-1 text-primary mb-4"><i class="bi bi-copy"></i></div>
+                    <h3 class="fw-black text-dark mb-3">¿Clonar Guardia Anterior?</h3>
+                    <p class="text-muted mb-4">Se copiará todo el personal de la semana anterior hacia la semana actual. Las asignaciones actuales de esta semana serán reemplazadas.</p>
+                    <div class="d-flex gap-2 justify-content-center mt-4">
+                        <button class="btn btn-light btn-lg rounded-pill px-4 border" (click)="showCloneConfirmation.set(false)">Cancelar</button>
+                        <button class="btn btn-primary btn-lg rounded-pill px-5 fw-black shadow-sm" (click)="confirmCloneRoster()">Sí, Clonar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  }
+
+  @if (showClearConfirmation()) {
+    <div class="mb-4 p-4 border-0 rounded-4 bg-white shadow-lg border-start border-5 border-danger animate-fade-in">
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+            <div class="d-flex align-items-center">
+                <i class="bi bi-exclamation-triangle-fill text-danger fs-2 me-3"></i>
+                <div>
+                    <h5 class="fw-bold mb-1">Confirmar vaciado de lista</h5>
+                    <p class="text-muted mb-0 small">Se eliminarán todas las asignaciones de esta semana. Esta acción no se puede deshacer.</p>
+                </div>
+            </div>
+            <div class="d-flex gap-2">
+                <button class="btn btn-light rounded-pill px-4 border fw-bold" (click)="showClearConfirmation.set(false)">No, cancelar</button>
+                <button class="btn btn-danger rounded-pill px-4 fw-bold shadow-sm" (click)="confirmClearRoster()">Sí, vaciar lista</button>
+            </div>
+        </div>
+    </div>
+  }
+
+  <!-- CABECERA PRINCIPAL -->
+  <div class="card border-0 shadow-sm rounded-4 overflow-hidden main-assignment-card mb-4">
+    <div class="card-body p-3 p-md-5 bg-white position-relative">
+      
+      <div class="row align-items-center position-relative z-1 g-3">
+        <div class="col-lg-6 col-12 text-center text-lg-start">
+          <div class="d-flex flex-column gap-2 mb-3 mb-lg-0 align-items-center align-items-lg-start">
+            <div class="d-flex align-items-center gap-3 flex-wrap justify-content-center justify-content-lg-start">
+              <h2 class="fw-black text-dark mb-0 fs-3 fs-md-2">Lista de Servicio</h2>
+              @if (isClosed()) {
+                <span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3 py-2 border border-success border-opacity-25">
+                  <i class="bi bi-lock-fill me-1"></i> CERRADA
+                </span>
+              } @else {
+                <span class="badge bg-warning bg-opacity-10 text-warning-emphasis rounded-pill px-3 py-2 border border-warning border-opacity-50">
+                  <i class="bi bi-pencil-fill me-1"></i> EDICIÓN
+                </span>
+              } 
+            </div>
+            <div class="d-flex align-items-center week-navigator p-2 bg-light rounded-pill shadow-sm border mt-2" style="width: fit-content;">
+              <button class="btn btn-primary btn-sm rounded-circle p-0 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;" (click)="navigateWeek(-1)" title="Semana Anterior">
+                  <i class="bi bi-chevron-left fw-bold"></i>
+              </button>
+              <span class="px-3 fw-bold text-dark text-sm" style="min-width: 150px; text-align: center;">{{ weekRangeText() }}</span>
+              <button class="btn btn-primary btn-sm rounded-circle p-0 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;" (click)="navigateWeek(1)" title="Semana Siguiente">
+                  <i class="bi bi-chevron-right fw-bold"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-12">
+          <div class="d-flex flex-wrap justify-content-center justify-content-lg-end gap-2 gap-md-3 position-relative z-3">
+            
+            @if (!isClosed()) {
+                <button class="btn btn-primary btn-sm rounded-pill fw-bold px-3 shadow-sm" (click)="smartGenerate()" [disabled]="isGeneratingSmart()">
+                    <i class="bi bi-cpu me-1"></i>
+                    @if (isGeneratingSmart()) { <span class="spinner-border spinner-border-sm"></span> }
+                    @else { Auto-Generar }
+                </button>
+
+                <div class="btn-group shadow-sm">
+                    <button class="btn btn-outline-dark btn-sm rounded-start-pill fw-bold px-3" (click)="openSaveTemplate()">
+                        <i class="bi bi-save me-1"></i>Plantilla
+                    </button>
+                    <button class="btn btn-dark btn-sm rounded-end-pill fw-bold px-3" (click)="showTemplateModal.set(true)">
+                        <i class="bi bi-folder-check me-1"></i>Cargar
+                    </button>
+                </div>
+            }
+
+            @if (!isClosed() && assignments().length > 0) {
+              <button class="btn btn-outline-danger btn-sm rounded-pill fw-bold px-3" (click)="clearRoster()" [disabled]="showClearConfirmation()">
+                <i class="bi bi-trash3"></i>
+              </button>
+            }
+
+            @if (isClosed()) {
+                <button class="btn btn-outline-warning btn-sm rounded-pill fw-bold px-4" (click)="requestReopenRoster()" [disabled]="isReopening()">
+                    <i class="bi bi-unlock-fill me-1"></i>Reabrir
+                </button>
+            } @else if (assignments().length > 0) {
+              <button class="btn btn-success btn-sm rounded-pill fw-bold px-4 shadow-sm" (click)="requestCloseRoster()" [disabled]="isClosing()">
+                <i class="bi bi-check-circle-fill me-1"></i>Cerrar
+              </button>
+            }
+
+            <button type="button" class="btn btn-primary btn-sm rounded-pill fw-bold px-4 shadow-sm" (click)="printRoster()" [disabled]="assignments().length === 0">
+              <i class="bi bi-file-earmark-pdf-fill me-1"></i>PDF
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORMULARIO DE ASIGNACIÓN -->
+    @if (!isClosed()) {
+        <div class="bg-light border-top border-bottom border-light px-4 py-1">
+            <div class="text-uppercase small fw-black tracking-widest text-muted py-2">
+                <i class="bi bi-plus-circle-fill me-2"></i>Asignar Oficial a Puesto
+            </div>
+        </div>
+        <div class="card-body p-3 p-md-4">
+            <div class="row g-3 g-md-4 align-items-end">
+                <div class="col-12 col-md-4 position-relative">
+                    <label class="form-label small fw-black text-uppercase text-muted tracking-wider">1. Buscar Personal</label>
+                    <div class="input-group search-box">
+                        <span class="input-group-text bg-white border-end-0 text-muted"><i class="bi bi-search"></i></span>
+                        <input type="text" class="form-control border-start-0 ps-0 shadow-none py-2 py-md-1" placeholder="Nombre o Cédula..." (input)="onSearchAgent($event)">
+                    </div>
+                    
+                    @if (isSearchingAgents()) {
+                        <div class="position-absolute w-100 text-center py-2 bg-white border rounded-bottom shadow-sm z-3 mt-0">
+                            <div class="spinner-border spinner-border-sm text-primary"></div>
+                        </div>
+                    }
+        
+                    @if (searchAgentsResults().length > 0) {
+                        <ul class="list-group position-absolute w-100 shadow-lg z-3 mt-1 scrollable-list border-primary border-opacity-25 rounded-4 overflow-hidden animate-fade-in">
+                        @for (agent of searchAgentsResults(); track agent.id) {
+                            <li class="list-group-item list-group-item-action cursor-pointer py-3" (click)="selectAgent(agent)">
+                                <div class="d-flex align-items-center">
+                                    <div class="avatar-sm bg-primary-soft text-primary rounded-circle me-3 d-flex align-items-center justify-content-center fw-bold" style="width: 35px; height: 35px;">
+                                        {{ agent.name[0] }}
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold text-dark text-sm">{{ agent.fullName }}</div>
+                                        <div class="text-xs text-muted text-uppercase">{{ agent.rankName }}</div>
+                                    </div>
+                                </div>
+                            </li>
+                        }
+                        </ul>
+                    }
+                </div>
+                <div class="col-12 col-md-3">
+                    <label class="form-label small fw-black text-uppercase text-muted tracking-wider">2. Turno</label>
+                    <select class="form-select shadow-none py-2 py-md-1" [(ngModel)]="selectedShiftId">
+                        <option value="0">-- Seleccionar --</option>
+                        @for (shift of shifts(); track shift.id) {
+                            <option [value]="shift.id">{{ shift.name }} ({{ shift.timeRange }})</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-12 col-md-3">
+                    <label class="form-label small fw-black text-uppercase text-muted tracking-wider">3. Puesto</label>
+                    <select class="form-select shadow-none py-2 py-md-1" [(ngModel)]="selectedPostId">
+                        <option value="0">-- Seleccionar --</option>
+                        @for (post of posts(); track post.id) {
+                            <option [value]="post.id">{{ post.name }}</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-12 col-md-2">
+                    <button class="btn btn-primary w-100 fw-bold rounded-3 py-2 py-md-2 shadow-sm action-btn mt-2 mt-md-0" [disabled]="!selectedAgent() || isAssigning()" (click)="assignAgent()">
+                        <i class="bi bi-plus-lg"></i>
+                    </button>
+                </div>
+            </div>
+            @if (selectedAgent(); as agent) {
+                <div class="mt-3 p-2 bg-primary-soft rounded-3 d-inline-flex align-items-center animate-fade-in border border-primary border-opacity-10">
+                    <span class="small fw-bold text-primary px-2">Seleccionado: {{ agent.fullName }}</span>
+                    <button class="btn btn-link btn-sm p-0 text-danger" (click)="selectedAgent.set(null)"><i class="bi bi-x-circle-fill"></i></button>
+                </div>
+            }
+        </div>
+    }
+  </div>
+
+  <!-- GRID DE ASIGNACIONES POR TURNO -->
+  <div class="row g-4">
+    @for (group of groupedAssignments(); track group.shiftName) {
+      <div class="col-12">
+        <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+          <div class="card-header bg-white border-0 py-3 px-4 d-flex justify-content-between align-items-center">
+            <h5 class="fw-black text-dark mb-0">{{ group.shiftName }} <span class="badge bg-light text-muted fw-normal ms-2" style="font-size: 0.7rem;">{{ group.timeRange }}</span></h5>
+            <span class="badge bg-primary rounded-pill px-3">{{ group.items.length }} Agentes</span>
+          </div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-hover-custom align-middle mb-0">
+                <thead class="bg-light text-muted small text-uppercase fw-black tracking-wider">
+                  <tr>
+                    <th class="ps-4 py-3">Rango y Nombre del Agente</th>
+                    <th>Institución</th>
+                    <th>Puesto / Ubicación</th>
+                    <th class="text-end pe-4 no-print">Acción</th>
+                  </tr>
+                </thead>
+                <tbody class="border-top-0">
+                  @for (item of group.items; track item.id) {
+                    <tr class="assignment-row">
+                      <td class="ps-4">
+                        <div class="d-flex align-items-center">
+                          <div class="avatar-sm bg-light text-primary rounded-circle me-3 d-flex align-items-center justify-content-center fw-bold border" style="width: 32px; height: 32px; font-size: 0.8rem;">
+                            {{ item.agentName[0] }}
+                          </div>
+                          <div>
+                            <div class="fw-bold text-dark">{{ item.agentName }}</div>
+                            <div class="text-xs text-muted fw-medium">{{ item.agentRank }}</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <span class="badge bg-info bg-opacity-10 text-info-emphasis border border-info border-opacity-25 px-2 py-1">{{ item.agentInstitution }}</span>
+                      </td>
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <i class="bi bi-geo-alt text-danger me-2"></i>
+                          <span class="fw-semibold text-dark small">{{ item.dutyPostName }}</span>
+                        </div>
+                      </td>
+                      <td class="text-end pe-4 no-print">
+                        @if (!isClosed()) {
+                          <button class="btn btn-outline-danger btn-sm border-0 rounded-circle btn-icon hover-lift" (click)="removeAssignment(item.id)" title="Quitar de la lista">
+                            <i class="bi bi-x-lg"></i>
+                          </button>
+                        }
+                      </td>
+                    </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+
+    @if (assignments().length === 0) {
+      <div class="col-12">
+        <div class="card border-0 shadow-sm rounded-4 p-5 text-center bg-white border-2 border-dashed border-light">
+          <div class="display-1 text-muted opacity-10 mb-4"><i class="bi bi-calendar2-x"></i></div>
+          <h4 class="fw-black text-muted">No hay asignaciones para esta semana</h4>
+          <p class="text-muted mb-4">Empieza a asignar personal usando el buscador de arriba o clona una semana anterior.</p>
+          <div class="d-flex gap-2 justify-content-center">
+              <button class="btn btn-primary rounded-pill px-4 fw-bold" (click)="showTemplateModal.set(true)">
+                  <i class="bi bi-folder-check me-2"></i>Cargar Plantilla
+              </button>
+              <button class="btn btn-outline-dark rounded-pill px-4 fw-bold" (click)="cloneFromPreviousRoster()">
+                  <i class="bi bi-copy me-2"></i>Clonar Semana Anterior
+              </button>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+
+  <!-- PIE DE PÁGINA: ESTADO Y FIRMAS -->
+  @if (assignments().length > 0) {
+    <div class="card border-0 shadow-sm rounded-4 mt-5 p-4 bg-white">
+        <div class="row align-items-center">
+            <div class="col-md-4 text-center text-md-start mb-4 mb-md-0 border-end border-light">
+                <p class="text-muted small text-uppercase fw-black tracking-widest mb-1">Estado de la Lista</p>
+                @if (isClosed()) {
+                    <div class="text-success fw-bold"><i class="bi bi-check-all me-1"></i> ARCHIVADA Y FIRMADA</div>
+                    <div class="text-muted text-xs">Cerrada el {{ closedAt() | date:'short' }}</div>
+                } @else {
+                    <div class="text-warning fw-bold"><i class="bi bi-pencil-square me-1"></i> EN ELABORACIÓN...</div>
+                    <div class="text-muted text-xs">Pendiente de validación final.</div>
+                }
+            </div>
+            <div class="col-md-8">
+                <div class="row g-3">
+                    <div class="col-6 text-center">
+                        <div class="border-bottom mx-auto mb-2" style="width: 150px; height: 40px;"></div>
+                        <div class="fw-bold text-dark small">{{ preparador()?.fullName || 'Pendiente' }}</div>
+                        <div class="text-muted text-xs">{{ preparador()?.rank || 'Rango' }}, Sub-Encargado</div>
+                    </div>
+                    <div class="col-6 text-center">
+                        <div class="border-bottom mx-auto mb-2" style="width: 150px; height: 40px;"></div>
+                        <div class="fw-bold text-dark small">{{ aprobador()?.fullName || 'Pendiente' }}</div>
+                        <div class="text-muted text-xs">{{ aprobador()?.rank || 'Rango' }}, Encargado</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  }
+
+</div>

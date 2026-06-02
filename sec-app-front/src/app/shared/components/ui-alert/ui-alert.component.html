@@ -1,0 +1,19 @@
+@if (isVisible) {
+  <div class="alert alert-{{ type }} shadow-sm d-flex align-items-center" 
+       [ngClass]="{'alert-dismissible fade show': dismissible}" 
+       role="alert">
+    
+    <i class="bi {{ iconClass }} fs-4 me-3"></i>
+    
+    <div>
+      @if (title) {
+        <h6 class="alert-heading fw-bold mb-1">{{ title }}</h6>
+      }
+      <div class="mb-0">{{ message }}</div>
+    </div>
+
+    @if (dismissible) {
+      <button type="button" class="btn-close" (click)="closeAlert()" aria-label="Close"></button>
+    }
+  </div>
+}

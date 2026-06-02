@@ -1,0 +1,91 @@
+<div class="container py-4 animate-fade-in">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+                <div class="card-header bg-primary py-4 text-center">
+                    <h4 class="text-white fw-black mb-0"><i class="bi bi-shield-exclamation me-2"></i>Reportar Novedad de Turno</h4>
+                </div>
+                <div class="card-body p-4 p-md-5">
+                    <form [formGroup]="incidentForm" (ngSubmit)="onSubmit()">
+                        <div class="mb-4">
+                            <label class="form-label fw-bold text-dark">Título de la Novedad</label>
+                            <input type="text" class="form-control form-control-lg rounded-3 shadow-none border-2" 
+                                   [ngClass]="{'is-invalid': incidentForm.get('title')?.invalid && (incidentForm.get('title')?.touched || incidentForm.get('title')?.hasError('serverError'))}"
+                                   placeholder="Ej: Pérdida de llaves, Incidente en lobby..." formControlName="title">
+                            <div class="invalid-feedback">
+                                @if (incidentForm.get('title')?.hasError('serverError')) {
+                                    {{ incidentForm.get('title')?.getError('serverError') }}
+                                } @else {
+                                    El título es requerido (máximo 100 caracteres).
+                                }
+                            </div>
+                        </div>
+
+                        <div class="row g-4 mb-4">
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold text-dark">Gravedad / Prioridad</label>
+                                <select class="form-select form-select-lg rounded-3 border-2" 
+                                        [ngClass]="{'is-invalid': incidentForm.get('severity')?.invalid && (incidentForm.get('severity')?.touched || incidentForm.get('severity')?.hasError('serverError'))}"
+                                        formControlName="severity">
+                                    <option value="Low">Baja (Informativa)</option>
+                                    <option value="Medium">Media (Requiere atención)</option>
+                                    <option value="High">Alta (Urgente / Crítica)</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    @if (incidentForm.get('severity')?.hasError('serverError')) {
+                                        {{ incidentForm.get('severity')?.getError('serverError') }}
+                                    } @else {
+                                        La gravedad es requerida.
+                                    }
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold text-dark">Puesto Asociado (Opcional)</label>
+                                <select class="form-select form-select-lg rounded-3 border-2" 
+                                        [ngClass]="{'is-invalid': incidentForm.get('dutyPostId')?.invalid && (incidentForm.get('dutyPostId')?.touched || incidentForm.get('dutyPostId')?.hasError('serverError'))}"
+                                        formControlName="dutyPostId">
+                                    <option [ngValue]="null">-- Ninguno --</option>
+                                    @for (post of posts(); track post.id) {
+                                        <option [value]="post.id">{{ post.name }}</option>
+                                    }
+                                </select>
+                                <div class="invalid-feedback">
+                                    @if (incidentForm.get('dutyPostId')?.hasError('serverError')) {
+                                        {{ incidentForm.get('dutyPostId')?.getError('serverError') }}
+                                    }
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-bold text-dark">Descripción Detallada</label>
+                            <textarea class="form-control rounded-3 border-2" rows="5" 
+                                      [ngClass]="{'is-invalid': incidentForm.get('description')?.invalid && (incidentForm.get('description')?.touched || incidentForm.get('description')?.hasError('serverError'))}"
+                                      placeholder="Describa lo sucedido de la forma más detallada posible..." 
+                                      formControlName="description"></textarea>
+                            <div class="invalid-feedback">
+                                @if (incidentForm.get('description')?.hasError('serverError')) {
+                                    {{ incidentForm.get('description')?.getError('serverError') }}
+                                } @else {
+                                    La descripción es requerida.
+                                }
+                            </div>
+                        </div>
+
+                        <div class="d-flex gap-3 pt-3">
+                            <button type="button" class="btn btn-light btn-lg rounded-pill px-5 border fw-bold" routerLink="/app/home">Cancelar</button>
+                            <button type="submit" class="btn btn-primary btn-lg rounded-pill px-5 fw-black shadow-sm flex-grow-1" 
+                                    [disabled]="incidentForm.invalid || isSaving()">
+                                @if (isSaving()) {
+                                    <span class="spinner-border spinner-border-sm me-2"></span>Enviando...
+                                } @else {
+                                    <i class="bi bi-send-check-fill me-2"></i>Enviar Reporte
+                                }
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

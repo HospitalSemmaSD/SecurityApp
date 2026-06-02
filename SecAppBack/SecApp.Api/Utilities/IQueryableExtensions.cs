@@ -1,0 +1,14 @@
+﻿using SecApp.Api.DTOs.CommonDTOs;
+
+namespace SecApp.Api.Utilities
+{
+    public static class  IQueryableExtensions
+    {
+        public static IQueryable<T> Pager<T>(this IQueryable<T> queryable, PaginationDTO pagination)
+        {
+            return queryable
+                .Skip((pagination.Page - 1) * pagination.RecordsPerPage)
+                .Take(pagination.RecordsPerPage);
+        }
+    }
+}

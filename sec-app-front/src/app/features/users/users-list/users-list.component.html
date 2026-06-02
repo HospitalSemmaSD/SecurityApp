@@ -1,0 +1,159 @@
+<div class="container-fluid py-5 px-md-5 bg-white min-vh-100">
+
+  <!-- CABECERA ESTILO EDITORIAL -->
+  <div class="text-center mb-5">
+    <h2 class="fw-light text-uppercase tracking-wide mb-2 text-dark">Gestión de Accesos</h2>
+    <p class="text-muted fst-italic mb-4">Administración de credenciales y roles del sistema de seguridad</p>
+    <div class="divider mx-auto mb-4" style="width: 60px; height: 1px; background-color: #ddd;"></div>
+    <button class="btn btn-outline-dark rounded-pill px-4 py-2 fw-semibold text-uppercase text-sm shadow-sm transition-all" routerLink="/app/users/new">
+      <i class="bi bi-person-plus me-2"></i> Nuevo Usuario
+    </button>
+  </div>
+
+  <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+    <div class="table-responsive">
+      <table class="table align-middle mb-0">
+        <thead class="bg-light border-bottom">
+          <tr>
+            <th class="ps-4 py-4 text-uppercase tracking-wider text-xs fw-bold text-muted">Usuario / Nombre</th>
+            <th class="py-4 text-uppercase tracking-wider text-xs fw-bold text-muted">Identificación</th>
+            <th class="py-4 text-uppercase tracking-wider text-xs fw-bold text-muted">Contacto</th>
+            <th class="py-4 text-uppercase tracking-wider text-xs fw-bold text-muted">Rol de Acceso</th>
+            <th class="py-4 text-end pe-4 text-uppercase tracking-wider text-xs fw-bold text-muted">Acciones</th>
+          </tr>
+        </thead>
+        <tbody class="border-top-0">
+          @if (loading()) {
+            <tr>
+              <td colspan="5" class="text-center py-5">
+                <div class="spinner-border text-primary opacity-50" role="status"></div>
+                <p class="text-muted mt-3 text-xs tracking-wide">Cargando usuarios...</p>
+              </td>
+            </tr>
+          } @else if (errorMessage()) {
+            <tr>
+              <td colspan="5" class="text-center py-5">
+                <div class="text-danger bg-danger bg-opacity-10 d-inline-block p-3 rounded-circle mb-3">
+                    <i class="bi bi-exclamation-octagon fs-3"></i>
+                </div>
+                <h6 class="text-danger fw-bold">{{ errorMessage() }}</h6>
+              </td>
+            </tr>
+          } @else {
+            @for (user of users(); track user.id) {
+              <tr class="transition-all hover-bg-light" [ngClass]="{'bg-light bg-opacity-50': selectedUser()?.id === user.id}">
+                <td class="ps-4 py-4">
+                  <div class="d-flex align-items-center">
+                    <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
+                        <span class="fw-bold">{{ user.fullName.charAt(0) || 'U' }}</span>
+                    </div>
+                    <div class="d-flex flex-column">
+                        <span class="fw-bold text-dark text-sm">{{ user.fullName || 'Sin Nombre' }}</span>
+                        <span class="text-muted text-xs tracking-tight"><i class="bi bi-person-badge me-1"></i>{{ user.userName }}</span>
+                    </div>
+                  </div>
+                </td>
+                <td class="py-4 text-sm text-dark">
+                  {{ (user.identification || '' | mask: '000-0000000-0') || '---' }}
+                </td>
+                <td class="py-4">
+                  <div class="d-flex flex-column gap-1">
+                    <span class="text-dark text-xs"><i class="bi bi-telephone text-muted me-2"></i>{{ (user.phoneNumber || '' | mask: '(000) 000-0000') || '---' }}</span>
+                    <span class="text-muted text-xs"><i class="bi bi-envelope text-muted me-2"></i>{{ user.email || '---' }}</span>
+                  </div>
+                </td>
+                <td class="py-4">
+                  @for (role of user.roles; track role) {
+                    <span class="badge rounded-pill px-3 py-2 fw-semibold text-uppercase text-xs" 
+                          [ngClass]="role === 'Admin' ? 'bg-dark text-white' : 'bg-light text-dark border'">
+                      {{ role }}
+                    </span>
+                  }
+                  @if (user.roles.length === 0) {
+                    <span class="text-muted text-xs fst-italic">Sin rol asignado</span>
+                  }
+                </td>
+                <td class="text-end pe-4 py-4">
+                  <div class="d-flex justify-content-end gap-2">
+                    <button class="btn btn-sm btn-light rounded-circle border-0 shadow-sm-hover" 
+                            style="width: 34px; height: 34px;"
+                            [routerLink]="['/app/users/edit', user.id]" title="Editar Perfil">
+                      <i class="bi bi-pencil-square text-primary"></i>
+                    </button>
+                    <button class="btn btn-sm rounded-circle border-0 shadow-sm-hover" 
+                            style="width: 34px; height: 34px;"
+                            [ngClass]="selectedUser()?.id === user.id ? 'btn-dark' : 'btn-light'"
+                            (click)="onManageRoles(user)" title="Gestionar Nivel de Acceso">
+                      <i class="bi bi-shield-lock" [ngClass]="{'text-warning': selectedUser()?.id !== user.id}"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              
+              <!-- GESTIÓN DE ROL EXPANDIBLE -->
+              @if (selectedUser()?.id === user.id) {
+                <tr>
+                  <td colspan="5" class="p-0 border-0">
+                    <div class="bg-white p-5 animate__animated animate__fadeInDown border-top border-bottom shadow-inner" 
+                         style="background-image: linear-gradient(to bottom, #fcfcfc, #fff);">
+                      
+                      <div class="max-w-md mx-auto text-center">
+                        <div class="mb-4">
+                            <span class="text-uppercase tracking-wider text-xs fw-bold text-muted mb-2 d-block">Configuración de Seguridad</span>
+                            <h5 class="fw-light mb-0">Nivel de Acceso para <span class="fw-bold">{{ user.fullName }}</span></h5>
+                        </div>
+
+                        <div class="d-flex justify-content-center gap-3 mb-4">
+                            @for (role of availableRoles(); track role) {
+                              <div class="role-option">
+                                <input type="radio" class="btn-check" 
+                                       [name]="'role_group_' + user.id"
+                                       [id]="'role_' + user.id + '_' + role"
+                                       [checked]="hasRole(user, role)"
+                                       (click)="toggleRole(user, role)"
+                                       [disabled]="isUpdatingRole()">
+                                <label class="btn btn-outline-dark rounded-pill px-4 py-2 text-sm fw-semibold shadow-sm transition-all d-flex align-items-center gap-2" 
+                                       [for]="'role_' + user.id + '_' + role">
+                                  @if (isUpdatingRole() && !hasRole(user, role)) {
+                                     <!-- No mostrar check si está cargando otro -->
+                                  } @else if (hasRole(user, role)) {
+                                     <i class="bi bi-check-circle-fill text-success"></i>
+                                  }
+                                  {{ role }}
+                                </label>
+                              </div>
+                            }
+                        </div>
+
+                        @if (isUpdatingRole()) {
+                           <div class="text-center mb-3">
+                               <div class="spinner-border spinner-border-sm text-dark opacity-50"></div>
+                           </div>
+                        }
+                        
+                        <p class="text-muted text-xs tracking-wide">
+                          <i class="bi bi-info-circle me-1"></i> El cambio de rol se aplicará de forma inmediata al perfil del usuario.
+                        </p>
+                      </div>
+
+                    </div>
+                  </td>
+                </tr>
+              }
+            } @empty {
+              <tr>
+                <td colspan="5" class="text-center py-5">
+                  <div class="mb-3 opacity-25">
+                    <i class="bi bi-people" style="font-size: 5rem;"></i>
+                  </div>
+                  <h4 class="text-muted fw-light">No hay usuarios registrados</h4>
+                  <p class="text-muted small">Haz clic en "Nuevo Usuario" para comenzar a gestionar los accesos.</p>
+                </td>
+              </tr>
+            }
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

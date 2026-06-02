@@ -1,0 +1,120 @@
+<div class="container-fluid py-4">
+  
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h3 class="fw-bold text-primary"><i class="bi bi-shield-shaded me-2"></i>Catálogo de Instituciones</h3>
+  </div>
+
+  @if (showDeleteAlert()) {
+    <div class="mb-4 p-3 border border-danger rounded bg-white shadow-sm animate__animated animate__fadeIn">
+      <app-ui-alert 
+        type="danger" 
+        title="Confirmar Eliminación Crítica" 
+        [message]="'¿Estás seguro de que deseas eliminar la institución: ' + nameToDelete() + '?'"
+        [dismissible]="false">
+      </app-ui-alert>
+      
+      <div class="d-flex justify-content-end gap-2 mt-2">
+        <button class="btn btn-light btn-sm border fw-semibold" (click)="showDeleteAlert.set(false)">
+          Cancelar
+        </button>
+        <button class="btn btn-danger btn-sm fw-bold" (click)="confirmDelete()">
+          <i class="bi bi-trash-fill me-1"></i> Sí, Eliminar Definitivamente
+        </button>
+      </div>
+    </div>
+  }
+
+  <div class="row g-4">
+    
+    <div class="col-12 col-lg-8">
+      <div class="card shadow-sm border-0">
+        <div class="card-body p-0">
+          
+          <div class="table-responsive">
+            <table class="table table-hover mb-0">
+              <thead class="table-light">
+                <tr>
+                  <th class="px-4 py-3">Nombre de la Institución Castrense</th>
+                  <th class="px-4 py-3 text-end">Acciones</th> 
+                </tr>
+              </thead>
+              <tbody>
+                @if (isLoadingData()) {
+                  <tr>
+                    <td colspan="2" class="text-center py-4 text-muted">Cargando datos del servidor...</td>
+                  </tr>
+                } @else if (institutions().length === 0) {
+                  <tr>
+                    <td colspan="2" class="text-center py-4 text-muted">No hay instituciones registradas.</td>
+                  </tr>
+                }
+                
+                @for (inst of institutions(); track inst.id) {
+                  <tr>                    
+                    <td class="px-4 py-3">{{ inst.name }}</td>
+                    
+                    <td class="px-4 py-3 text-end">
+                      <button class="btn btn-sm btn-outline-primary me-2" (click)="onEdit(inst)" title="Editar">
+                        <i class="bi bi-pencil-fill"></i>
+                      </button>
+                      <button class="btn btn-sm btn-outline-danger" (click)="onDeleteRequest(inst)" title="Eliminar">
+                        <i class="bi bi-trash-fill"></i>
+                      </button>
+                    </td>
+                  </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-lg-4">
+      <div class="card shadow-sm border-0 bg-light">
+        <div class="card-body p-4">
+          
+          <h5 class="fw-bold mb-3 text-primary">
+            <i class="bi" [ngClass]="editingId() ? 'bi-pencil-square' : 'bi-plus-circle'"></i>
+            {{ editingId() ? ' Editar Institución' : ' Nueva Institución' }}
+          </h5>
+          
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label class="form-label text-muted small fw-semibold">Nombre Completo</label>
+              <input type="text" formControlName="name" class="form-control border-primary-subtle" placeholder="Ej: Fuerza Aérea (F.A.)"
+                     [ngClass]="{'is-invalid': form.get('name')?.invalid && (form.get('name')?.touched || form.get('name')?.hasError('serverError'))}">
+              <div class="invalid-feedback">
+                @if (form.get('name')?.hasError('serverError')) {
+                  {{ form.get('name')?.getError('serverError') }}
+                } @else {
+                  El nombre es requerido.
+                }
+              </div>
+            </div>
+
+            <div class="d-grid gap-2 mt-4">
+              <button type="submit" class="btn btn-primary fw-bold" [disabled]="form.invalid || isSaving()">
+                @if (isSaving()) {
+                  <span class="spinner-border spinner-border-sm me-2"></span>
+                } @else {
+                  <i class="bi" [ngClass]="editingId() ? 'bi-save' : 'bi-check-circle'"></i>
+                }
+                {{ editingId() ? 'Actualizar Cambios' : 'Agregar al Catálogo' }}
+              </button>
+              
+              @if (editingId()) {
+                <button type="button" class="btn btn-outline-secondary" (click)="cancelEdit()">
+                  Cancelar Edición
+                </button>
+              }
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

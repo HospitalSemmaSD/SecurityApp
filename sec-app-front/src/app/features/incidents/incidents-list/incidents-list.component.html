@@ -1,0 +1,63 @@
+<div class="container py-4 animate-fade-in">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2 class="fw-black text-dark mb-1">Historial de Novedades</h2>
+            <p class="text-muted small mb-0">Registro completo de incidencias y novedades de los turnos de seguridad.</p>
+        </div>
+        <button class="btn btn-primary rounded-pill px-4 fw-bold shadow-sm" routerLink="/app/incidents/new">
+            <i class="bi bi-plus-lg me-2"></i>Reportar Novedad
+        </button>
+    </div>
+
+    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table align-middle mb-0 table-hover">
+                    <thead class="bg-light text-muted small text-uppercase fw-black tracking-wider">
+                        <tr>
+                            <th class="ps-4 py-3">Fecha y Hora</th>
+                            <th>Gravedad</th>
+                            <th>Título / Descripción</th>
+                            <th>Puesto</th>
+                            <th>Reportado por</th>
+                        </tr>
+                    </thead>
+                    <tbody class="border-top-0">
+                        @for (incident of incidents(); track incident.id) {
+                            <tr>
+                                <td class="ps-4">
+                                    <div class="fw-bold text-dark">{{ incident.createdAt | date:'dd/MM/yyyy' }}</div>
+                                    <div class="text-xs text-muted">{{ incident.createdAt | date:'hh:mm a' }}</div>
+                                </td>
+                                <td>
+                                    <span class="badge rounded-pill px-3 py-2 fw-bold" [ngClass]="getSeverityClass(incident.severity)">
+                                        {{ incident.severity }}
+                                    </span>
+                                </td>
+                                <td style="max-width: 400px;">
+                                    <div class="fw-bold text-dark">{{ incident.title }}</div>
+                                    <div class="text-xs text-muted text-truncate">{{ incident.description }}</div>
+                                </td>
+                                <td>
+                                    <span class="small fw-semibold text-dark">{{ incident.dutyPostName || 'N/A' }}</span>
+                                    <div class="text-xs text-muted">{{ incident.shiftName }}</div>
+                                </td>
+                                <td>
+                                    <span class="small text-dark">{{ incident.reportedByUserName }}</span>
+                                </td>
+                            </tr>
+                        }
+                        @if (incidents().length === 0 && !isLoading()) {
+                            <tr>
+                                <td colspan="5" class="text-center py-5">
+                                    <i class="bi bi-shield-check display-4 text-muted opacity-25 d-block mb-3"></i>
+                                    <span class="text-muted">No hay novedades registradas en el historial.</span>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

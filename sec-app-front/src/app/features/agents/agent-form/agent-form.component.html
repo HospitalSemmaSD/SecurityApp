@@ -1,0 +1,157 @@
+<div class="container py-4 animate-fade-in">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+        <div class="card-header bg-primary text-white py-4 text-center">
+          <h4 class="fw-black mb-0">
+            <i class="bi" [ngClass]="isEditMode ? 'bi-person-gear' : 'bi-person-plus-fill'"></i>
+            {{ isEditMode ? 'Editar Expediente del Oficial' : 'Registro de Nuevo Oficial' }}
+          </h4>
+        </div>
+
+        <div class="card-body p-4 p-md-5">
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            
+            <h6 class="text-muted text-uppercase fw-bold mb-3 border-bottom pb-2">1. Datos Personales</h6>
+            <div class="row g-3 mb-4">
+              <div class="col-md-2">
+                <label class="form-label fw-semibold">Código</label>
+                <input type="text" formControlName="agentCode" class="form-control" placeholder="Ej: 1234">
+              </div>
+              <div class="col-md-4">
+                <label class="form-label fw-semibold">Nombres <span class="text-danger">*</span></label>
+                <input type="text" formControlName="name" class="form-control" placeholder="Juan Alberto"
+                       [ngClass]="{'is-invalid': form.get('name')?.invalid && form.get('name')?.touched}">
+              </div>
+              <div class="col-md-4">
+                <label class="form-label fw-semibold">Apellidos <span class="text-danger">*</span></label>
+                <input type="text" formControlName="lastName" class="form-control" placeholder="Pérez García"
+                       [ngClass]="{'is-invalid': form.get('lastName')?.invalid && form.get('lastName')?.touched}">
+              </div>
+              <div class="col-md-2">
+                <label class="form-label fw-semibold">Sexo <span class="text-danger">*</span></label>
+                <select formControlName="gender" class="form-select">
+                  <option value="M">Masculino</option>
+                  <option value="F">Femenino</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label fw-semibold">Cédula de Identidad <span class="text-danger">*</span></label>
+                <input type="text" formControlName="identification" class="form-control" 
+                       mask="000-0000000-0" placeholder="000-0000000-0"
+                       [ngClass]="{'is-invalid': form.get('identification')?.invalid && form.get('identification')?.touched}">
+              </div>
+              <div class="col-md-4">
+                <label class="form-label fw-semibold">Fecha de Nacimiento <span class="text-danger">*</span></label>
+                <input type="text" formControlName="birthDay" class="form-control" 
+                       mask="d0/M0/0000" [dropSpecialCharacters]="false" placeholder="DD/MM/AAAA"
+                       [ngClass]="{'is-invalid': form.get('birthDay')?.invalid && form.get('birthDay')?.touched}">
+              </div>
+            </div>
+
+            <h6 class="text-muted text-uppercase fw-bold mb-3 border-bottom pb-2">2. Asignación Institucional</h6>
+            <div class="row g-3 mb-4">
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Institución Castrense <span class="text-danger">*</span></label>
+                <select formControlName="institutionId" class="form-select"
+                        [ngClass]="{'is-invalid': form.get('institutionId')?.invalid && form.get('institutionId')?.touched}">
+                  <option value="" disabled>Seleccione Institución...</option>
+                  @for (inst of institutions(); track inst.id) {
+                    <option [value]="inst.id">{{ inst.name }}</option>
+                  }
+                </select>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Rango <span class="text-danger">*</span></label>
+                <select formControlName="rankId" class="form-select"
+                        [ngClass]="{'is-invalid': form.get('rankId')?.invalid && form.get('rankId')?.touched}">
+                  <option value="" disabled>Seleccione Rango...</option>
+                  @for (rank of filteredRanks(); track rank.id) {
+                    <option [value]="rank.id">{{ rank.name }}</option>
+                  }
+                </select>
+              </div>
+            </div>
+
+            <h6 class="text-muted text-uppercase fw-bold mb-3 border-bottom pb-2">3. Horarios y Puestos Predeterminados</h6>
+            <div class="row g-3 mb-4">
+              <div class="col-md-12">
+                <label class="form-label fw-semibold">Días de Trabajo (Horario)</label>
+                <div class="d-flex flex-wrap gap-2 pt-1 mb-3">
+                  @for (day of weekDays; track day.id) {
+                    <button type="button" 
+                            class="btn btn-sm rounded-pill px-3 fw-bold"
+                            [class]="isDaySelected(day.id) ? 'btn-primary' : 'btn-outline-secondary'"
+                            (click)="toggleDay(day.id)">
+                      {{ day.name }}
+                    </button>
+                  }
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Turno Predeterminado</label>
+                <select class="form-select" formControlName="defaultShiftId">
+                  <option [ngValue]="null">-- Ninguno --</option>
+                  @for (shift of shifts(); track shift.id) {
+                    <option [value]="shift.id">{{ shift.name }} ({{ shift.timeRange }})</option>
+                  }
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Puesto de Guardia Habitual</label>
+                <select class="form-select" formControlName="defaultDutyPostId">
+                  <option [ngValue]="null">-- Ninguno --</option>
+                  @for (post of posts(); track post.id) {
+                    <option [value]="post.id">{{ post.name }}</option>
+                  }
+                </select>
+              </div>
+            </div>
+
+            <h6 class="text-muted text-uppercase fw-bold mb-3 border-bottom pb-2">4. Contacto y Estado</h6>
+            <div class="row g-3 mb-5">
+              <div class="col-md-4">
+                <label class="form-label fw-semibold">Teléfono <span class="text-danger">*</span></label>
+                <input type="text" formControlName="phone" class="form-control" mask="000-000-0000">
+              </div>
+              <div class="col-md-4">
+                <label class="form-label fw-semibold">Correo Electrónico</label>
+                <input type="email" formControlName="email" class="form-control" placeholder="correo@institucion.gob.do">
+              </div>
+              <div class="col-md-4">
+                <label class="form-label fw-semibold">Estatus</label>
+                <div class="form-check form-switch mt-2">
+                  <input class="form-check-input" type="checkbox" role="switch" id="statusSwitch" formControlName="status">
+                  <label class="form-check-label fw-bold" [class.text-success]="form.get('status')?.value" [class.text-danger]="!form.get('status')?.value" for="statusSwitch">
+                    {{ form.get('status')?.value ? 'ACTIVO' : 'INACTIVO' }}
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-12 mt-4">
+                <label class="form-label fw-semibold">Fotografía</label>
+                <div class="d-flex align-items-center gap-3">
+                  @if (imagePreview()) {
+                    <img [src]="imagePreview()" class="rounded-circle object-fit-cover border shadow-sm" style="width: 80px; height: 80px;">
+                  }
+                  <input type="file" class="form-control" (change)="onFileSelected($event)" accept="image/*">
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-end gap-3 p-3 bg-light rounded">
+              <button type="button" class="btn btn-outline-secondary px-4" routerLink="/app/agents">Cancelar</button>
+              <button type="submit" class="btn btn-primary px-5 fw-bold shadow-sm" [disabled]="form.invalid || isLoading()">
+                @if (isLoading()) {
+                  <span class="spinner-border spinner-border-sm me-2"></span>
+                }
+                {{ isEditMode ? 'Guardar Cambios' : 'Registrar Oficial' }}
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,174 @@
+<div class="container-fluid py-5 px-md-5 bg-white min-vh-100">
+  
+  <!-- CABECERA ESTILO EDITORIAL -->
+  <div class="text-center mb-5">
+    <h2 class="fw-light text-uppercase tracking-wide mb-2 text-dark">Directorio de Agentes</h2>
+    <p class="text-muted fst-italic mb-4">Gestión de expedientes y asignaciones del personal operativo del HDSSD</p>
+    <div class="divider mx-auto mb-4"></div>
+    <button class="btn btn-outline-dark rounded-pill px-4 py-2 fw-semibold text-uppercase text-sm shadow-sm transition-all" routerLink="/app/agents/new">
+      <i class="bi bi-plus-lg me-2"></i> Añadir Agente
+    </button>
+  </div>
+
+  <!-- BÚSQUEDA Y FILTROS MINIMALISTAS -->
+  <div class="mb-5">
+    <div class="row g-4 align-items-center justify-content-center">
+      <div class="col-md-7 col-lg-6">
+        <div class="search-wrapper">
+          <i class="bi bi-search search-icon"></i>
+          <input type="text" class="form-control search-input shadow-none" 
+                 placeholder="Buscar por nombre, cédula o institución..." 
+                 [ngModel]="searchTerm()"
+                 (ngModelChange)="onSearch($event)">
+          @if (searchTerm()) {
+            <button class="search-clear" (click)="onSearch('')">
+              <i class="bi bi-x-lg"></i>
+            </button>
+          }
+        </div>
+      </div>
+      <div class="col-md-5 col-lg-4">
+        <div class="d-flex justify-content-center gap-2">
+          <button class="btn btn-sm rounded-pill px-3 py-2 fw-semibold tracking-wider text-uppercase" 
+                  [class.btn-dark]="statusFilter() === 'all'" 
+                  [class.btn-outline-dark]="statusFilter() !== 'all'"
+                  (click)="onStatusChange('all')">Todos</button>
+          <button class="btn btn-sm rounded-pill px-3 py-2 fw-semibold tracking-wider text-uppercase" 
+                  [class.btn-dark]="statusFilter() === 'active'" 
+                  [class.btn-outline-dark]="statusFilter() !== 'active'"
+                  (click)="onStatusChange('active')">Activos</button>
+          <button class="btn btn-sm rounded-pill px-3 py-2 fw-semibold tracking-wider text-uppercase" 
+                  [class.btn-dark]="statusFilter() === 'inactive'" 
+                  [class.btn-outline-dark]="statusFilter() !== 'inactive'"
+                  (click)="onStatusChange('inactive')">Inactivos</button>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-3 text-muted text-xs tracking-wide">
+      Mostrando <strong>{{ agents().length }}</strong> de <strong>{{ totalRecords() }}</strong> oficiales registrados
+    </div>
+  </div>
+
+  <!-- ALERTA DE ELIMINACIÓN REDISEÑADA -->
+  @if (showDeleteAlert()) {
+    <div class="delete-alert-container mb-5 p-4 border rounded-4 bg-white shadow-lg mx-auto" style="max-width: 600px;">
+      <div class="d-flex align-items-center mb-3">
+        <div class="bg-danger bg-opacity-10 p-3 rounded-circle me-3">
+          <i class="bi bi-exclamation-triangle-fill text-danger fs-4"></i>
+        </div>
+        <div>
+          <h5 class="fw-bold mb-0">Confirmar Baja del Sistema</h5>
+          <p class="text-muted mb-0">¿Estás seguro de eliminar a <strong>{{ agentToDelete()?.fullName }}</strong>?</p>
+        </div>
+      </div>
+      <div class="d-flex justify-content-end gap-3 pt-3 border-top">
+        <button class="btn btn-light rounded-pill px-4 fw-semibold border" (click)="showDeleteAlert.set(false)">Cancelar</button>
+        <button class="btn btn-danger rounded-pill px-4 fw-bold" (click)="confirmDelete()">
+          <i class="bi bi-trash3-fill me-2"></i> Confirmar Eliminación
+        </button>
+      </div>
+    </div>
+  }
+
+  <!-- GRID DE TARJETAS (ESTILO TEAM) -->
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4 g-xl-5">
+    
+    @if (loading()) {
+      <div class="col-12 text-center py-5">
+        <div class="spinner-border text-primary opacity-50" style="width: 3rem; height: 3rem;" role="status"></div>
+        <p class="text-muted mt-3 tracking-wide text-sm">Cargando personal operativo...</p>
+      </div>
+    } @else {
+      
+      @for (agent of filteredAgents(); track agent.id) {
+        <div class="col animate__animated animate__fadeIn">
+          <div class="agent-profile-card text-center shadow-hover">
+            
+            <div class="avatar-container mx-auto">
+              <img [src]="getProfileImage(agent)" 
+                   class="avatar-img shadow-sm" 
+                   alt="Foto de {{ agent.fullName }}"
+                   #img>
+              <div class="status-indicator" [class.bg-success]="agent.status" [class.bg-danger]="!agent.status" [title]="agent.status ? 'Activo' : 'Inactivo'"></div>
+            </div>
+
+            <div class="mt-2">
+              @if (agent.status) {
+                <span class="badge bg-success bg-opacity-10 text-success text-xs rounded-pill px-2 py-1">Activo</span>
+              } @else {
+                <span class="badge bg-danger bg-opacity-10 text-danger text-xs rounded-pill px-2 py-1">Inactivo</span>
+              }
+            </div>
+
+            <h5 class="agent-name mt-2">{{ agent.lastName }}</h5>
+            <span class="agent-rank">{{ agent.rankName || 'SIN RANGO' }}</span>
+
+            <div class="agent-info">
+              <div class="mb-2 fw-medium text-dark">{{ agent.name }}</div>
+
+              <!-- Código de Agente para vinculación -->
+              <div class="mb-2">
+                <span class="badge bg-light text-dark border fw-normal">Código: {{ agent.agentCode }}</span>
+              </div>
+
+              <!-- Institución Añadida -->
+              <div class="text-xs text-muted mb-3 text-uppercase tracking-wider">
+                <i class="bi bi-shield-check me-1"></i> {{ agent.institutionName || 'SIN INSTITUCIÓN' }}
+              </div>
+
+              <div class="contact-details d-flex flex-column gap-2 border-top pt-3 mt-2">
+                <div class="d-flex align-items-center justify-content-center gap-2 text-xs">
+                  <i class="bi bi-telephone text-muted"></i>
+                  <span class="text-dark">{{ (agent.phone | mask: '(000) 000-0000') || 'N/A' }}</span>
+                </div>
+              </div>
+            </div>
+            <div class="agent-actions">
+              <button class="action-btn" (click)="onEdit(agent.id)" title="Editar Perfil">
+                <i class="bi bi-pencil-square"></i>
+              </button>
+              <button class="action-btn delete" (click)="onDeleteRequest(agent)" title="Eliminar Agente">
+                <i class="bi bi-trash3"></i>
+              </button>
+            </div>
+            
+          </div>
+        </div>
+      } @empty {
+        <div class="col-12 text-center py-5">
+          <div class="mb-3 opacity-25">
+            <i class="bi bi-person-x" style="font-size: 5rem;"></i>
+          </div>
+          <h4 class="text-muted fw-light">No se encontró personal operativo</h4>
+          <p class="text-muted small">Intenta ajustar los criterios de búsqueda o registra un nuevo agente.</p>
+        </div>
+      }
+    }
+  </div>
+
+  <!-- PAGINACIÓN MINIMALISTA -->
+  @if (totalPages() > 1 && !loading()) {
+    <div class="mt-5 pt-5 d-flex justify-content-center align-items-center gap-3">
+      <button class="btn btn-outline-dark rounded-circle p-0 d-flex align-items-center justify-content-center" 
+              style="width: 40px; height: 40px;"
+              [disabled]="currentPage() === 1"
+              (click)="changePage(currentPage() - 1)">
+        <i class="bi bi-chevron-left"></i>
+      </button>
+      
+      <div class="d-flex align-items-center gap-2">
+        <span class="text-xs fw-black text-muted text-uppercase tracking-widest">Página</span>
+        <span class="fw-bold text-dark">{{ currentPage() }}</span>
+        <span class="text-xs fw-black text-muted text-uppercase tracking-widest">de</span>
+        <span class="fw-bold text-dark">{{ totalPages() }}</span>
+      </div>
+
+      <button class="btn btn-outline-dark rounded-circle p-0 d-flex align-items-center justify-content-center" 
+              style="width: 40px; height: 40px;"
+              [disabled]="currentPage() === totalPages()"
+              (click)="changePage(currentPage() + 1)">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  }
+</div>
