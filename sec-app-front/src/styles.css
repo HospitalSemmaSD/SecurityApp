@@ -1,3 +1,154 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'bootstrap/dist/css/bootstrap.min.css';
 @import 'ngx-toastr/toastr';
+
+/* CONFIGURACIONES GLOBALES DE MODO OSCURO (OVERWRITES) */
+[data-bs-theme="dark"] {
+  /* Fondo general del body */
+  body {
+    background-color: #121212 !important;
+    color: #f8f9fa !important;
+  }
+
+  /* Sobrescribir utilidades de color comunes de Bootstrap */
+  .bg-white {
+    background-color: #1e1e1e !important;
+  }
+  
+  .bg-light {
+    background-color: #121212 !important;
+  }
+
+  .text-dark {
+    color: #e9ecef !important;
+  }
+
+  .text-muted {
+    color: #a0aab2 !important;
+  }
+
+  .border {
+    border-color: #2d2d2d !important;
+  }
+
+  .border-bottom {
+    border-color: #2d2d2d !important;
+  }
+
+  .border-top {
+    border-color: #2d2d2d !important;
+  }
+
+  .border-light {
+    border-color: #2d2d2d !important;
+  }
+
+  /* Tarjetas (Cards) */
+  .card {
+    background-color: #1e1e1e !important;
+    color: #f8f9fa !important;
+    border-color: #2d2d2d !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+  }
+
+  /* Cabecera del Panel (Header) */
+  header {
+    background-color: #1e1e1e !important;
+    border-color: #2d2d2d !important;
+  }
+
+  /* Tablas (Tables) */
+  .table {
+    --bs-table-color: #e9ecef !important;
+    --bs-table-bg: #1e1e1e !important;
+    --bs-table-hover-bg: #2d2d2d !important;
+    --bs-table-border-color: #2d2d2d !important;
+  }
+
+  .table thead th {
+    background-color: #252525 !important;
+    color: #a0aab2 !important;
+    border-bottom: 2px solid #333333 !important;
+  }
+
+  .table-responsive {
+    border-color: #2d2d2d !important;
+  }
+
+  .table-hover-custom tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.03) !important;
+  }
+
+  /* Formularios y Controles de Entrada (Inputs) */
+  .form-control, .form-select {
+    background-color: #252525 !important;
+    color: #e9ecef !important;
+    border-color: #3a3a3a !important;
+  }
+
+  .form-control:focus, .form-select:focus {
+    background-color: #2a2a2a !important;
+    color: #fff !important;
+    border-color: #0d6efd !important;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25) !important;
+  }
+
+  .form-control::placeholder {
+    color: #6c757d !important;
+  }
+
+  .input-group-text {
+    background-color: #252525 !important;
+    color: #a0aab2 !important;
+    border-color: #3a3a3a !important;
+  }
+
+  /* Modales */
+  .modal-content {
+    background-color: #1e1e1e !important;
+    color: #f8f9fa !important;
+    border: 1px solid #3a3a3a !important;
+  }
+
+  .modal-header {
+    border-bottom: 1px solid #2d2d2d !important;
+  }
+
+  .modal-footer {
+    border-top: 1px solid #2d2d2d !important;
+  }
+
+  /* Listas (List Groups) */
+  .list-group-item {
+    background-color: #1e1e1e !important;
+    color: #f8f9fa !important;
+    border-color: #2d2d2d !important;
+  }
+
+  .list-group-item-action:hover {
+    background-color: #2d2d2d !important;
+    color: #ffffff !important;
+  }
+
+  /* Inputs deshabilitados */
+  .form-control:disabled, .form-select:disabled {
+    background-color: #151515 !important;
+    color: #6c757d !important;
+    border-color: #2d2d2d !important;
+  }
+
+  /* Badges y elementos decorativos */
+  .bg-primary-soft {
+    background-color: rgba(13, 110, 253, 0.15) !important;
+    color: #0d6efd !important;
+  }
+
+  .badge.bg-light.text-muted {
+    background-color: #252525 !important;
+    color: #a0aab2 !important;
+  }
+
+  .badge.bg-primary {
+    background-color: #0d6efd !important;
+  }
+}

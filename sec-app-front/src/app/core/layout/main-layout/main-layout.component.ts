@@ -5,6 +5,7 @@ import { environment } from '../../../../environments/environment';
 import { Agent } from '../../models/agent.model';
 import { AgentService } from '../../services/agent.service';
 import { AuthService } from '../../services/auth.service';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-main-layout',
@@ -16,8 +17,15 @@ import { AuthService } from '../../services/auth.service';
 export class MainLayoutComponent implements OnInit {
   authService = inject(AuthService);
   agentService = inject(AgentService);
+  themeService = inject(ThemeService);
 
   agentProfile = signal<Agent | null>(null);
+  
+  isDarkMode = computed(() => this.themeService.isDarkMode());
+
+  toggleTheme() {
+    this.themeService.toggleTheme();
+  }
 
   usuarioConectado = computed(() => {
     const profile = this.agentProfile();
