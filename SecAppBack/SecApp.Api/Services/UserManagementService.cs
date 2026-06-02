@@ -10,10 +10,12 @@ namespace SecApp.Api.Services
     public class UserManagementService : IUserManagementService
     {
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly IAuditService _auditService;
 
-        public UserManagementService(UserManager<ApplicationUser> userManager)
+        public UserManagementService(UserManager<ApplicationUser> userManager, IAuditService auditService)
         {
             _userManager = userManager;
+            _auditService = auditService;
         }
 
         public async Task<List<UserResponseDTO>> GetUsersAsync()
@@ -92,6 +94,13 @@ namespace SecApp.Api.Services
             if (result.Succeeded)
             {
                 await _userManager.AddToRoleAsync(newUser, userDto.Role);
+
+                await _auditService.LogActionAsync(
+                    "Crear Usuario",
+                    "User",
+                    newUser.Id,
+                    $"Usuario: {newUser.UserName}, Nombre: {newUser.FullName}, Rol: {userDto.Role}"
+                );
             }
             else
             {
@@ -148,6 +157,13 @@ namespace SecApp.Api.Services
             
             // 4. Asegurar sincronización final del sello de seguridad
             await _userManager.UpdateSecurityStampAsync(user);
+
+            await _auditService.LogActionAsync(
+                "Actualizar Usuario",
+                "User",
+                user.Id,
+                $"Usuario: {user.UserName}, Nombre: {user.FullName}, Rol: {userDto.Role}"
+            );
         }
 
         public async Task AssignRoleAsync(string userId, string role)
@@ -171,6 +187,13 @@ namespace SecApp.Api.Services
                 var errors = string.Join(", ", result.Errors.Select(e => e.Description));
                 throw new Exception($"Error al asignar rol: {errors}");
             }
+
+            await _auditService.LogActionAsync(
+                "Asignar Rol",
+                "User",
+                userId,
+                $"Asignado rol {role} al usuario: {user.UserName}"
+            );
         }
 
         public async Task RemoveRoleAsync(string userId, string role)
@@ -184,6 +207,13 @@ namespace SecApp.Api.Services
                 var errors = string.Join(", ", result.Errors.Select(e => e.Description));
                 throw new Exception($"Error al remover rol: {errors}");
             }
+
+            await _auditService.LogActionAsync(
+                "Remover Rol",
+                "User",
+                userId,
+                $"Removido rol {role} del usuario: {user.UserName}"
+            );
         }
     }
 }

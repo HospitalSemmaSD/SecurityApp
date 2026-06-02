@@ -16,6 +16,7 @@ namespace SecApp.Api.Services
         private readonly IOutputCacheStore _outputCache;
         private readonly IMapper _mapper;
         private readonly IFileSaver _fileSaver;
+        private readonly IAuditService _auditService;
 
         private const string cacheTag = "agents";
         private readonly string AgentFolderPath = "agents";
@@ -24,12 +25,14 @@ namespace SecApp.Api.Services
             IBaseRepository<Agent> agentsRepository,
             IOutputCacheStore outputCache,
             IMapper mapper,
-            IFileSaver fileSaver)
+            IFileSaver fileSaver,
+            IAuditService auditService)
         {
             _agentsRepository = agentsRepository;
             _outputCache = outputCache;
             _mapper = mapper;
             _fileSaver = fileSaver;
+            _auditService = auditService;
         }
 
         public async Task<List<AgentDTO>> GetAgents(PaginationDTO pagination, HttpContext httpContext, bool? status = null)
@@ -118,6 +121,13 @@ namespace SecApp.Api.Services
             await _agentsRepository.Insert(agent);
             await _outputCache.EvictByTagAsync(cacheTag, default);
 
+            await _auditService.LogActionAsync(
+                "Crear Agente",
+                "Agent",
+                agent.Id.ToString(),
+                $"Código: {agent.AgentCode}, Cédula: {agent.Identification}, Nombre: {agent.FullName}"
+            );
+
             return _mapper.Map<AgentDTO>(agent);
         }
 
@@ -146,12 +156,21 @@ namespace SecApp.Api.Services
 
             await _agentsRepository.Update(agentDB);
             await _outputCache.EvictByTagAsync(cacheTag, default);
+
+            await _auditService.LogActionAsync(
+                "Actualizar Agente",
+                "Agent",
+                id.ToString(),
+                $"Código: {agentDB.AgentCode}, Cédula: {agentDB.Identification}, Nombre: {agentDB.FullName}, Estado: {(agentDB.Status ? "Activo" : "Inactivo")}"
+            );
         }
 
         public async Task DeleteAgent(int id)
         {
             var agent = await _agentsRepository.GetById(id);
             if (agent == null) throw new KeyNotFoundException("Agente no encontrado.");
+
+            var details = $"Código: {agent.AgentCode}, Cédula: {agent.Identification}, Nombre: {agent.FullName}";
 
             if (!string.IsNullOrEmpty(agent.Photo))
             {
@@ -160,6 +179,13 @@ namespace SecApp.Api.Services
 
             await _agentsRepository.Delete(id);
             await _outputCache.EvictByTagAsync(cacheTag, default);
+
+            await _auditService.LogActionAsync(
+                "Eliminar Agente",
+                "Agent",
+                id.ToString(),
+                details
+            );
         }
     }
 }

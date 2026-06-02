@@ -54,6 +54,9 @@ export class AuthService {
   }
 
   logout(): void {
+    this.http.post(`${this.apiUrl}/logout`, {}).subscribe({
+      error: (e) => console.warn('No se pudo registrar el cierre de sesión en la bitácora', e)
+    });
     localStorage.removeItem(this.tokenKey);
     this._token.set(null);
   }
