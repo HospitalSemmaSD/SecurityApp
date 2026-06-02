@@ -61,6 +61,9 @@ Este archivo sirve como referencia de las tareas identificadas para mantener la 
 - [ ] **Refresh Tokens:** Implementar la lógica para refrescar tokens JWT automáticamente sin obligar al usuario a iniciar sesión repetidamente.
 - [ ] **Bloqueo Temporal de Cuentas:** Añadir control de intentos fallidos en el backend para bloquear la cuenta temporalmente.
 
+### 📝 Registro de Logs del Servidor (Logging)
+- [ ] **Configurar Serilog/NLog:** Configurar un framework de logs en el backend (.NET Core) para registrar excepciones y trazas operativas en archivos físicos diarios rotativos (ej. `logs/log-YYYY-MM-DD.txt`).
+
 ---
 
 ## 5. Plan de Verificación
